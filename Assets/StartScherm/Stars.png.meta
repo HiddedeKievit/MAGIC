@@ -47,21 +47,6 @@ TextureImporter:
   - first:
       213: -6496578650881425696
     second: Stars_14
-  - first:
-      213: 8497903717021780433
-    second: Stars_15
-  - first:
-      213: 5261382250960468193
-    second: Stars_16
-  - first:
-      213: -4422740967006600327
-    second: Stars_17
-  - first:
-      213: 6183606860243970708
-    second: Stars_18
-  - first:
-      213: -3253588033481309088
-    second: Stars_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -160,10 +145,10 @@ TextureImporter:
       name: Stars_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 188
-        width: 157
-        height: 137
+        x: 223
+        y: 724
+        width: 220
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +167,10 @@ TextureImporter:
       name: Stars_1
       rect:
         serializedVersion: 2
-        x: 269
-        y: 265
-        width: 69
-        height: 64
+        x: 5054
+        y: 805
+        width: 216
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +189,10 @@ TextureImporter:
       name: Stars_2
       rect:
         serializedVersion: 2
-        x: 414
-        y: 224
-        width: 68
-        height: 65
+        x: 5602
+        y: 756
+        width: 216
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,10 +211,10 @@ TextureImporter:
       name: Stars_3
       rect:
         serializedVersion: 2
-        x: 1351
-        y: 209
-        width: 95
-        height: 80
+        x: 5859
+        y: 441
+        width: 507
+        height: 488
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +233,10 @@ TextureImporter:
       name: Stars_4
       rect:
         serializedVersion: 2
-        x: 1435
-        y: 284
-        width: 68
-        height: 64
+        x: 563
+        y: 627
+        width: 54
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,10 +255,10 @@ TextureImporter:
       name: Stars_5
       rect:
         serializedVersion: 2
-        x: 1566
-        y: 273
-        width: 68
-        height: 64
+        x: 822
+        y: 569
+        width: 220
+        height: 168
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +277,10 @@ TextureImporter:
       name: Stars_6
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 188
-        width: 155
-        height: 149
+        x: 4707
+        y: 504
+        width: 331
+        height: 233
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,10 +299,10 @@ TextureImporter:
       name: Stars_7
       rect:
         serializedVersion: 2
-        x: 359
-        y: 259
-        width: 14
-        height: 10
+        x: 5250
+        y: 381
+        width: 320
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +321,10 @@ TextureImporter:
       name: Stars_8
       rect:
         serializedVersion: 2
-        x: 1482
-        y: 176
-        width: 92
-        height: 85
+        x: 5279
+        y: 628
+        width: 98
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +343,10 @@ TextureImporter:
       name: Stars_9
       rect:
         serializedVersion: 2
-        x: 1495
-        y: 259
-        width: 26
-        height: 22
+        x: 0
+        y: 31
+        width: 565
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,10 +365,10 @@ TextureImporter:
       name: Stars_10
       rect:
         serializedVersion: 2
-        x: 195
-        y: 215
-        width: 14
-        height: 10
+        x: 563
+        y: 376
+        width: 102
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,10 +387,10 @@ TextureImporter:
       name: Stars_11
       rect:
         serializedVersion: 2
-        x: 223
-        y: 107
-        width: 138
-        height: 110
+        x: 822
+        y: 224
+        width: 220
+        height: 169
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,10 +409,10 @@ TextureImporter:
       name: Stars_12
       rect:
         serializedVersion: 2
-        x: 359
-        y: 195
-        width: 26
-        height: 22
+        x: 5759
+        y: 296
+        width: 102
+        height: 81
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,10 +431,10 @@ TextureImporter:
       name: Stars_13
       rect:
         serializedVersion: 2
-        x: 39
-        y: 187
-        width: 14
-        height: 10
+        x: 4715
+        y: 236
+        width: 98
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,10 +453,10 @@ TextureImporter:
       name: Stars_14
       rect:
         serializedVersion: 2
-        x: 413
-        y: 137
-        width: 70
-        height: 64
+        x: 5018
+        y: 5
+        width: 320
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -482,116 +467,6 @@ TextureImporter:
       bones: []
       spriteID: 0ee73da232487d5a0800000000000000
       internalID: -6496578650881425696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stars_15
-      rect:
-        serializedVersion: 2
-        x: 1611
-        y: 175
-        width: 26
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1d90e84286e9ee570800000000000000
-      internalID: 8497903717021780433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stars_16
-      rect:
-        serializedVersion: 2
-        x: 1359
-        y: 159
-        width: 26
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e83b00084f240940800000000000000
-      internalID: 5261382250960468193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stars_17
-      rect:
-        serializedVersion: 2
-        x: 1426
-        y: 81
-        width: 92
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9730100f5844f92c0800000000000000
-      internalID: -4422740967006600327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stars_18
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 4
-        width: 157
-        height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49aa28f5da590d550800000000000000
-      internalID: 6183606860243970708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stars_19
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 115
-        width: 14
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 06482eafbeee8d2d0800000000000000
-      internalID: -3253588033481309088
       vertices: []
       indices: 
       edges: []
@@ -617,11 +492,6 @@ TextureImporter:
       Stars_12: 2635194071972507443
       Stars_13: 2434053896325560149
       Stars_14: -6496578650881425696
-      Stars_15: 8497903717021780433
-      Stars_16: 5261382250960468193
-      Stars_17: -4422740967006600327
-      Stars_18: 6183606860243970708
-      Stars_19: -3253588033481309088
       Stars_2: 1222489850116747820
       Stars_3: 908394461399428893
       Stars_4: 6356170700173641542
