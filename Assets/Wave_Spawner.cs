@@ -15,7 +15,9 @@ public class Wave_Spawner : MonoBehaviour
     public Wave[] Waves;
     public Transform[] SpawnPoints;
 
-    public float timeBetweenWaves = 10f;   
+    public float timeBetweenWaves = 10f; 
+
+    public Text waveCounterText;  
 
     private int currentWaveNumber = 0;
     private Wave currentWave;
@@ -72,6 +74,7 @@ public class Wave_Spawner : MonoBehaviour
         isWaitingForNextWave = false;
 
         nextSpawnTime = Time.time;
+        UpdateWaveUI();
     }
 
     void SpawnWave()
@@ -98,4 +101,9 @@ public class Wave_Spawner : MonoBehaviour
             waveCountdown = timeBetweenWaves;
         }
     }
+
+    void UpdateWaveUI()
+{
+    waveCounterText.text = "Wave: " + (currentWaveNumber + 1) + " / " + Waves.Length;
+}
 }
