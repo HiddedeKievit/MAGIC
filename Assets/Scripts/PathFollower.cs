@@ -14,53 +14,78 @@ public class PathFollower : MonoBehaviour
     void Start()
     {
         Mover = GetComponent<ICanMove>();
-        target = Path.checkpoints[index].position;
+        if (Path == null)
+            target = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // if theres no path, im not following a path.
+        if (Path == null)
+            IsFollowingPath = false;
+
+        // if im following a path, update the target.
         if (IsFollowingPath)
             target = Path.checkpoints[index].position;
+
 
         float distanceToTarget = Vector3.Distance(transform.position, target);
 
         // if close to the target
         if (distanceToTarget < Mover.BaseSize)
         {
+            // if i have a path, ill now be following that path
 
-            // slow by dividing the distance by the base size
-            float slowFactor = distanceToTarget / Mover.BaseSize;
-            float adjustedSpeed = Mover.BaseMovementSpeed * slowFactor;
-
-
-            // last checkpoint, stop moving when close enough.
-            if (index + 1 >= Path.checkpoints.Length && distanceToTarget <= 0.1f)
+            if (Path != null)
             {
-                return;
+                IsFollowingPath = true;
+
+                // last checkpoint, deal damage and destroy enemy
+                if (index + 1 >= Path.checkpoints.Length && distanceToTarget <= 0.1f)
+                {
+                    // kill damage
+                    Destroy(gameObject);
+                    return;
+                }
+
+
+                // next checkpoint
+                if (index + 1 < Path.checkpoints.Length)
+                    index++;
+
             }
-
-            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * adjustedSpeed);
-
-            // move slowly towards the last checkpoint
-            MoveToTarget(adjustedSpeed, Mover.BaseRotateSpeed);
-
-
-            if (index + 1 < Path.checkpoints.Length)
-            {
-                index++;
-                return;
-            }
-        } else
-        {
-            MoveToTarget(Mover.BaseMovementSpeed, Mover.BaseRotateSpeed);
+            return;
         }
+
+
+        // if you end up here, you are not close to a target so move towards target
+        MoveAndRotate(Mover.BaseMovementSpeed, Mover.BaseRotateSpeed);
     }
 
 
-    void MoveToTarget(float speed, float rotateSpeed)
+    // Though, should pathfollower be a seperate thing from a new script: Mover? like:
+    // pathfollower handles the current path location and stuff, mover handles moving towards a target in general
+    public void SetTarget(Vector3 position)
     {
+        IsFollowingPath = false;
+        target = position.normalized;
+    }
 
+    void MoveAndRotate(float moveSpeed, float rotateSpeed)
+    {
+        MoveToTarget(moveSpeed);
+        RotateToTarget(rotateSpeed);
+    }
+
+    void MoveToTarget(float speed)
+    {
+        // move forward
+        transform.position = transform.position + Time.deltaTime * speed * transform.up;
+    }
+
+    void RotateToTarget(float rotateSpeed)
+    {
         // direction from me to target
         Vector2 direction = ( target - transform.position ).normalized;
 
@@ -69,10 +94,6 @@ public class PathFollower : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
 
         // rotate towards angle i want to be
-
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
-
-
-        transform.position = transform.position + Time.deltaTime * speed * transform.up;
     }
 }
