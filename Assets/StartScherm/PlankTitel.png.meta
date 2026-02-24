@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1680503c831fc61499fe3366f8d7cb2a
+guid: 8d851811ef76c2c4aa12e4dceeecc83e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5661533588869169433
-    second: StartKnop_0
+      213: 8978831993616990543
+    second: PlankTitel_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StartKnop_0
+      name: PlankTitel_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 440
-        height: 157
+        width: 723
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7eeb28f62313e61b0800000000000000
-      internalID: -5661533588869169433
+      spriteID: f41047550283b9c70800000000000000
+      internalID: 8978831993616990543
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      StartKnop_0: -5661533588869169433
+      PlankTitel_0: 8978831993616990543
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
