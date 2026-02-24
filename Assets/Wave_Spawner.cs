@@ -17,6 +17,8 @@ public class Wave_Spawner : MonoBehaviour
 
     public float timeBetweenWaves = 10f; 
 
+    public PathManager Path;
+
     public Text waveCounterText;  
 
     private int currentWaveNumber = 0;
@@ -83,7 +85,9 @@ public class Wave_Spawner : MonoBehaviour
         {
             GameObject randomEnemy =
                 currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
-
+        
+            PathFollower follower = randomEnemy.GetComponent<PathFollower>();
+            follower.Path = Path;
             Transform randomPoint =
                 SpawnPoints[Random.Range(0, SpawnPoints.Length)];
 
