@@ -33,7 +33,7 @@ public class PathFollower : MonoBehaviour
         float distanceToTarget = Vector3.Distance(transform.position, target);
 
         // if close to the target
-        if (distanceToTarget < Mover.BaseSize)
+        if (distanceToTarget < Mover.TargetClearance)
         {
             // if i have a path, ill now be following that path
 
