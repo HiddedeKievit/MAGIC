@@ -19,6 +19,9 @@ public class LanternToggle : MonoBehaviour
 
     private bool isOn = false;
 
+    public GameObject fireBurst; // the moving flame
+    public GameObject firePatch; // the fire on the grass (loop)
+
     void Start()
     {
         SetState(false);
@@ -39,6 +42,26 @@ public class LanternToggle : MonoBehaviour
         if (lanternGlow) lanternGlow.SetActive(isOn);
 
         if (ghostImage) ghostImage.color = isOn ? ghostLitColor : ghostDarkColor;
+
+        if (isOn)
+        {
+            // Play burst when opening
+            if (fireBurst)
+            {
+                fireBurst.SetActive(true);
+
+                Animator anim = fireBurst.GetComponent<Animator>();
+                if (anim)
+                {
+                    anim.Play(0, 0, 0f); // restart animation from beginning
+                }
+            }
+        }
+        else
+        {
+            // Turn everything off when closing
+            if (fireBurst) fireBurst.SetActive(false);
+            if (firePatch) firePatch.SetActive(false);
+        }
     }
 }
-    
