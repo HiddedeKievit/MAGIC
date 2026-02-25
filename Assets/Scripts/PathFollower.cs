@@ -42,7 +42,7 @@ public class PathFollower : MonoBehaviour
                 IsFollowingPath = true;
 
                 // last checkpoint, deal damage and destroy enemy
-                if (index + 1 >= Path.checkpoints.Length && distanceToTarget <= 0.1f)
+                if (index + 1 >= Path.checkpoints.Length)
                 {
                     // kill damage
                     Destroy(gameObject);
