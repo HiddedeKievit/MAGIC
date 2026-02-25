@@ -6,10 +6,13 @@ public class SpriteChanger : MonoBehaviour
     [SerializeField] Sprite[] directionalSprites;
     public Sprite newSprite;
 
+    //Finds the SpriteRenderer so it can change the sprite.
     private void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = directionalSprites[0];
     }
+
+    //Changes sprite on key input.
     public void SpriteChange()
     {
         if (Input.GetKeyDown(KeyCode.S))

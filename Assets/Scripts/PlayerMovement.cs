@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
         sprintState = false;
     }
     
-    
+    //Checks for sprint keyinput, increases/decreases speed depending on sprintState, caps speed at 5 or 10.
     void Update()
     {
         rb.linearVelocity = moveInput * moveSpeed;
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //Using the input system to be able to move around
+    //Using the input system to be able to move around + calls on SpriteChange script
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
