@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Strong.prefab.meta
-guid: ff6fad160b66640098f008095f3c61c1
-========
-guid: ff37a71cc46acc8468bf592254685ee0
->>>>>>>> Tibo:Assets/Sprites/GroundPalette/Ground.prefab.meta
+guid: d3cdb927de09022499a82b854c571a65
 PrefabImporter:
   externalObjects: {}
   userData: 

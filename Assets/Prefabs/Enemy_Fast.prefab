@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
---- !u!1 &6576794874508145595
-========
---- !u!1 &5452498235998039160
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
+--- !u!1 &3634794594642639487
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,71 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
-  - component: {fileID: 1708336025345849272}
-  - component: {fileID: 3118946257702723809}
-  - component: {fileID: 952631957048286111}
-  - component: {fileID: 6296795131174250346}
+  - component: {fileID: 7571284060937747019}
+  - component: {fileID: 584927081840655274}
+  - component: {fileID: 694839629088138411}
+  - component: {fileID: 7741595943487244754}
   m_Layer: 3
   m_Name: Enemy_Fast
   m_TagString: Enemy
-========
-  - component: {fileID: 6031967925355941243}
-  - component: {fileID: 2130141001868837009}
-  - component: {fileID: 8429991218315631720}
-  - component: {fileID: 4039236903713126536}
-  - component: {fileID: -3498807045943906742}
-  m_Layer: 0
-  m_Name: Bat
-  m_TagString: Untagged
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
---- !u!4 &1708336025345849272
-========
---- !u!4 &6031967925355941243
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
+--- !u!4 &7571284060937747019
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
-  m_GameObject: {fileID: 6576794874508145595}
+  m_GameObject: {fileID: 3634794594642639487}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -126.3, y: 3.7, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3118946257702723809
-========
-  m_GameObject: {fileID: 5452498235998039160}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.12, y: -3.11, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2130141001868837009
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
+--- !u!212 &584927081840655274
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
-  m_GameObject: {fileID: 6576794874508145595}
-========
-  m_GameObject: {fileID: 5452498235998039160}
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
+  m_GameObject: {fileID: 3634794594642639487}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -114,11 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
   m_Sprite: {fileID: -2036660143253890644, guid: c1aff2b77b6b24359b9fb4934ba4ff76, type: 3}
-========
-  m_Sprite: {fileID: 21300000, guid: f089a431cfb8acf4883fb4882ebac0f7, type: 3}
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,65 +89,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
---- !u!114 &952631957048286111
-========
---- !u!114 &8429991218315631720
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
+--- !u!114 &694839629088138411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
-  m_GameObject: {fileID: 6576794874508145595}
-========
-  m_GameObject: {fileID: 5452498235998039160}
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f830415ccc67c444bc9af3a032d807c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
-  baseMovementSpeed: 40
-  baseRotateSpeed: 5
-  baseSize: 1
-  health: 5
---- !u!114 &6296795131174250346
-========
-  baseMovementSpeed: 5
-  baseRotateSpeed: 4
-  health: 5
-  canMove: 1
-  targetClearance: 1
-  path: {fileID: 0}
---- !u!114 &4039236903713126536
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/Enemy_Fast.prefab
-  m_GameObject: {fileID: 6576794874508145595}
-========
-  m_GameObject: {fileID: 5452498235998039160}
->>>>>>>> Tibo:Assets/Prefabs/Bat.prefab
+  m_GameObject: {fileID: 3634794594642639487}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bbd05a86fc58c84a8d66863106a96dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3498807045943906742
+  Path: {fileID: 0}
+  IsFollowingPath: 1
+--- !u!114 &7741595943487244754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5452498235998039160}
+  m_GameObject: {fileID: 3634794594642639487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef3f2ed26e9c024bb7eee3b088463d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f830415ccc67c444bc9af3a032d807c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseMovementSpeed: 30
+  baseRotateSpeed: 2
+  baseSize: 1
+  health: 3
