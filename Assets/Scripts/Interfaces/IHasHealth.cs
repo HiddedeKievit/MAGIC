@@ -1,4 +1,4 @@
 public interface IHasHealth
 {
-    int Health { get; set; }
+    int Health { get; }
 }

@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &4173623458752996594
+=======
+--- !u!1 &3163251612003875593
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +12,18 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 8598792538202222234}
   - component: {fileID: 3809513382518996065}
   - component: {fileID: 237587558948658221}
   - component: {fileID: 203813345851012135}
   - component: {fileID: 2081796000020852587}
+=======
+  - component: {fileID: 5320399298936320845}
+  - component: {fileID: 6822489252101051772}
+  - component: {fileID: 288892262576545389}
+  - component: {fileID: 6734976392747942719}
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
   m_Layer: 3
   m_Name: Enemy_Strong
   m_TagString: Enemy
@@ -20,13 +31,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &8598792538202222234
+=======
+--- !u!4 &5320399298936320845
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 4173623458752996594}
+=======
+  m_GameObject: {fileID: 3163251612003875593}
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -157.6, y: 42.2, z: 0}
@@ -35,13 +54,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!212 &3809513382518996065
+=======
+--- !u!212 &6822489252101051772
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 4173623458752996594}
+=======
+  m_GameObject: {fileID: 3163251612003875593}
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -90,12 +117,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!114 &237587558948658221
+=======
+--- !u!114 &288892262576545389
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 4173623458752996594}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -112,6 +144,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4173623458752996594}
+=======
+  m_GameObject: {fileID: 3163251612003875593}
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f830415ccc67c444bc9af3a032d807c, type: 3}
@@ -120,14 +155,23 @@ MonoBehaviour:
   baseMovementSpeed: 15
   baseRotateSpeed: 2
   baseSize: 1
+<<<<<<< HEAD
   health: 15
 --- !u!114 &2081796000020852587
+=======
+  health: 5
+--- !u!114 &6734976392747942719
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 4173623458752996594}
+=======
+  m_GameObject: {fileID: 3163251612003875593}
+>>>>>>> parent of 51e9488 (Merge branch 'Tibo' into Hidde)
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bbd05a86fc58c84a8d66863106a96dd, type: 3}
