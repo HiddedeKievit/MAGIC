@@ -14,13 +14,16 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
+    //Finds rigidbody & sets sprintState to false
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sprintState = false;
     }
     
-    //Checks for sprint keyinput, increases/decreases speed depending on sprintState, caps speed at 5 or 10.
+    //Checks for sprint keyinput(LeftShift),
+    //Increases/decreases speed depending on sprintState
+    //Caps speed at minimum 5 & maximum 10.
     void Update()
     {
         rb.linearVelocity = moveInput * moveSpeed;

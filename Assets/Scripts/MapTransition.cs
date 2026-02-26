@@ -15,6 +15,7 @@ public class MapTransition : MonoBehaviour
     }
 
     //Checks the tag of colliding object to then swap the BoundingShape of the Cinemachine Camera if it's the player.
+    //Calls the function to push Player
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -24,6 +25,7 @@ public class MapTransition : MonoBehaviour
         }
     }
 
+    //Pushes player in certain direction depending on what enum is selected.
     private void UpdatePlayerPosition(GameObject player)
     {
         Vector3 newPos = player.transform.position;
