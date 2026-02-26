@@ -2,77 +2,53 @@ using UnityEngine;
 
 public class PathFollower : MonoBehaviour
 {
-    private ICanMove Mover;
+    private ICanMove mover;
+    private IPathable pathSource;
 
-    public PathManager Path;
 
-    public bool IsFollowingPath = true;
-
-    private Vector3 target;
+    // what checkpoint am i at
     private int index = 0;
 
     void Start()
     {
-        Mover = GetComponent<ICanMove>();
-        target = Path.checkpoints[index].position;
+        mover = GetComponent<ICanMove>();
+        pathSource = GetComponent<IPathable>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (IsFollowingPath)
-            target = Path.checkpoints[index].position;
+        // if theres no path, something went wrong. dont do anything.
+        if (pathSource == null || pathSource.Path == null)
+        {
+            Debug.Log("Missing path source or path manager");
+            enabled = false;
+            return;
+        }
+        // keep updating the target.
+        mover.Target = pathSource.Path.checkpoints[index].position;
 
-        float distanceToTarget = Vector3.Distance(transform.position, target);
+        float distanceToTarget = Vector3.Distance(transform.position, mover.Target);
 
         // if close to the target
-        if (distanceToTarget < Mover.BaseSize)
+        if (distanceToTarget < mover.TargetClearance)
         {
+            // if i have a path, ill now be following that path
 
-            // slow by dividing the distance by the base size
-            float slowFactor = distanceToTarget / Mover.BaseSize;
-            float adjustedSpeed = Mover.BaseMovementSpeed * slowFactor;
-
-
-            // last checkpoint, stop moving when close enough.
-            if (index + 1 >= Path.checkpoints.Length && distanceToTarget <= 0.1f)
+            if (pathSource.Path != null)
             {
-                return;
+                // last checkpoint. remove self?
+                if (index + 1 >= pathSource.Path.checkpoints.Length)
+                {
+                    GetComponent<IFinishable>().ReachEnd();
+                    return;
+                }
+
+
+                // next checkpoint
+                if (index + 1 < pathSource.Path.checkpoints.Length)
+                    index++;
             }
-
-            transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * adjustedSpeed);
-
-            // move slowly towards the last checkpoint
-            MoveToTarget(adjustedSpeed, Mover.BaseRotateSpeed);
-
-
-            if (index + 1 < Path.checkpoints.Length)
-            {
-                index++;
-                return;
-            }
-        } else
-        {
-            MoveToTarget(Mover.BaseMovementSpeed, Mover.BaseRotateSpeed);
         }
-    }
-
-
-    void MoveToTarget(float speed, float rotateSpeed)
-    {
-
-        // direction from me to target
-        Vector2 direction = ( target - transform.position ).normalized;
-
-        // angle i want to be
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
-        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-
-        // rotate towards angle i want to be
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
-
-
-        transform.position = transform.position + Time.deltaTime * speed * transform.up;
     }
 }
