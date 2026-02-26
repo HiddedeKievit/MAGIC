@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2130141001868837009}
   - component: {fileID: 8429991218315631720}
   - component: {fileID: 4039236903713126536}
+  - component: {fileID: -3498807045943906742}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -103,8 +104,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovementSpeed: 5
   baseRotateSpeed: 4
-  targetClearance: 1
   health: 5
+  canMove: 1
+  targetClearance: 1
+  path: {fileID: 0}
 --- !u!114 &4039236903713126536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,5 +120,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbd05a86fc58c84a8d66863106a96dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: {fileID: 0}
-  IsFollowingPath: 1
+--- !u!114 &-3498807045943906742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452498235998039160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef3f2ed26e9c024bb7eee3b088463d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
