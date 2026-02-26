@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class TowerTargeting : MonoBehaviour
 {
     [Header("Tower Settings")]
-    [SerializeField] private float range = 5f; // detection range
+    [SerializeField] private float range = 5f;
 
     private Transform target;
+
+    public Transform CurrentTarget => target;
 
     void Update()
     {
