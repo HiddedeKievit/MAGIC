@@ -8,6 +8,9 @@ public class LanternToggle : MonoBehaviour
     public Sprite closedLantern;
     public Sprite openLantern;
 
+    [Header("Bonfire")]
+    public BonFire bonFire; // drag the Bonfire (parent) that has the BonFire script
+
     [Header("Light Objects")]
     public GameObject lightBeam;   // the big beam sprite
     public GameObject lanternGlow; // optional small glow around lantern
@@ -17,10 +20,11 @@ public class LanternToggle : MonoBehaviour
     public Color ghostLitColor = Color.white;
     public Color ghostDarkColor = new Color(0.85f, 0.85f, 0.85f, 1f);
 
-    private bool isOn = false;
+    [Header("Fire FX")]
+    public GameObject fireBurst; // the moving flame (plays once)
+    public GameObject firePatch; // optional loop on grass
 
-    public GameObject fireBurst; // the moving flame
-    public GameObject firePatch; // the fire on the grass (loop)
+    private bool isOn = false;
 
     void Start()
     {
@@ -36,15 +40,20 @@ public class LanternToggle : MonoBehaviour
     {
         isOn = on;
 
-        lanternImage.sprite = isOn ? openLantern : closedLantern;
+        if (lanternImage)
+            lanternImage.sprite = isOn ? openLantern : closedLantern;
 
         if (lightBeam) lightBeam.SetActive(isOn);
         if (lanternGlow) lanternGlow.SetActive(isOn);
 
-        if (ghostImage) ghostImage.color = isOn ? ghostLitColor : ghostDarkColor;
+        if (ghostImage)
+            ghostImage.color = isOn ? ghostLitColor : ghostDarkColor;
 
         if (isOn)
         {
+            // Ignite bonfire (auto returns to wood after burnTime in BonFire script)
+            if (bonFire) bonFire.Ignite();
+
             // Play burst when opening
             if (fireBurst)
             {
@@ -52,16 +61,21 @@ public class LanternToggle : MonoBehaviour
 
                 Animator anim = fireBurst.GetComponent<Animator>();
                 if (anim)
-                {
-                    anim.Play(0, 0, 0f); // restart animation from beginning
-                }
+                    anim.Play(0, 0, 0f); // restart from beginning
             }
+
+            // Optional: enable loop patch while lantern is on
+            if (firePatch) firePatch.SetActive(true);
         }
         else
         {
-            // Turn everything off when closing
+            // Optional: if lantern closes, hide these FX
             if (fireBurst) fireBurst.SetActive(false);
             if (firePatch) firePatch.SetActive(false);
+
+            // If you want the bonfire to STOP immediately when lantern closes,
+            // uncomment this line (otherwise it will finish its burnTime):
+            // if (bonFire) bonFire.ExtinguishImmediate();
         }
     }
 }
