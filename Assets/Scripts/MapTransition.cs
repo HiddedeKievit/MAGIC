@@ -6,7 +6,8 @@ public class MapTransition : MonoBehaviour
     [SerializeField] PolygonCollider2D mapBoundry;
     CinemachineConfiner2D confiner;
     [SerializeField] Direction direction;
-    enum Direction { Up, Down, Left, Right }
+    [SerializeField] Transform teleportTargetPosition;
+    enum Direction { Up, Down, Left, Right, Teleport }
 
     //Finds the Cinemachine confiner object.
     private void Start()
@@ -28,6 +29,11 @@ public class MapTransition : MonoBehaviour
     //Pushes player in certain direction depending on what enum is selected.
     private void UpdatePlayerPosition(GameObject player)
     {
+        if (direction == Direction.Teleport)
+        {
+            player.transform.position = teleportTargetPosition.position;
+        }
+        
         Vector3 newPos = player.transform.position;
 
         switch (direction)
