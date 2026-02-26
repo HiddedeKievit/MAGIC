@@ -34,10 +34,10 @@ public class TowerAttack : MonoBehaviour
 
     void HitTarget()
     {
-        Enemy enemy = target.GetComponent<Enemy>();
+        Entity enemy = target.GetComponent<Entity>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+            enemy.Health -= damage;
         }
 
         Destroy(gameObject);
