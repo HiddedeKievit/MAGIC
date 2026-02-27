@@ -4,18 +4,26 @@ using UnityEngine.UI;
 public class TurretButton : MonoBehaviour
 {
     [SerializeField] private Image icon;
+    public TurretData turretData;
+    public PlacementManager placementManager;
 
-    private TurretData data;
+    private Button button;
 
-    public void Setup(TurretData turretData)
+    void Awake()
     {
-        data = turretData;
-        icon.sprite = turretData.icon;
+        button = GetComponent<Button>();
+        button.onClick.AddListener(OnClick);
+    }
+
+    public void Setup()
+    {
+        if (icon != null && turretData != null)
+            icon.sprite = turretData.icon;
     }
 
     public void OnClick()
     {
-        Debug.Log("Selected turret: " + data.turretName);
-        // Later: enter placement mode
+        if (placementManager != null && turretData != null)
+            placementManager.StartPlacement(turretData);
     }
 }
