@@ -825,13 +825,15 @@ GameObject:
   - component: {fileID: 438608054}
   - component: {fileID: 438608056}
   - component: {fileID: 438608055}
+  - component: {fileID: 438608057}
+  - component: {fileID: 438608058}
   m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &438608054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -889,6 +891,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438608053}
   m_CullTransparentMesh: 1
+--- !u!95 &438608057
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438608053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 96bc84404137f6b45ae64b0e4b16f545, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &438608058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438608053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1086cf5ac3402994e96da5fce004642a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetImage: {fileID: 0}
+  minAlpha: 0.96
+  maxAlpha: 1
+  flickerSpeed: 10
+  smoothing: 10
 --- !u!1 &490506012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,8 +2328,16 @@ MonoBehaviour:
   ghostImage: {fileID: 885263876}
   ghostLitColor: {r: 1, g: 1, b: 1, a: 1}
   ghostDarkColor: {r: 0.2905661, g: 0.2779566, b: 0.2779566, a: 0.5529412}
+  ghostFadeInTime: 0.35
+  ghostFadeOutTime: 0.55
   fireBurst: {fileID: 263604381}
   firePatch: {fileID: 263604381}
+  fireImage: {fileID: 438608055}
+  minBrightness: 0.92
+  maxBrightness: 1
+  flickerSpeed: 14
+  flickerSmooth: 10
+  igniteDelay: 0.25
 --- !u!1 &1336154762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,7 +3274,6 @@ GameObject:
   - component: {fileID: 1745299641}
   - component: {fileID: 1745299640}
   - component: {fileID: 1745299642}
-  - component: {fileID: 1745299643}
   m_Layer: 5
   m_Name: Bonfire
   m_TagString: Untagged
@@ -3307,28 +3355,6 @@ MonoBehaviour:
   wood: {fileID: 396160243}
   fire: {fileID: 438608053}
   burnTime: 3
---- !u!95 &1745299643
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1745299638}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8e8a2465ea371a24a91d1acc91e65be1, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &1810936058 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8167669621884692765, guid: c122696153c56654c97ce57cf68ffb44, type: 3}
