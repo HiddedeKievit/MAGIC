@@ -11,6 +11,6 @@ public class TurretData : ScriptableObject
     public GameObject ghostPrefab;
 
     [Header("Placement")]
-    [SerializeField] private Vector2 footprintSize = Vector2.one;
-    public Vector2 FootprintSize => footprintSize;
+    [SerializeField] private Vector2 towerGrid = Vector2.one;
+    public Vector2 TowerGrid => towerGrid;
 }

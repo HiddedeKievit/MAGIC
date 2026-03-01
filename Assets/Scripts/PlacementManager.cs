@@ -6,12 +6,12 @@ public class PlacementManager : MonoBehaviour
 
     private TurretData selectedTurret;
     private GameObject ghostTurret;
-    private SpriteRenderer footprintRenderer;
+    private SpriteRenderer towerGridRenderer;
 
-    [Header("Placement Settings")]
-    [SerializeField] private LayerMask placementLayer; 
-    [SerializeField] private Sprite validPlacementSprite;   // green circle
-    [SerializeField] private Sprite invalidPlacementSprite; // red circle
+    [Header("Placement")]
+    [SerializeField] private LayerMask placementLayer;
+    [SerializeField] private Sprite validSprite;
+    [SerializeField] private Sprite invalidSprite;
 
     void Awake()
     {
@@ -28,109 +28,82 @@ public class PlacementManager : MonoBehaviour
         ClearPlacement();
 
         selectedTurret = turret;
-
-        // Instantiate ghost prefab
         ghostTurret = Instantiate(turret.ghostPrefab);
 
-        // Disable all colliders on ghost
         foreach (var col in ghostTurret.GetComponentsInChildren<Collider2D>())
             col.enabled = false;
 
-        // Add / get footprint sprite
-        footprintRenderer = ghostTurret.GetComponentInChildren<SpriteRenderer>();
-        if (footprintRenderer == null)
+        towerGridRenderer = ghostTurret.GetComponentInChildren<SpriteRenderer>();
+
+        if (towerGridRenderer == null)
         {
-            Debug.LogError("Ghost prefab needs a child SpriteRenderer for footprint!");
+            Debug.LogError("Ghost prefab needs a TowerGrid SpriteRenderer child!");
+            return;
         }
-        else
-        {
-            footprintRenderer.sprite = validPlacementSprite;
-            footprintRenderer.transform.localScale = new Vector3(
-                selectedTurret.FootprintSize.x,
-                selectedTurret.FootprintSize.y,
-                1f
-            );
-        }
+
+        towerGridRenderer.sprite = validSprite;
+        ResizeTowerGrid(towerGridRenderer, selectedTurret.TowerGrid);
     }
 
     void Update()
     {
-        if (ghostTurret == null || selectedTurret == null) return;
+        if (!ghostTurret) return;
 
         FollowMouse();
 
-        // Check placement
-        bool canPlace = CanPlaceAt(ghostTurret.transform.position, selectedTurret.FootprintSize);
+        bool canPlace = CanPlaceAt(
+            ghostTurret.transform.position,
+            selectedTurret.TowerGrid
+        );
 
-        // Update footprint sprite and color
-        if (footprintRenderer != null)
-        {
-            footprintRenderer.sprite = canPlace ? validPlacementSprite : invalidPlacementSprite;
-        }
+        towerGridRenderer.sprite = canPlace ? validSprite : invalidSprite;
 
-        // Place tower if valid
         if (Input.GetMouseButtonDown(0) && canPlace)
-            TryPlace();
+            Place();
 
-        // Cancel placement
         if (Input.GetMouseButtonDown(1))
-            CancelPlacement();
+            ClearPlacement();
     }
 
     void FollowMouse()
     {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0f;
-        ghostTurret.transform.position = mousePos;
+        Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        pos.z = 0f;
+        ghostTurret.transform.position = pos;
     }
 
-    void TryPlace()
+    void Place()
     {
-        if (!CanPlaceAt(ghostTurret.transform.position, selectedTurret.FootprintSize))
-        {
-            Debug.Log("Cannot place here!");
-            return;
-        }
-
-        GameObject placed = Instantiate(
+        Instantiate(
             selectedTurret.turretPrefab,
             ghostTurret.transform.position,
             Quaternion.identity
-        );
+        ).layer = LayerMask.NameToLayer("PlacementBlocker");
 
-        placed.layer = LayerMask.NameToLayer("PlacementBlocker");
-
-        ClearPlacement();
-    }
-
-    void CancelPlacement()
-    {
         ClearPlacement();
     }
 
     void ClearPlacement()
     {
-        if (ghostTurret != null)
-            Destroy(ghostTurret);
-
+        if (ghostTurret) Destroy(ghostTurret);
         ghostTurret = null;
         selectedTurret = null;
-        footprintRenderer = null;
+        towerGridRenderer = null;
     }
 
-    private bool CanPlaceAt(Vector3 position, Vector2 size)
+    bool CanPlaceAt(Vector3 pos, Vector2 size)
     {
-        Collider2D hit = Physics2D.OverlapBox(position, size, 0f, placementLayer);
-        return hit == null;
+        return !Physics2D.OverlapBox(pos, size, 0f, placementLayer);
     }
 
-#if UNITY_EDITOR
-    void OnDrawGizmos()
+    void ResizeTowerGrid(SpriteRenderer sr, Vector2 targetSize)
     {
-        if (ghostTurret == null || selectedTurret == null) return;
+        Vector2 spriteSize = sr.sprite.bounds.size;
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(ghostTurret.transform.position, selectedTurret.FootprintSize);
+        sr.transform.localScale = new Vector3(
+            targetSize.x / spriteSize.x,
+            targetSize.y / spriteSize.y,
+            1f
+        );
     }
-#endif
 }
