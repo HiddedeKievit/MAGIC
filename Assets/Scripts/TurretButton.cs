@@ -4,26 +4,25 @@ using UnityEngine.UI;
 public class TurretButton : MonoBehaviour
 {
     [SerializeField] private Image icon;
+
+    // Make these public so TurretMenu can assign them
     public TurretData turretData;
     public PlacementManager placementManager;
 
-    private Button button;
-
-    void Awake()
-    {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
-    }
-
     public void Setup()
     {
-        if (icon != null && turretData != null)
+        if (turretData != null)
             icon.sprite = turretData.icon;
     }
 
     public void OnClick()
+{
+    if (placementManager != null && turretData != null)
     {
-        if (placementManager != null && turretData != null)
-            placementManager.StartPlacement(turretData);
+        Debug.Log("Starting placement for: " + turretData.turretName);
+        placementManager.StartPlacement(turretData);
     }
+    else
+        Debug.LogWarning("PlacementManager or TurretData missing on button: " + name);
+}
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8754725468297244303}
   - component: {fileID: 1166266623378050402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RangeCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2037452366219718377
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2792150268394025045}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2758884947319564747}
   - component: {fileID: 3945829401888096978}
   - component: {fileID: 706794529458917602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

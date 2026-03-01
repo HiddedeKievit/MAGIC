@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 71453101}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: f
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251859024}
   - component: {fileID: 251859023}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Paths
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,10 +309,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4095696993937658603, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 1071780666}
+    - target: {fileID: 4095696993937658603, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: turretData
+      value: 
+      objectReference: {fileID: 11400000, guid: 74d1bdebe3b653241a1f9fb10bf59d54, type: 2}
+    - target: {fileID: 4095696993937658603, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: placementManager
+      value: 
+      objectReference: {fileID: 1502868534}
+    - target: {fileID: 8115612164872127707, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4095696993937658603, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
     - target: {fileID: 8115612164872127707, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1502868533}
+    - target: {fileID: 8115612164872127707, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115612164872127707, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8849458464441926231, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
       propertyPath: m_Name
       value: TurretButton
@@ -406,7 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 422800005}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: k
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 549721249}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: a
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571365664}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: e
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 642824838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnPoint_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -634,7 +658,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 758228859}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -903,7 +927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1061753908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -931,6 +955,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1588806575002669586, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
   m_PrefabInstance: {fileID: 315024628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1071780666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6675257389629589758, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+  m_PrefabInstance: {fileID: 315024628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077427567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,7 +1055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1149658670}
   - component: {fileID: 1149658669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,7 +1268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1321062020}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: j
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1724598089}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: c
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1421,7 +1456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1817099074}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: g
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1505,7 +1540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1847044698}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: i
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1536,7 +1571,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1856740187}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: h
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1567,7 +1602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1884454165}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: b
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1633,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1901967438}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1962838082}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: l
   m_TagString: Untagged
   m_Icon: {fileID: 0}

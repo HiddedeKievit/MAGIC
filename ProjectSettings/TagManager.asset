@@ -13,9 +13,9 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - Placement
-  - 
-  - 
+  - PlacementBlocker
+  - Towers
+  - Path
   - 
   - 
   - 
