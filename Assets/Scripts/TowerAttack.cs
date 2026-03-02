@@ -2,44 +2,23 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
+    [Header("Attack Settings")]
     [SerializeField] private int damage = 1;
+    [SerializeField] private float projectileSpeed = 60f;
+    [SerializeField] private GameObject projectilePrefab;
 
-    private Transform target;
-
-    public void SetTarget(Transform newTarget)
+    public void Fire(Transform firePoint, Transform target)
     {
-        target = newTarget;
-    }
+        GameObject projectile = Instantiate(
+            projectilePrefab,
+            firePoint.position,
+            firePoint.rotation
+        );
 
-    void Update()
-    {
-        if (target == null)
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
         {
-            Destroy(gameObject);
-            return;
+            projectileScript.Initialize(target, damage, projectileSpeed);
         }
-
-        Vector2 direction = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
-
-        if (direction.magnitude <= distanceThisFrame)
-        {
-            HitTarget();
-            return;
-        }
-
-        transform.Translate(direction.normalized * distanceThisFrame, Space.World);
-    }
-
-    void HitTarget()
-    {
-        Entity enemy = target.GetComponent<Entity>();
-        if (enemy != null)
-        {
-            enemy.Health -= damage;
-        }
-
-        Destroy(gameObject);
     }
 }
