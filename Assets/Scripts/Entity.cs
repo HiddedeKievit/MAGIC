@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Entity : MonoBehaviour, IHasHealth, IFinishable
+public class Entity : MonoBehaviour, IFinishable
 {
     [Header("Health")]
     [SerializeField] private int health = 5;

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 560545272c0d76e4fa8eaafc87746060, type: 3}
-  m_Name: Stun
+  m_Name: TrollStun
   m_EditorClassIdentifier: 
   name: Stun
   cooldownTime: 5
-  activeTime: 5
+  activeTime: 0
   range: 3
+  StunTime: 5

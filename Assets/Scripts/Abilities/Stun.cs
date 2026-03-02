@@ -4,10 +4,28 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Stun : Ability
 {
-    public override void Activate()
+    public float StunTime = 5f;
+    public override void Activate(Vector3 origin)
     {
-        // get towers in range then stun
-        Debug.Log("Stun!");
+        Debug.Log("Stunning!");
 
+        GameObject[] entities = GameObject.FindGameObjectsWithTag("Tower");
+
+        foreach (GameObject entity in entities)
+        {
+            float distance = Vector2.Distance(origin, entity.transform.position);
+
+            if (distance <= range)
+            {
+                TowerShooting shooter = entity.GetComponent<TowerShooting>();
+                if (shooter)
+                {
+
+                    shooter.stunTimer = StunTime;
+                    Debug.Log("Stunned " + shooter.name);
+
+                }
+            }
+        }
     }
 }

@@ -7,5 +7,5 @@ public class Ability : ScriptableObject
     public float activeTime;
     public float range;
 
-    public virtual void Activate() { }
+    public virtual void Activate(Vector3 origin) { }
 }

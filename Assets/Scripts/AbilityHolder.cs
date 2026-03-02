@@ -27,7 +27,7 @@ public class AbilityHolder : MonoBehaviour
         switch (state)
         {
             case AbilityState.ready:
-                ability.Activate();
+                ability.Activate(transform.position);
                 state = AbilityState.active;
                 activeTime = ability.activeTime;
                 break;
