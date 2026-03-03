@@ -6,7 +6,7 @@ public class GhostTowerVisualizer : MonoBehaviour
     [SerializeField] private SpriteRenderer rangeSprite;
     [SerializeField] private SpriteRenderer gridSprite;
 
-    private float rangeSpriteOriginalWidth;
+    private float rangeSpriteWorldWidth;
 
     void Awake()
     {
@@ -17,7 +17,10 @@ public class GhostTowerVisualizer : MonoBehaviour
             return;
         }
 
-        rangeSpriteOriginalWidth = rangeSprite.bounds.size.x;
+        // TRUE world width at scale 1
+        rangeSpriteWorldWidth =
+            rangeSprite.sprite.rect.width /
+            rangeSprite.sprite.pixelsPerUnit;
     }
 
     public void Initialize(TurretData data)
@@ -29,17 +32,25 @@ public class GhostTowerVisualizer : MonoBehaviour
     public void SetRange(float range)
     {
         float diameter = range * 2f;
-        float scale = diameter / rangeSpriteOriginalWidth;
-        rangeSprite.transform.localScale = new Vector3(scale, scale, 1f);
+        float scale = diameter / rangeSpriteWorldWidth;
+
+        rangeSprite.transform.localScale =
+            new Vector3(scale, scale, 1f);
     }
 
     public void SetGridSize(Vector2 size)
     {
-        Vector2 spriteSize = gridSprite.sprite.bounds.size;
+        float spriteWorldWidth =
+            gridSprite.sprite.rect.width /
+            gridSprite.sprite.pixelsPerUnit;
+
+        float spriteWorldHeight =
+            gridSprite.sprite.rect.height /
+            gridSprite.sprite.pixelsPerUnit;
 
         gridSprite.transform.localScale = new Vector3(
-            size.x / spriteSize.x,
-            size.y / spriteSize.y,
+            size.x / spriteWorldWidth,
+            size.y / spriteWorldHeight,
             1f
         );
     }
