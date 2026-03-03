@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretName: Turret
   icon: {fileID: 4484503593788869233, guid: 4a04bea012021ef4888c250e9920bf19, type: 3}
+  range: 60
+  fireRate: 1
+  damage: 2
+  projectileSpeed: 180
+  projectilePrefab: {fileID: 8366925171870380377, guid: e037b041c23226041a9526ea392c612e, type: 3}
   turretPrefab: {fileID: 7809721549941625901, guid: 87c699993afe65c4cb3a2c7dbb616292, type: 3}
   ghostPrefab: {fileID: 5328992271549580022, guid: bce2d997fd38e7a4792756de71827b77, type: 3}
-  footprintSize: {x: 1, y: 1}
+  towerGrid: {x: 25, y: 5}

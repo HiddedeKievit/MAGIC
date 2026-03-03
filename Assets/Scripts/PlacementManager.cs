@@ -6,7 +6,7 @@ public class PlacementManager : MonoBehaviour
 
     private TurretData selectedTurret;
     private GameObject ghostTurret;
-    private SpriteRenderer towerGridRenderer;
+    private GhostTowerVisualizer ghostVisualizer;
 
     [Header("Placement")]
     [SerializeField] private LayerMask placementLayer;
@@ -20,6 +20,7 @@ public class PlacementManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
     }
 
@@ -30,33 +31,36 @@ public class PlacementManager : MonoBehaviour
         selectedTurret = turret;
         ghostTurret = Instantiate(turret.ghostPrefab);
 
+        // Disable all colliders on ghost
         foreach (var col in ghostTurret.GetComponentsInChildren<Collider2D>())
             col.enabled = false;
 
-        towerGridRenderer = ghostTurret.GetComponentInChildren<SpriteRenderer>();
+        ghostVisualizer = ghostTurret.GetComponent<GhostTowerVisualizer>();
 
-        if (towerGridRenderer == null)
+        if (ghostVisualizer == null)
         {
-            Debug.LogError("Ghost prefab needs a TowerGrid SpriteRenderer child!");
+            Debug.LogError("Ghost prefab missing GhostTowerVisualizer!");
             return;
         }
 
-        towerGridRenderer.sprite = validSprite;
-        ResizeTowerGrid(towerGridRenderer, selectedTurret.TowerGrid);
+        // Initialize visuals using TurretData
+        ghostVisualizer.Initialize(selectedTurret);
     }
 
     void Update()
     {
-        if (!ghostTurret) return;
+        if (!ghostTurret)
+            return;
 
         FollowMouse();
 
         bool canPlace = CanPlaceAt(
             ghostTurret.transform.position,
-            selectedTurret.TowerGrid
+            selectedTurret.towerGrid
         );
 
-        towerGridRenderer.sprite = canPlace ? validSprite : invalidSprite;
+        // Update grid visual
+        ghostVisualizer.SetGridValid(canPlace, validSprite, invalidSprite);
 
         if (Input.GetMouseButtonDown(0) && canPlace)
             Place();
@@ -74,21 +78,29 @@ public class PlacementManager : MonoBehaviour
 
     void Place()
     {
-        Instantiate(
+        GameObject towerObj = Instantiate(
             selectedTurret.turretPrefab,
             ghostTurret.transform.position,
             Quaternion.identity
-        ).layer = LayerMask.NameToLayer("PlacementBlocker");
+        );
+
+        // Initialize with TurretData
+        towerObj.GetComponent<Tower>().Initialize(selectedTurret);
+
+        // Set blocking layer
+        SetLayerRecursively(towerObj, LayerMask.NameToLayer("PlacementBlocker"));
 
         ClearPlacement();
     }
 
     void ClearPlacement()
     {
-        if (ghostTurret) Destroy(ghostTurret);
+        if (ghostTurret)
+            Destroy(ghostTurret);
+
         ghostTurret = null;
         selectedTurret = null;
-        towerGridRenderer = null;
+        ghostVisualizer = null;
     }
 
     bool CanPlaceAt(Vector3 pos, Vector2 size)
@@ -96,14 +108,11 @@ public class PlacementManager : MonoBehaviour
         return !Physics2D.OverlapBox(pos, size, 0f, placementLayer);
     }
 
-    void ResizeTowerGrid(SpriteRenderer sr, Vector2 targetSize)
+    void SetLayerRecursively(GameObject obj, int layer)
     {
-        Vector2 spriteSize = sr.sprite.bounds.size;
+        obj.layer = layer;
 
-        sr.transform.localScale = new Vector3(
-            targetSize.x / spriteSize.x,
-            targetSize.y / spriteSize.y,
-            1f
-        );
+        foreach (Transform child in obj.transform)
+            SetLayerRecursively(child.gameObject, layer);
     }
 }
