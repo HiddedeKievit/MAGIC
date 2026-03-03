@@ -482,15 +482,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1434165558315391522, guid: 87c699993afe65c4cb3a2c7dbb616292, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.64
+      value: 0.099999994
       objectReference: {fileID: 0}
     - target: {fileID: 1434165558315391522, guid: 87c699993afe65c4cb3a2c7dbb616292, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.64
+      value: 0.099999994
       objectReference: {fileID: 0}
     - target: {fileID: 1434165558315391522, guid: 87c699993afe65c4cb3a2c7dbb616292, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.64
+      value: 0.099999994
       objectReference: {fileID: 0}
     - target: {fileID: 1434165558315391522, guid: 87c699993afe65c4cb3a2c7dbb616292, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1427,6 +1427,7 @@ GameObject:
   - component: {fileID: 2007974981}
   - component: {fileID: 2007974980}
   - component: {fileID: 2007974979}
+  - component: {fileID: 2007974986}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Tower
@@ -1471,9 +1472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7509ff8a4dfee142b97b3c857874797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  projectileSpeed: 10
-  projectilePrefab: {fileID: 8366925171870380377, guid: e037b041c23226041a9526ea392c612e, type: 3}
 --- !u!114 &2007974982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,7 +1484,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2bbad7db0360f47b562d5b7ae9ac0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
   firePoint: {fileID: 2007241710}
   stunTimer: 0
 --- !u!114 &2007974983
@@ -1501,7 +1498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c473c20651a4ac78fc5d99dca5322b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
 --- !u!212 &2007974984
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1574,6 +1570,18 @@ Transform:
   - {fileID: 1591239888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2007974986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007974978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119fe7a6a433242e9b7d3bd699168e66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2010389704
 PrefabInstance:
   m_ObjectHideFlags: 0
