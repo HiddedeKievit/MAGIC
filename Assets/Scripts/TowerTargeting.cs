@@ -1,28 +1,38 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Tower))]
 public class TowerTargeting : MonoBehaviour
 {
-    [Header("Tower Settings")]
-    [SerializeField] private float range = 5f;
-    public float Range => range;
+    private Tower tower;
 
     private Transform target;
     public Transform CurrentTarget => target;
 
+    public float Range
+{
+    get
+    {
+        if (tower == null || tower.Data == null)
+            return 0f;
+
+        return tower.Data.range;
+    }
+}
+
+    void Awake()
+    {
+        tower = GetComponent<Tower>();
+    }
+
     void Update()
     {
         if (target == null)
-        {
             FindTarget();
-        }
 
         if (target != null)
         {
-            // If target moves out of range, forget it
-            if (Vector2.Distance(transform.position, target.position) > range)
-            {
+            if (Vector2.Distance(transform.position, target.position) > Range)
                 target = null;
-            }
         }
     }
 
@@ -34,7 +44,7 @@ public class TowerTargeting : MonoBehaviour
         {
             float distance = Vector2.Distance(transform.position, entity.transform.position);
 
-            if (distance <= range)
+            if (distance <= Range)
             {
                 target = entity.transform;
                 return;
@@ -46,7 +56,10 @@ public class TowerTargeting : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
+        if (tower == null || tower.Data == null)
+            return;
+
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, tower.Data.range);
     }
 }

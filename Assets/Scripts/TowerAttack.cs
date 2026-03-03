@@ -1,18 +1,21 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Tower))]
 public class TowerAttack : MonoBehaviour
 {
-    [Header("Attack Settings")]
-    [SerializeField] private int damage = 1;
-    [SerializeField] private float projectileSpeed = 60f;
-    [SerializeField] private GameObject projectilePrefab;
+    private Tower tower;
+
+    void Awake()
+    {
+        tower = GetComponent<Tower>();
+    }
 
 
 
     public void Fire(Transform firePoint, Transform target)
     {
         GameObject projectile = Instantiate(
-            projectilePrefab,
+            tower.Data.projectilePrefab,
             firePoint.position,
             firePoint.rotation
         );
@@ -20,7 +23,11 @@ public class TowerAttack : MonoBehaviour
         Projectile projectileScript = projectile.GetComponent<Projectile>();
         if (projectileScript != null)
         {
-            projectileScript.Initialize(target, damage, projectileSpeed);
+            projectileScript.Initialize(
+                target,
+                tower.Data.damage,
+                tower.Data.projectileSpeed
+            );
         }
     }
 }
