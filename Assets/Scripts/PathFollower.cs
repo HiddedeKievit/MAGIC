@@ -13,6 +13,10 @@ public class PathFollower : MonoBehaviour
     void Awake()
     {
         mover = GetComponent<Mover>();
+        if (Path != null)
+        {
+            mover.Target = Path.checkpoints[0].position;
+        }
     }
 
 
