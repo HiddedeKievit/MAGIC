@@ -1,31 +1,49 @@
+﻿using System.Collections;
 using UnityEngine;
-using System.Collections; 
 
 public class BonFire : MonoBehaviour
 {
     public GameObject wood;
     public GameObject fire;
-
-    public float burnTime = 3f; // seconds fire stays on
+    public float burnTime = 3f;
 
     private Coroutine burnCoroutine;
 
+    void Awake()
+    {
+        ResetToUnlit();
+    }
+
+    public void ResetToUnlit()
+    {
+        if (wood) wood.SetActive(true);
+        if (fire) fire.SetActive(false);
+
+        if (burnCoroutine != null)
+        {
+            StopCoroutine(burnCoroutine);
+            burnCoroutine = null;
+        }
+    }
+
     public void Ignite()
     {
+        if (!fire) return;
+
+        fire.SetActive(true);
+
         if (burnCoroutine != null)
             StopCoroutine(burnCoroutine);
-
-        wood.SetActive(false);
-        fire.SetActive(true);
 
         burnCoroutine = StartCoroutine(BurnRoutine());
     }
 
-    IEnumerator BurnRoutine()
+    private IEnumerator BurnRoutine()
     {
         yield return new WaitForSeconds(burnTime);
 
-        fire.SetActive(false);
-        wood.SetActive(true);
+        if (fire) fire.SetActive(false);
+
+        burnCoroutine = null;
     }
 }
