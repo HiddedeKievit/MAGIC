@@ -15,11 +15,11 @@ public class Wave_Spawner : MonoBehaviour
     public Wave[] Waves;
     public Transform[] SpawnPoints;
 
-    public float timeBetweenWaves = 10f;
+    public float timeBetweenWaves = 10f; 
 
     public PathManager Path;
 
-    public Text waveCounterText;
+    public Text waveCounterText;  
 
     private int currentWaveNumber = 0;
     private Wave currentWave;
@@ -57,7 +57,8 @@ public class Wave_Spawner : MonoBehaviour
                 if (currentWaveNumber < Waves.Length)
                 {
                     StartWave();
-                } else
+                }
+                else
                 {
                     Debug.Log("All waves completed!");
                     isWaitingForNextWave = false;
@@ -84,13 +85,9 @@ public class Wave_Spawner : MonoBehaviour
         {
             GameObject randomEnemy =
                 currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
-
-
-
-            PathFollower pf = randomEnemy.AddComponent<PathFollower>();
-            pf.Path = Path;
-
-
+        
+            IPathable follower = randomEnemy.GetComponent<IPathable>();
+            follower.Path = Path;
             Transform randomPoint =
                 SpawnPoints[Random.Range(0, SpawnPoints.Length)];
 
@@ -100,7 +97,7 @@ public class Wave_Spawner : MonoBehaviour
             nextSpawnTime = Time.time + currentWave.spawnInterval;
         }
 
-
+        
         if (enemiesLeftToSpawn == 0 && isSpawning)
         {
             isSpawning = false;
@@ -110,7 +107,7 @@ public class Wave_Spawner : MonoBehaviour
     }
 
     void UpdateWaveUI()
-    {
-        waveCounterText.text = "Wave: " + ( currentWaveNumber + 1 ) + " / " + Waves.Length;
-    }
+{
+    waveCounterText.text = "Wave: " + (currentWaveNumber + 1) + " / " + Waves.Length;
+}
 }
