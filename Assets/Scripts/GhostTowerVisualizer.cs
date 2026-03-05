@@ -17,16 +17,17 @@ public class GhostTowerVisualizer : MonoBehaviour
             return;
         }
 
-        // TRUE world width at scale 1
         rangeSpriteWorldWidth =
             rangeSprite.sprite.rect.width /
             rangeSprite.sprite.pixelsPerUnit;
+
+        gridSprite.enabled = false; // hidden by default
     }
 
     public void Initialize(TurretData data)
     {
         SetRange(data.range);
-        SetGridSize(data.towerGrid);
+        SetGridSize(data.range);
     }
 
     public void SetRange(float range)
@@ -34,29 +35,23 @@ public class GhostTowerVisualizer : MonoBehaviour
         float diameter = range * 2f;
         float scale = diameter / rangeSpriteWorldWidth;
 
-        rangeSprite.transform.localScale =
+        Vector3 scaleVec = new Vector3(scale, scale, 1f);
+
+        rangeSprite.transform.localScale = scaleVec;
+        gridSprite.transform.localScale = scaleVec;
+    }
+
+    void SetGridSize(float range)
+    {
+        float diameter = range * 2f;
+        float scale = diameter / rangeSpriteWorldWidth;
+
+        gridSprite.transform.localScale =
             new Vector3(scale, scale, 1f);
     }
 
-    public void SetGridSize(Vector2 size)
+    public void SetPlacementValid(bool valid)
     {
-        float spriteWorldWidth =
-            gridSprite.sprite.rect.width /
-            gridSprite.sprite.pixelsPerUnit;
-
-        float spriteWorldHeight =
-            gridSprite.sprite.rect.height /
-            gridSprite.sprite.pixelsPerUnit;
-
-        gridSprite.transform.localScale = new Vector3(
-            size.x / spriteWorldWidth,
-            size.y / spriteWorldHeight,
-            1f
-        );
-    }
-
-    public void SetGridValid(bool valid, Sprite validSprite, Sprite invalidSprite)
-    {
-        gridSprite.sprite = valid ? validSprite : invalidSprite;
+        gridSprite.enabled = !valid;
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1da99750f27dac04cae4b2dc2199ea35
+guid: 3ccab4b01e8944e49a5a6f7a40558b73
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3041685520618199992
-    second: TowerRange 1_0
+      213: 8356958830029134202
+    second: TowerRange_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TowerRange 1_0
+      name: TowerRange_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 11
-        width: 477
-        height: 477
+        x: 3
+        y: 3
+        width: 244
+        height: 244
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bb95ee8ddc363a20800000000000000
-      internalID: 3041685520618199992
+      spriteID: a79537267c1e9f370800000000000000
+      internalID: 8356958830029134202
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TowerRange 1_0: 3041685520618199992
+      TowerRange_0: 8356958830029134202
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
