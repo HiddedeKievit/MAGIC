@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/TowerRange.png.meta
-guid: 2a5c846e30f008f42aea2ff3d49e051f
+guid: f089a431cfb8acf4883fb4882ebac0f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8356958830029134202
-    second: TowerRange_0
-========
-guid: 1c6fa9fa009d7d8419ce6dfdf7c4fad4
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7452726632593167273
-    second: lightcircle_0
->>>>>>>> Bram:Assets/Sprites/lightcircle.png.meta
+      213: -697763020151794088
+    second: bat_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,23 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/Sprites/TowerRange.png.meta
-      name: TowerRange_0
+      name: bat_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 244
-        height: 244
-========
-      name: lightcircle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 358
-        height: 358
->>>>>>>> Bram:Assets/Sprites/lightcircle.png.meta
+        x: 1
+        y: 8
+        width: 29
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,13 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/Sprites/TowerRange.png.meta
-      spriteID: a79537267c1e9f370800000000000000
-      internalID: 8356958830029134202
-========
-      spriteID: 9a31fc7d2676d6760800000000000000
-      internalID: 7452726632593167273
->>>>>>>> Bram:Assets/Sprites/lightcircle.png.meta
+      spriteID: 856d276ea3c0156f0800000000000000
+      internalID: -697763020151794088
       vertices: []
       indices: 
       edges: []
@@ -159,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:Assets/Sprites/TowerRange.png.meta
-      TowerRange_0: 8356958830029134202
-========
-      lightcircle_0: 7452726632593167273
->>>>>>>> Bram:Assets/Sprites/lightcircle.png.meta
+      bat_0: -697763020151794088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
