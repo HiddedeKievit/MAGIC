@@ -3,31 +3,34 @@ using UnityEngine;
 public class GhostTowerVisualizer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private SpriteRenderer rangeSprite;
-    [SerializeField] private SpriteRenderer gridSprite;
+    [SerializeField] private SpriteRenderer rangeSprite; // blue
+    [SerializeField] private SpriteRenderer gridSprite;  // red
 
     private float rangeSpriteWorldWidth;
+    private Vector2 gridSize;
 
     void Awake()
     {
         if (rangeSprite == null || gridSprite == null)
         {
-            Debug.LogError("GhostTowerVisual references missing!");
+            Debug.LogError("GhostTowerVisualizer references missing!");
             enabled = false;
             return;
         }
 
+        // Calculate sprite width in world units
         rangeSpriteWorldWidth =
             rangeSprite.sprite.rect.width /
             rangeSprite.sprite.pixelsPerUnit;
 
-        gridSprite.enabled = false; // hidden by default
+        gridSprite.enabled = false; // start hidden
     }
 
     public void Initialize(TurretData data)
     {
+        gridSize = data.towerGrid;
+
         SetRange(data.range);
-        SetGridSize(data.range);
     }
 
     public void SetRange(float range)
@@ -41,17 +44,20 @@ public class GhostTowerVisualizer : MonoBehaviour
         gridSprite.transform.localScale = scaleVec;
     }
 
-    void SetGridSize(float range)
-    {
-        float diameter = range * 2f;
-        float scale = diameter / rangeSpriteWorldWidth;
-
-        gridSprite.transform.localScale =
-            new Vector3(scale, scale, 1f);
-    }
-
+    // THIS is what PlacementManager calls
     public void SetPlacementValid(bool valid)
     {
+        rangeSprite.enabled = valid;
         gridSprite.enabled = !valid;
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+
+        Gizmos.DrawWireCube(
+            transform.position,
+            gridSize
+        );
     }
 }
