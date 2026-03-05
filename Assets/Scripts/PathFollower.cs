@@ -33,21 +33,25 @@ public class PathFollower : MonoBehaviour
 
 
 
-        // if close to the target
+        // close to the target
         if (mover.DistanceToTarget < mover.TargetClearence)
         {
 
-            // last checkpoint. remove self?
+            // at the last checkpoint. 
             if (index + 1 >= Path.checkpoints.Length)
             {
-                enabled = false; // done
+                // nothing to path so disable self.
+                enabled = false;
 
-                GetComponent<IFinishable>().ReachEnd();
+                // try to get tje finishable component and activate the reach end
+                if (TryGetComponent<IFinishable>(out var canFinish))
+                    canFinish.ReachEnd();
+
                 return;
             }
 
 
-            // next checkpoint
+            // go to the next checkpoint
             if (index + 1 < Path.checkpoints.Length)
             {
                 index++;

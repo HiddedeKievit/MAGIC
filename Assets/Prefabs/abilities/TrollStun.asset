@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TrollStun
   m_EditorClassIdentifier: 
   name: Stun
-  cooldownTime: 5
-  activeTime: 0
+  cooldownTime: 1
+  activeTime: 1
   range: 3
+  effectPrefab: {fileID: 7042328681328425334, guid: c9b688df2ef8ece4a91c98fb653281a4, type: 3}
   StunTime: 5

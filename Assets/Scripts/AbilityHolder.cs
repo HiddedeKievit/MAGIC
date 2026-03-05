@@ -30,6 +30,10 @@ public class AbilityHolder : MonoBehaviour
                 ability.Activate(transform.position);
                 state = AbilityState.active;
                 activeTime = ability.activeTime;
+
+                if (ability.effectPrefab)
+                    Instantiate(ability.effectPrefab, transform.position, Quaternion.identity);
+
                 break;
             case AbilityState.active:
                 if (activeTime > 0)
