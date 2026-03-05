@@ -1531,6 +1531,8 @@ MonoBehaviour:
   placementLayer:
     serializedVersion: 2
     m_Bits: 64
+  validSprite: {fileID: 7690171194095405039, guid: 24d4425acb27116498210aa0a9bebb29, type: 3}
+  invalidSprite: {fileID: -947997498899794374, guid: 762b6ba0bec833741bb1d6ed01e3311b, type: 3}
 --- !u!4 &1502868535
 Transform:
   m_ObjectHideFlags: 0
