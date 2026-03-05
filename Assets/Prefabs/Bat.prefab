@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f830415ccc67c444bc9af3a032d807c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 20
+  baseMovementSpeed: 24
   baseRotateSpeed: 4
-  health: 3
+  health: 4
   canMove: 1
   targetClearance: 1
   path: {fileID: 0}

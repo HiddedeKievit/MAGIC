@@ -103,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSpeed: 18
-  baseRotateSpeed: 2
-  health: 1
+  baseRotateSpeed: 4
+  health: 5
   canMove: 1
   targetClearance: 0.5
   path: {fileID: 0}
