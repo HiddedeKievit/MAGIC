@@ -86,7 +86,7 @@ public class Wave_Spawner : MonoBehaviour
             GameObject randomEnemy =
                 currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
         
-            PathFollower follower = randomEnemy.GetComponent<PathFollower>();
+            IPathable follower = randomEnemy.GetComponent<IPathable>();
             follower.Path = Path;
             Transform randomPoint =
                 SpawnPoints[Random.Range(0, SpawnPoints.Length)];

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
+    
     //Checks for sprint keyinput(LeftShift),
     //Increases/decreases speed depending on sprintState
     //Caps speed at minimum 5 & maximum 10.

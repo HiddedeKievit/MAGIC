@@ -1,18 +1,23 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Tower))]
 [RequireComponent(typeof(TowerTargeting))]
+[RequireComponent(typeof(TowerAttack))]
 public class TowerShooting : MonoBehaviour
 {
-    [SerializeField] private float fireRate = 1f;
-    [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
 
+    private Tower tower;
     private TowerTargeting targeting;
+    private TowerAttack attack;
+
     private float fireCooldown;
 
     void Awake()
     {
+        tower = GetComponent<Tower>();
         targeting = GetComponent<TowerTargeting>();
+        attack = GetComponent<TowerAttack>();
     }
 
     void Update()
@@ -27,8 +32,8 @@ public class TowerShooting : MonoBehaviour
 
         if (fireCooldown <= 0f)
         {
-            Shoot(target);
-            fireCooldown = 1f / fireRate;
+            attack.Fire(firePoint, target);
+            fireCooldown = 1f / tower.Data.fireRate;
         }
     }
 
@@ -37,20 +42,5 @@ public class TowerShooting : MonoBehaviour
         Vector2 direction = target.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
-    }
-
-    void Shoot(Transform target)
-    {
-        GameObject projectile = Instantiate(
-            projectilePrefab,
-            firePoint.position,
-            firePoint.rotation
-        );
-
-        TowerAttack attack = projectile.GetComponent<TowerAttack>();
-        if (attack != null)
-        {
-            attack.SetTarget(target);
-        }
     }
 }
