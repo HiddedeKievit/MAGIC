@@ -1,3 +1,5 @@
+// temp comment to fix stuff hopefully
+
 using UnityEngine;
 
 public class Entity : MonoBehaviour, ICanMove, IHasHealth, IPathable, IFinishable
