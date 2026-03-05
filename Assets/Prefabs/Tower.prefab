@@ -84,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 2.44, y: 2.44}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2037452366219718377
@@ -203,15 +203,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -922497358129609566, guid: fc51daea73a0b4236a19892d975332ba, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.02, y: 2.36}
+  m_Size: {x: 2.385, y: 2.385}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2540905125259229695
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2bbad7db0360f47b562d5b7ae9ac0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 2792150268394025045}
+  firePoint: {fileID: 0}
 --- !u!114 &8023884636226848965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3105fb5725fd1e14f8027d6102963629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeSprite: {fileID: 1166266623378050402}
+  rangeSprite: {fileID: 0}
 --- !u!114 &2209789286366637224
 MonoBehaviour:
   m_ObjectHideFlags: 0
