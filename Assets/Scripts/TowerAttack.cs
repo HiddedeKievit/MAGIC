@@ -1,45 +1,31 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Tower))]
 public class TowerAttack : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
-    [SerializeField] private int damage = 1;
+    private Tower tower;
 
-    private Transform target;
-
-    public void SetTarget(Transform newTarget)
+    void Awake()
     {
-        target = newTarget;
+        tower = GetComponent<Tower>();
     }
 
-    void Update()
+    public void Fire(Transform firePoint, Transform target)
     {
-        if (target == null)
+        GameObject projectile = Instantiate(
+            tower.Data.projectilePrefab,
+            firePoint.position,
+            firePoint.rotation
+        );
+
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
         {
-            Destroy(gameObject);
-            return;
+            projectileScript.Initialize(
+                target,
+                tower.Data.damage,
+                tower.Data.projectileSpeed
+            );
         }
-
-        Vector2 direction = target.position - transform.position;
-        float distanceThisFrame = speed * Time.deltaTime;
-
-        if (direction.magnitude <= distanceThisFrame)
-        {
-            HitTarget();
-            return;
-        }
-
-        transform.Translate(direction.normalized * distanceThisFrame, Space.World);
-    }
-
-    void HitTarget()
-    {
-        Entity enemy = target.GetComponent<Entity>();
-        if (enemy != null)
-        {
-            enemy.Health -= damage;
-        }
-
-        Destroy(gameObject);
     }
 }
