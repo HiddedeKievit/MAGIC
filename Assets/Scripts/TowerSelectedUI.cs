@@ -5,51 +5,49 @@ public class TowerSelectedUI : MonoBehaviour
     public static TowerSelectedUI Instance;
 
     [SerializeField] private GameObject panel;
-    [SerializeField] private Canvas canvas;
 
     private Tower currentTower;
+    private Transform anchor;
 
     void Awake()
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         Instance = this;
         panel.SetActive(false);
     }
 
     void Update()
-    {
-        if (currentTower == null)
-            return;
+{
+    if (currentTower == null || anchor == null)
+        return;
 
-        Vector2 screenPos =
-            Camera.main.WorldToScreenPoint(currentTower.UIAnchor.position);
+    Vector3 screenPos = Camera.main.WorldToScreenPoint(anchor.position);
 
-        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+    RectTransform canvasRect = panel.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+    RectTransform panelRect = panel.GetComponent<RectTransform>();
 
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvasRect,
-            screenPos,
-            canvas.worldCamera,
-            out Vector2 localPoint
-        );
+    Vector2 localPos;
+    RectTransformUtility.ScreenPointToLocalPointInRectangle(
+        canvasRect,
+        screenPos,
+        Camera.main,
+        out localPos
+    );
 
-        panel.GetComponent<RectTransform>().localPosition = localPoint;
-    }
+    panelRect.localPosition = localPos;
+}
 
     public void Show(Tower tower)
     {
         currentTower = tower;
+        anchor = tower.transform.Find("UIAnchor");
+
         panel.SetActive(true);
     }
 
     public void Hide()
     {
         currentTower = null;
+        anchor = null;
         panel.SetActive(false);
     }
 
