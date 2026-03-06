@@ -5,11 +5,18 @@ public class TowerSelectedUI : MonoBehaviour
     public static TowerSelectedUI Instance;
 
     [SerializeField] private GameObject panel;
+    [SerializeField] private Canvas canvas;
 
     private Tower currentTower;
 
     void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
         panel.SetActive(false);
     }
@@ -19,9 +26,19 @@ public class TowerSelectedUI : MonoBehaviour
         if (currentTower == null)
             return;
 
-        // Follow tower
-        Vector3 pos = Camera.main.WorldToScreenPoint(currentTower.transform.position);
-        transform.position = pos + new Vector3(0, -80f, 0);
+        Vector2 screenPos =
+            Camera.main.WorldToScreenPoint(currentTower.UIAnchor.position);
+
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            screenPos,
+            canvas.worldCamera,
+            out Vector2 localPoint
+        );
+
+        panel.GetComponent<RectTransform>().localPosition = localPoint;
     }
 
     public void Show(Tower tower)
