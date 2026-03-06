@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMovementSpeed: 18
-  baseRotateSpeed: 2
+  baseRotateSpeed: 4
   health: 1
   canMove: 1
   targetClearance: 0.5
