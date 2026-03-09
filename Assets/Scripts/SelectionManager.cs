@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class SelectionManager : MonoBehaviour
 {
@@ -7,16 +6,13 @@ public class SelectionManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Ignore clicks on UI (like the Sell button)
-            if (EventSystem.current.IsPointerOverGameObject())
-                return;
-
+            // Check if we clicked something
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Collider2D hit = Physics2D.OverlapPoint(mousePos);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
             // If we didn't hit a tower → deselect
-            if (hit == null || !hit.GetComponent<TowerSelection>())
+            if (hit.collider == null || !hit.collider.GetComponent<TowerSelection>())
             {
                 if (TowerSelection.Current != null)
                     TowerSelection.Current.Deselect();
