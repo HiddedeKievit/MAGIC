@@ -1720,7 +1720,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1674423645}
         m_TargetAssemblyTypeName: TowerSelectedUI, Assembly-CSharp
-        m_MethodName: UpgradeRange
+        m_MethodName: OnRangeUpgradePressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1852,7 +1852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1674423645}
         m_TargetAssemblyTypeName: TowerSelectedUI, Assembly-CSharp
-        m_MethodName: UpgradeDoubleGun
+        m_MethodName: OnDoubleGunUpgradePressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2028,7 +2028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: 463}
+  m_AnchoredPosition: {x: 0, y: 235}
   m_SizeDelta: {x: 415.012, y: 87.165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1642626973
