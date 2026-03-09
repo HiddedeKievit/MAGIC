@@ -1,63 +1,57 @@
+// temp comment to fix stuff hopefully
 
 using UnityEngine;
 
 
 public class PathFollower : MonoBehaviour
 {
-    private Mover mover;
-    [SerializeField] public PathManager Path;
+    private ICanMove mover;
+    private IPathable pathSource;
+
 
     // what checkpoint am i at
     private int index = 0;
 
-    void Awake()
+    void Start()
     {
-        mover = GetComponent<Mover>();
-        if (Path != null)
-        {
-            mover.Target = Path.checkpoints[0].position;
-        }
+        mover = GetComponent<ICanMove>();
+        pathSource = GetComponent<IPathable>();
+
     }
-
-
 
     void Update()
     {
         // if theres no path, something went wrong. dont do anything.
-        if (Path == null)
-            return;
-
-
-        // keep updating the target.
-        mover.Target = Path.checkpoints[index].position;
-
-
-
-        // close to the target
-        if (mover.DistanceToTarget < mover.TargetClearence)
+        if (pathSource == null || pathSource.Path == null)
         {
+            Debug.Log("Missing path source or path manager");
+            enabled = false;
+            return;
+        }
+        // keep updating the target.
+        mover.Target = pathSource.Path.checkpoints[index].position;
 
-            // at the last checkpoint. 
-            if (index + 1 >= Path.checkpoints.Length)
+        float distanceToTarget = Vector3.Distance(transform.position, mover.Target);
+
+        // if close to the target
+        if (distanceToTarget < mover.TargetClearance)
+        {
+            // if i have a path, ill now be following that path
+
+            if (pathSource.Path != null)
             {
-                // nothing to path so disable self.
-                enabled = false;
-
-                // try to get tje finishable component and activate the reach end
-                if (TryGetComponent<IFinishable>(out var canFinish))
-                    canFinish.ReachEnd();
-
-                return;
-            }
+                // last checkpoint. remove self?
+                if (index + 1 >= pathSource.Path.checkpoints.Length)
+                {
+                    GetComponent<IFinishable>().ReachEnd();
+                    return;
+                }
 
 
-            // go to the next checkpoint
-            if (index + 1 < Path.checkpoints.Length)
-            {
-                index++;
-                mover.Target = Path.checkpoints[index].position;
+                // next checkpoint
+                if (index + 1 < pathSource.Path.checkpoints.Length)
+                    index++;
             }
         }
-
     }
 }
