@@ -9,15 +9,15 @@ public class TowerTargeting : MonoBehaviour
     public Transform CurrentTarget => target;
 
     public float Range
-{
-    get
     {
-        if (tower == null || tower.Data == null)
-            return 0f;
+        get
+        {
+            if (tower == null)
+                return 0f;
 
-        return tower.Data.range;
+            return tower.CurrentRange;
+        }
     }
-}
 
     void Awake()
     {
@@ -56,10 +56,13 @@ public class TowerTargeting : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        if (tower == null || tower.Data == null)
+        if (tower == null)
+            tower = GetComponent<Tower>();
+
+        if (tower == null)
             return;
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, tower.Data.range);
+        Gizmos.DrawWireSphere(transform.position, Range);
     }
 }

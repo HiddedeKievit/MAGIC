@@ -16,25 +16,26 @@ public class TowerSelectedUI : MonoBehaviour
     }
 
     void Update()
-{
-    if (currentTower == null || anchor == null)
-        return;
+    {
+        if (currentTower == null || anchor == null)
+            return;
 
-    Vector3 screenPos = Camera.main.WorldToScreenPoint(anchor.position);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(anchor.position);
 
-    RectTransform canvasRect = panel.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-    RectTransform panelRect = panel.GetComponent<RectTransform>();
+        RectTransform canvasRect = panel.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+        RectTransform panelRect = panel.GetComponent<RectTransform>();
 
-    Vector2 localPos;
-    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        canvasRect,
-        screenPos,
-        Camera.main,
-        out localPos
-    );
+        Vector2 localPos;
 
-    panelRect.localPosition = localPos;
-}
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            canvasRect,
+            screenPos,
+            Camera.main,
+            out localPos
+        );
+
+        panelRect.localPosition = localPos;
+    }
 
     public void Show(Tower tower)
     {
@@ -58,5 +59,19 @@ public class TowerSelectedUI : MonoBehaviour
             Destroy(currentTower.gameObject);
             Hide();
         }
+    }
+
+    public void OnRangeUpgradePressed()
+    {
+        if (currentTower == null) return;
+
+        currentTower.UpgradeRange();
+    }
+
+    public void OnDoubleGunUpgradePressed()
+    {
+        if (currentTower == null) return;
+
+        currentTower.UpgradeDoubleGun();
     }
 }

@@ -11,6 +11,11 @@ public class TowerRangeVisualizer : MonoBehaviour
 
     private float spriteOriginalWidth;
 
+    public void RefreshRange()
+{
+    UpdateRangeVisual();
+}
+
     void Awake()
     {
         targeting = GetComponent<TowerTargeting>();
