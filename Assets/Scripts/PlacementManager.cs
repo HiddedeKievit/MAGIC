@@ -10,7 +10,8 @@ public class PlacementManager : MonoBehaviour
 
     [Header("Placement")]
     [SerializeField] private LayerMask placementLayer;
-
+    [SerializeField] private Sprite validSprite;
+    [SerializeField] private Sprite invalidSprite;
 
     void Awake()
     {
@@ -59,7 +60,7 @@ public class PlacementManager : MonoBehaviour
         );
 
         // Update grid visual
-        ghostVisualizer.SetPlacementValid(canPlace);
+        ghostVisualizer.SetGridValid(canPlace, validSprite, invalidSprite);
 
         if (Input.GetMouseButtonDown(0) && canPlace)
             Place();

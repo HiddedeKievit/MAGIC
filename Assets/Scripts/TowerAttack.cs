@@ -10,6 +10,8 @@ public class TowerAttack : MonoBehaviour
         tower = GetComponent<Tower>();
     }
 
+
+
     public void Fire(Transform firePoint, Transform target)
     {
         GameObject projectile = Instantiate(

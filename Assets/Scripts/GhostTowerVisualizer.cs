@@ -3,34 +3,30 @@ using UnityEngine;
 public class GhostTowerVisualizer : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private SpriteRenderer rangeSprite; // blue
-    [SerializeField] private SpriteRenderer gridSprite;  // red
+    [SerializeField] private SpriteRenderer rangeSprite;
+    [SerializeField] private SpriteRenderer gridSprite;
 
     private float rangeSpriteWorldWidth;
-    private Vector2 gridSize;
 
     void Awake()
     {
         if (rangeSprite == null || gridSprite == null)
         {
-            Debug.LogError("GhostTowerVisualizer references missing!");
+            Debug.LogError("GhostTowerVisual references missing!");
             enabled = false;
             return;
         }
 
-        // Calculate sprite width in world units
+        // TRUE world width at scale 1
         rangeSpriteWorldWidth =
             rangeSprite.sprite.rect.width /
             rangeSprite.sprite.pixelsPerUnit;
-
-        gridSprite.enabled = false; // start hidden
     }
 
     public void Initialize(TurretData data)
     {
-        gridSize = data.towerGrid;
-
         SetRange(data.range);
+        SetGridSize(data.towerGrid);
     }
 
     public void SetRange(float range)
@@ -38,26 +34,29 @@ public class GhostTowerVisualizer : MonoBehaviour
         float diameter = range * 2f;
         float scale = diameter / rangeSpriteWorldWidth;
 
-        Vector3 scaleVec = new Vector3(scale, scale, 1f);
-
-        rangeSprite.transform.localScale = scaleVec;
-        gridSprite.transform.localScale = scaleVec;
+        rangeSprite.transform.localScale =
+            new Vector3(scale, scale, 1f);
     }
 
-    // THIS is what PlacementManager calls
-    public void SetPlacementValid(bool valid)
+    public void SetGridSize(Vector2 size)
     {
-        rangeSprite.enabled = valid;
-        gridSprite.enabled = !valid;
-    }
+        float spriteWorldWidth =
+            gridSprite.sprite.rect.width /
+            gridSprite.sprite.pixelsPerUnit;
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
+        float spriteWorldHeight =
+            gridSprite.sprite.rect.height /
+            gridSprite.sprite.pixelsPerUnit;
 
-        Gizmos.DrawWireCube(
-            transform.position,
-            gridSize
+        gridSprite.transform.localScale = new Vector3(
+            size.x / spriteWorldWidth,
+            size.y / spriteWorldHeight,
+            1f
         );
+    }
+
+    public void SetGridValid(bool valid, Sprite validSprite, Sprite invalidSprite)
+    {
+        gridSprite.sprite = valid ? validSprite : invalidSprite;
     }
 }
