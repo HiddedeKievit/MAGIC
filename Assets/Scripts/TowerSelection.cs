@@ -12,15 +12,18 @@ public class TowerSelection : MonoBehaviour
     }
 
     void Select()
-    {
-        if (Current != null && Current != this)
-            Current.Deselect();
+{
+    if (Current == this)
+        return;
 
-        Current = this;
-        IsSelected = true;
+    if (Current != null)
+        Current.Deselect();
 
-        TowerSelectedUI.Instance.Show(GetComponent<Tower>());
-    }
+    Current = this;
+    IsSelected = true;
+
+    TowerSelectedUI.Instance.Show(GetComponent<Tower>());
+}
 
     public void Deselect()
     {
