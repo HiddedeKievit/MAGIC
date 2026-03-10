@@ -7,10 +7,12 @@ public class Tower : MonoBehaviour
     [SerializeField] private Transform uiAnchor;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite doubleGunSprite;
+
     public Transform UIAnchor => uiAnchor;
 
     public float CurrentRange { get; private set; }
     public float CurrentFireRate { get; private set; }
+    public int CurrentDamage { get; private set; }
 
     public int Path1Level { get; private set; }
     public int Path2Level { get; private set; }
@@ -21,31 +23,80 @@ public class Tower : MonoBehaviour
 
         CurrentRange = data.range;
         CurrentFireRate = data.fireRate;
+        CurrentDamage = data.damage;
     }
 
-   public void UpgradeRange()
-{
-    if (Path2Level > 0) return;
+    // =========================
+    // PATH 1
+    // =========================
 
-    Path1Level++;
+    public void UpgradePath1()
+    {
+        if (Path1Level >= 2) return;
 
-    CurrentRange += 20f;
+        // Tier 2 lock
+        if (Path1Level == 1 && Path2Level == 2)
+            return;
 
-    GetComponent<TowerRangeVisualizer>()?.RefreshRange();
-}
+        Path1Level++;
 
-    public void UpgradeDoubleGun()
-{
-    if (Path1Level > 0) return;
-    Debug.Log("Double gun upgrade applied");
+        if (Path1Level == 1)
+        {
+            UpgradeRange();
+        }
+        else if (Path1Level == 2)
+        {
+            UpgradeDamage();
+        }
+    }
 
-    Path2Level++;
+    void UpgradeRange()
+    {
+        CurrentRange += 20f;
 
-    CurrentFireRate *= 2f;
+        GetComponent<TowerRangeVisualizer>()?.RefreshRange();
+    }
 
-    spriteRenderer.sprite = doubleGunSprite;
-}
+    void UpgradeDamage()
+    {
+        CurrentDamage += 2;
+    }
 
+    // =========================
+    // PATH 2
+    // =========================
 
+    public void UpgradePath2()
+    {
+        if (Path2Level >= 2) return;
 
+        // Tier 2 lock
+        if (Path2Level == 1 && Path1Level == 2)
+            return;
+
+        Path2Level++;
+
+        if (Path2Level == 1)
+        {
+            UpgradeFireRate();
+        }
+        else if (Path2Level == 2)
+        {
+            UpgradeDoubleGun();
+        }
+    }
+
+    void UpgradeFireRate()
+    {
+        CurrentFireRate *= 1f;
+    }
+
+    void UpgradeDoubleGun()
+    {
+        CurrentFireRate *= 2f;
+
+        spriteRenderer.sprite = doubleGunSprite;
+
+        Debug.Log("Double gun upgrade applied");
+    }
 }

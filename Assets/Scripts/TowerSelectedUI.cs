@@ -5,6 +5,14 @@ public class TowerSelectedUI : MonoBehaviour
     public static TowerSelectedUI Instance;
 
     [SerializeField] private GameObject panel;
+    [SerializeField] private UnityEngine.UI.Image path1ButtonIcon;
+[SerializeField] private UnityEngine.UI.Image path2ButtonIcon;
+
+[SerializeField] private Sprite path1Level1Icon;
+[SerializeField] private Sprite path1Level2Icon;
+
+[SerializeField] private Sprite path2Level1Icon;
+[SerializeField] private Sprite path2Level2Icon;
 
     private Tower currentTower;
     private Transform anchor;
@@ -37,13 +45,19 @@ public class TowerSelectedUI : MonoBehaviour
         panelRect.localPosition = localPos;
     }
 
-    public void Show(Tower tower)
-    {
-        currentTower = tower;
-        anchor = tower.transform.Find("UIAnchor");
+public void Show(Tower tower)
+{
+    currentTower = tower;
+    anchor = tower.transform.Find("UIAnchor");
 
-        panel.SetActive(true);
-    }
+    panel.SetActive(true);
+
+    // Reset buttons for new tower
+    path1ButtonIcon.gameObject.SetActive(true);
+    path2ButtonIcon.gameObject.SetActive(true);
+
+    UpdateUpgradeButtons();
+}
 
     public void Hide()
     {
@@ -61,17 +75,46 @@ public class TowerSelectedUI : MonoBehaviour
         }
     }
 
-    public void OnRangeUpgradePressed()
-    {
-        if (currentTower == null) return;
+void UpdateUpgradeButtons()
+{
+    if (currentTower == null)
+        return;
 
-        currentTower.UpgradeRange();
-    }
+    // PATH 1
+    if (currentTower.Path1Level == 0)
+        path1ButtonIcon.sprite = path1Level1Icon;
 
-    public void OnDoubleGunUpgradePressed()
-    {
-        if (currentTower == null) return;
+    else if (currentTower.Path1Level == 1)
+        path1ButtonIcon.sprite = path1Level2Icon;
 
-        currentTower.UpgradeDoubleGun();
-    }
+    else
+        path1ButtonIcon.gameObject.SetActive(false);
+
+
+    // PATH 2
+    if (currentTower.Path2Level == 0)
+        path2ButtonIcon.sprite = path2Level1Icon;
+
+    else if (currentTower.Path2Level == 1)
+        path2ButtonIcon.sprite = path2Level2Icon;
+
+    else
+        path2ButtonIcon.gameObject.SetActive(false);
+}
+
+    public void OnPath1UpgradePressed()
+{
+    if (currentTower == null) return;
+
+    currentTower.UpgradePath1();
+    UpdateUpgradeButtons();
+}
+
+public void OnPath2UpgradePressed()
+{
+    if (currentTower == null) return;
+
+    currentTower.UpgradePath2();
+    UpdateUpgradeButtons();
+}
 }
