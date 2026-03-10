@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: c22172f3a2b4bff4d92e55b9b5c9fb95
+guid: f8e47ca8990047841ad1d7696b72023d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7712346086576296513
-    second: BookTabs_0
+      213: -3598221776155338416
+    second: Creature+Card+decoration_0
   - first:
-      213: 2451066512090236724
-    second: BookTabs_1
+      213: 2058238434140945872
+    second: Creature+Card+decoration_1
   - first:
-      213: 8224394006631776055
-    second: BookTabs_2
+      213: -4664432335346914120
+    second: Creature+Card+decoration_2
   - first:
-      213: -4698352661208604106
-    second: BookTabs_3
+      213: 1367173037707344540
+    second: Creature+Card+decoration_3
   - first:
-      213: 4965775742726878606
-    second: BookTabs_4
+      213: -951218157952684062
+    second: Creature+Card+decoration_4
+  - first:
+      213: 5131888422079738607
+    second: Creature+Card+decoration_5
+  - first:
+      213: -2658772001693735602
+    second: Creature+Card+decoration_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,111 +118,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BookTabs_0
+      name: Creature+Card+decoration_0
       rect:
         serializedVersion: 2
-        x: 617
-        y: 388
-        width: 6
-        height: 7
+        x: 401
+        y: 798
+        width: 525
+        height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 142114b67e1c70b60800000000000000
-      internalID: 7712346086576296513
+      spriteID: 0599f29db5c801ec0800000000000000
+      internalID: -3598221776155338416
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookTabs_1
+      name: Creature+Card+decoration_1
       rect:
         serializedVersion: 2
-        x: 624
-        y: 389
-        width: 7
-        height: 8
+        x: 986
+        y: 799
+        width: 517
+        height: 67
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4378ef5a100f30220800000000000000
-      internalID: 2451066512090236724
+      spriteID: 0ddf60a63f4509c10800000000000000
+      internalID: 2058238434140945872
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookTabs_2
+      name: Creature+Card+decoration_2
       rect:
         serializedVersion: 2
-        x: 804
-        y: 475
-        width: 88
-        height: 121
+        x: 418
+        y: 550
+        width: 222
+        height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73f732a36cae22270800000000000000
-      internalID: 8224394006631776055
+      spriteID: 8bc2dc4118b944fb0800000000000000
+      internalID: -4664432335346914120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookTabs_3
+      name: Creature+Card+decoration_3
       rect:
         serializedVersion: 2
-        x: 912
-        y: 472
-        width: 74
-        height: 126
+        x: 1011
+        y: 671
+        width: 470
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6326627c5291cceb0800000000000000
-      internalID: -4698352661208604106
+      spriteID: c9ab90b52ac29f210800000000000000
+      internalID: 1367173037707344540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookTabs_4
+      name: Creature+Card+decoration_4
       rect:
         serializedVersion: 2
-        x: 998
-        y: 478
-        width: 89
-        height: 129
+        x: 1011
+        y: 579
+        width: 482
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e85bc7b6abaf9e440800000000000000
-      internalID: 4965775742726878606
+      spriteID: 2ef245700289cc2f0800000000000000
+      internalID: -951218157952684062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creature+Card+decoration_5
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 430
+        width: 487
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe2b0097451283740800000000000000
+      internalID: 5131888422079738607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Creature+Card+decoration_6
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 262
+        width: 490
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e456a4483f42a1bd0800000000000000
+      internalID: -2658772001693735602
       vertices: []
       indices: 
       edges: []
@@ -225,7 +275,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3c5efb4d17a6c0947abbc06442411a24
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BookTabs_0: 7712346086576296513
-      BookTabs_1: 2451066512090236724
-      BookTabs_2: 8224394006631776055
-      BookTabs_3: -4698352661208604106
-      BookTabs_4: 4965775742726878606
+      Creature+Card+decoration_0: -3598221776155338416
+      Creature+Card+decoration_1: 2058238434140945872
+      Creature+Card+decoration_2: -4664432335346914120
+      Creature+Card+decoration_3: 1367173037707344540
+      Creature+Card+decoration_4: -951218157952684062
+      Creature+Card+decoration_5: 5131888422079738607
+      Creature+Card+decoration_6: -2658772001693735602
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
