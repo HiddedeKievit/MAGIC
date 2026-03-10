@@ -100,6 +100,20 @@ void UpdateUpgradeButtons()
 
     else
         path2ButtonIcon.gameObject.SetActive(false);
+
+
+    // IMPORTANT RULE
+    // Only one level-2 upgrade allowed
+
+    if (currentTower.Path1Level == 2 && currentTower.Path2Level == 1)
+    {
+        path2ButtonIcon.gameObject.SetActive(false);
+    }
+
+    if (currentTower.Path2Level == 2 && currentTower.Path1Level == 1)
+    {
+        path1ButtonIcon.gameObject.SetActive(false);
+    }
 }
 
     public void OnPath1UpgradePressed()

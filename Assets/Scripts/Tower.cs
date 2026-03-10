@@ -59,7 +59,7 @@ public class Tower : MonoBehaviour
 
     void UpgradeDamage()
     {
-        CurrentDamage += 2;
+        CurrentDamage += 6;
     }
 
     // =========================
@@ -88,7 +88,7 @@ public class Tower : MonoBehaviour
 
     void UpgradeFireRate()
     {
-        CurrentFireRate *= 1f;
+        CurrentFireRate *= 2f;
     }
 
     void UpgradeDoubleGun()
