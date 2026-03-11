@@ -22,10 +22,10 @@ public class TowerAttack : MonoBehaviour
         if (projectileScript != null)
         {
             projectileScript.Initialize(
-                target,
-                tower.Data.damage,
-                tower.Data.projectileSpeed
-            );
+            target,
+            tower.CurrentDamage,
+            tower.Data.projectileSpeed
+);
         }
     }
 }
