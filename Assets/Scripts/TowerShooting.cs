@@ -13,6 +13,8 @@ public class TowerShooting : MonoBehaviour
     private TowerTargeting targeting;
     private TowerAttack attack;
 
+    public float stunTimer = 0;
+
     private float fireCooldown;
 
     private bool fireLeftNext = true;
@@ -26,6 +28,16 @@ public class TowerShooting : MonoBehaviour
 
     void Update()
     {
+
+        if (stunTimer > 0)
+{
+    stunTimer -= Time.deltaTime;
+    return;
+} else
+{
+    stunTimer = 0;
+}
+
         fireCooldown -= Time.deltaTime;
 
         Transform target = targeting.CurrentTarget;

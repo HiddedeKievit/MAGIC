@@ -86,12 +86,14 @@ public class Wave_Spawner : MonoBehaviour
             GameObject randomEnemy =
                 currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
         
-            IPathable follower = randomEnemy.GetComponent<IPathable>();
-            follower.Path = Path;
+           
+
             Transform randomPoint =
                 SpawnPoints[Random.Range(0, SpawnPoints.Length)];
 
-            Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
+            GameObject newenemy = Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
+            PathFollower pf = newenemy.AddComponent<PathFollower>();
+            pf.Path = Path;
 
             enemiesLeftToSpawn--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
