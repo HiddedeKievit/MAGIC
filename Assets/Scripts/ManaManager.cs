@@ -5,7 +5,10 @@ public class ManaManager : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI manaText;
-    [SerializeField] private float mana;
+    public float mana;
+    [SerializeField] private float manaCharge;
+    [SerializeField] private float startCharge;
+    [SerializeField] private float repeatCharge;
 
 
     private void Awake()
@@ -15,7 +18,7 @@ public class ManaManager : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(ManaUpdate), 5.0f, 5.0f);
+        InvokeRepeating(nameof(ManaUpdate), startCharge, repeatCharge);
     }
 
     private void Update()
@@ -27,7 +30,7 @@ public class ManaManager : MonoBehaviour
     void ManaUpdate()
     {
         Debug.Log("Charging...");
-        mana += 5;
+        mana += manaCharge;
         Debug.Log("Mana Charged!");
     }
 

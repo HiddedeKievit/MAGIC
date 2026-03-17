@@ -355,6 +355,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 74d1bdebe3b653241a1f9fb10bf59d54, type: 2}
     - target: {fileID: 4095696993937658603, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: manaManager
+      value: 
+      objectReference: {fileID: 1907175951}
+    - target: {fileID: 4095696993937658603, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
       propertyPath: placementManager
       value: 
       objectReference: {fileID: 1502868534}
@@ -2694,6 +2698,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaText: {fileID: 1408621693}
   mana: 0
+  manaCharge: 1
+  startCharge: 2
+  repeatCharge: 1
 --- !u!4 &1907175952
 Transform:
   m_ObjectHideFlags: 0
