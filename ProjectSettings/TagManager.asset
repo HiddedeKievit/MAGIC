@@ -67,5 +67,8 @@ TagManager:
   - name: New Layer 7
     uniqueID: 3632224521
     locked: 0
+  - name: ultimate layer
+    uniqueID: 2332709251
+    locked: 0
   m_RenderingLayers:
   - Default
