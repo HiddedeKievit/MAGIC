@@ -23,7 +23,7 @@ public class ManaManager : MonoBehaviour
 
     private void Update()
     {
-        manaText.text = $"Mana: {mana}";
+        manaText.text = $"{mana}";
     }
 
 

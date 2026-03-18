@@ -11,6 +11,8 @@ public class PlacementManager : MonoBehaviour
     [Header("Placement")]
     [SerializeField] private LayerMask placementLayer;
 
+    ManaManager manaManager;
+    TurretData turretData;
 
     void Awake()
     {
@@ -23,6 +25,7 @@ public class PlacementManager : MonoBehaviour
         Instance = this;
     }
 
+    
     public void StartPlacement(TurretData turret)
     {
         ClearPlacement();

@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tower Defense/Turret Data")]
 public class TurretData : ScriptableObject
 {
+    ManaManager manaManager;
+
     [Header("UI")]
     public string turretName;
     public Sprite icon;
@@ -19,5 +21,9 @@ public class TurretData : ScriptableObject
     public GameObject ghostPrefab;
 
     [Header("Placement")]
+    public float manaCost = 5;
     public Vector2 towerGrid = Vector2.one;
+
+
+    
 }

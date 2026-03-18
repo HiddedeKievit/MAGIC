@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: placementManager
       value: 
       objectReference: {fileID: 1502868534}
+    - target: {fileID: 6795358653908396245, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+      propertyPath: placementButton
+      value: 
+      objectReference: {fileID: 1071780666}
     - target: {fileID: 8849458464441926231, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
       propertyPath: m_Name
       value: TurretButton
@@ -2583,6 +2587,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1588806575002669586, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
   m_PrefabInstance: {fileID: 315024628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1071780666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8115612164872127707, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+  m_PrefabInstance: {fileID: 315024628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077427567
 GameObject:
   m_ObjectHideFlags: 0
