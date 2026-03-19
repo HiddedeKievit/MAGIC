@@ -69,6 +69,8 @@
     },
     "dotnet.defaultSolution": "Project Nyx.slnx",
     "cSpell.words": [
-        "Behaviour"
+        "Behaviour",
+        "Mathf",
+        "Scriptable"
     ]
 }
