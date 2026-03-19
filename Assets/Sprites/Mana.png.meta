@@ -3,8 +3,11 @@ guid: d13e88daa1b80ec448bc607854262157
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4975741955291382485
-    second: Mana_0
+      213: 2784468965456250579
+    second: mana_0
+  - first:
+      213: 7127817309117235897
+    second: mana_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mana_0
+      name: mana_0
       rect:
         serializedVersion: 2
-        x: 998
-        y: 145
-        width: 395
-        height: 600
+        x: 560
+        y: 441
+        width: 438
+        height: 606
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d2862b12f26d0540800000000000000
-      internalID: 4975741955291382485
+      spriteID: 3d68e1675cb64a620800000000000000
+      internalID: 2784468965456250579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mana_1
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 494
+        width: 555
+        height: 279
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b240dde3181be260800000000000000
+      internalID: 7127817309117235897
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 16815ccefa298fc43808681a194341a3
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mana_0: 4975741955291382485
+      mana_0: 2784468965456250579
+      mana_1: 7127817309117235897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
