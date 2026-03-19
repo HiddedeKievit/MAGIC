@@ -1,9 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TurretButton : MonoBehaviour
 {
     [SerializeField] private Image icon;
+    public ManaManager manaManager;
 
     // Make these public so TurretMenu can assign them
     public TurretData turretData;
