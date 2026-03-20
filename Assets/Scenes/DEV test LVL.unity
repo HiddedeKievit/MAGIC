@@ -3125,8 +3125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9730180b3864c5498fa45a6dbd6c76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaText: {fileID: 0}
-  mana: 0
+  manaText: {fileID: 714630779}
+  mana: 5
   manaCharge: 1
   startCharge: 2
   repeatCharge: 1
