@@ -19,8 +19,17 @@ public class Entity : MonoBehaviour, IFinishable
     public void ReachEnd()
     {
         // WIP: deal damage to tower
+        GameObject towerhmObj = GameObject.FindGameObjectWithTag("TowerHealthManager");
+
+        if (towerhmObj && towerhmObj.TryGetComponent(out HealthManager healthManager))
+        {
+            healthManager.Health -= 1;
+        }
+
 
         // delete self
         Destroy(gameObject);
+
+        enabled = false;
     }
 }
