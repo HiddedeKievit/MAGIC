@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - firering
   - Tower
+  - TowerHealthManager
   layers:
   - Default
   - TransparentFX

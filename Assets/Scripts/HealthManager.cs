@@ -12,7 +12,4 @@ public class HealthManager : MonoBehaviour
         //  change sprite to version with {health} rays
         healthtext.text = $"Health: {Health}";
     }
-
-
-
 }
