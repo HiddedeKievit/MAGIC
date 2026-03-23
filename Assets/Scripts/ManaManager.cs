@@ -3,35 +3,73 @@ using UnityEngine;
 
 public class ManaManager : MonoBehaviour
 {
+    public static ManaManager Instance { get; private set; }
 
+    [Header("UI")]
     [SerializeField] private TextMeshProUGUI manaText;
-    public float mana;
-    [SerializeField] private float manaCharge;
-    [SerializeField] private float startCharge;
-    [SerializeField] private float repeatCharge;
 
+    [Header("Mana Settings")]
+    public float mana = 0;
+    [SerializeField] private float manaCharge = 5f;
+    [SerializeField] private float startCharge = 1f;
+    [SerializeField] private float repeatCharge = 2f;
 
-    private void Awake()
+    void Awake()
     {
-        mana = 0;
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
 
-    private void Start()
+    void Start()
     {
-        InvokeRepeating(nameof(ManaUpdate), startCharge, repeatCharge);
+        InvokeRepeating(nameof(AddManaOverTime), startCharge, repeatCharge);
+        UpdateUI();
     }
 
-    private void Update()
+    void UpdateUI()
     {
-        manaText.text = $"Mana: {mana}";
+        if (manaText != null)
+            manaText.text = $"Mana: {Mathf.FloorToInt(mana)}";
     }
 
-
-    void ManaUpdate()
+    void AddManaOverTime()
     {
-        Debug.Log("Charging...");
         mana += manaCharge;
-        Debug.Log("Mana Charged!");
+        UpdateUI();
     }
 
+    // =========================
+    // PUBLIC API (IMPORTANT)
+    // =========================
+
+    public bool CanAfford(float cost)
+    {
+        return mana >= cost;
+    }
+
+    public bool SpendMana(float cost)
+    {
+        if (mana < cost)
+            return false;
+
+        mana -= cost;
+        UpdateUI();
+        return true;
+    }
+
+    public void AddMana(float amount)
+    {
+        mana += amount;
+        UpdateUI();
+    }
+
+    public float GetMana()
+    {
+        return mana;
+    }
 }
