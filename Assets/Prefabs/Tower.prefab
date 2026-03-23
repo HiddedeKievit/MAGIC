@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 706794529458917602}
   m_Layer: 6
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,6 +401,7 @@ MonoBehaviour:
   firePoint: {fileID: 2792150268394025045}
   firePointLeft: {fileID: 6699911791330917353}
   firePointRight: {fileID: 7763304431855354360}
+  stunTimer: 0
 --- !u!114 &8023884636226848965
 MonoBehaviour:
   m_ObjectHideFlags: 0
