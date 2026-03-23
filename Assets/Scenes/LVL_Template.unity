@@ -462,7 +462,7 @@ Transform:
   - {fileID: 1260630937}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1105635379
+--- !u!1 &1024900829
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,66 +470,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1105635380}
-  - component: {fileID: 1105635381}
-  m_Layer: 6
-  m_Name: EnemySpawner
+  - component: {fileID: 1024900831}
+  - component: {fileID: 1024900830}
+  m_Layer: 0
+  m_Name: LevelManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1105635380
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105635379}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -33.196117, y: 1.5796224, z: 0.68710965}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1798488325}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1105635381
+--- !u!114 &1024900830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105635379}
+  m_GameObject: {fileID: 1024900829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95733eb8446e84efea5ccc4a3a6b756c, type: 3}
+  m_Script: {fileID: 11500000, guid: ca0c10a63188f4dc982b6578aa337b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waves:
-  - waveName: Wave_1
-    noOfEnemies: 4
-    typeOfEnemies:
-    - {fileID: 4371970553508042413, guid: 5ef48bbafd9e89d48abe36eb8f1f663d, type: 3}
-    spawnInterval: 2
-  - waveName: Wave_2
-    noOfEnemies: 10
-    typeOfEnemies:
-    - {fileID: 4371970553508042413, guid: 5ef48bbafd9e89d48abe36eb8f1f663d, type: 3}
-    - {fileID: 5349908986371229524, guid: 07b147d36fcf84043a8ea450fe2e5d57, type: 3}
-    spawnInterval: 2
-  - waveName: Wave_3
-    noOfEnemies: 25
-    typeOfEnemies:
-    - {fileID: 4371970553508042413, guid: 5ef48bbafd9e89d48abe36eb8f1f663d, type: 3}
-    - {fileID: 5349908986371229524, guid: 07b147d36fcf84043a8ea450fe2e5d57, type: 3}
-    - {fileID: 7940867031643332780, guid: d32ade055c7d08f428a17ec964acab5f, type: 3}
-    spawnInterval: 1
-  SpawnPoints:
-  - {fileID: 1742369008}
-  timeBetweenWaves: 15
-  Path: {fileID: 0}
-  waveCounterText: {fileID: 0}
+--- !u!4 &1024900831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024900829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5874777, y: 2.227173, z: -0.5334061}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260630934
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,38 +738,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 240167192}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1798488324
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1798488325}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1798488325
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798488324}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.20728, y: -1.6689081, z: -0.68710965}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1105635380}
-  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997141667
 GameObject:
@@ -8653,4 +8597,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 505141759}
   - {fileID: 127892431}
-  - {fileID: 1798488325}
+  - {fileID: 1024900831}

@@ -11,7 +11,7 @@ public class ManaManager : MonoBehaviour
     [SerializeField] private float popSpeed = 10f;
 
     [Header("Mana Settings")]
-    [SerializeField] private float mana = 0;
+    public float mana = 0;
     [SerializeField] private float manaCharge = 5f;
     [SerializeField] private float startCharge = 1f;
     [SerializeField] private float repeatCharge = 2f;

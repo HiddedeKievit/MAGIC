@@ -1708,6 +1708,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1588806575002669586, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
   m_PrefabInstance: {fileID: 315024628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1071780666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8115612164872127707, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+  m_PrefabInstance: {fileID: 315024628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1077427567
 GameObject:
   m_ObjectHideFlags: 0
@@ -4189,7 +4200,7 @@ MonoBehaviour:
   textPopScale: 1.2
   popSpeed: 10
   mana: 5
-  manaCharge: 1
+  manaCharge: 2
   startCharge: 2
   repeatCharge: 1
 --- !u!4 &1907175952
