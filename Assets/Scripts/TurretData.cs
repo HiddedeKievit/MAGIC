@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tower Defense/Turret Data")]
 public class TurretData : ScriptableObject
 {
+    ManaManager manaManager;
+
     [Header("UI")]
     public string turretName;
     public Sprite icon;
