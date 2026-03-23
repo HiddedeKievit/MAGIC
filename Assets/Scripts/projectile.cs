@@ -47,6 +47,7 @@ public class Projectile : MonoBehaviour
         if (entity != null)
         {
             entity.Health -= damage;
+            print("Hit target for " + damage + " damage. Target health is now: " + entity.Health);
         }
 
         Destroy(gameObject);

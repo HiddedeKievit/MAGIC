@@ -1,16 +1,22 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using Microsoft.VisualBasic;
 using UnityEngine;
 
 public class LightDetector : MonoBehaviour
 {
-    [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] Collider2D Collider;
     [SerializeField] bool lightDetected;
+    [SerializeField] TurretData turretData;
+    private Tower tower;
+
 
 
     //sets lightDetected to false at start.
     void Start()
     {
         lightDetected = false;
+        tower = GetComponent<Tower>();
     }
 
     //Check to see if lightDetected is true, Debug purposes only.
@@ -21,7 +27,6 @@ public class LightDetector : MonoBehaviour
             print("I'M IN THE SPOTLIGHT BABYYYY");
             
         }
-        print("Light detected: " + lightDetected);
     }
 
     //Sets lightDetected to true if a GameObject with the Lantern tag enters the collision area.
@@ -30,8 +35,10 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = true;
-            print("light detected");
-            GetComponent<TurretData>().damage += 1;
+            turretData.damage += 1;
+            print("Turret damage increased to " + turretData.damage);
+            if (tower != null)
+                tower.RefreshDamage();
         }
     }
 
@@ -41,7 +48,9 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = false;
-            GetComponent<TurretData>().damage -= 1;
+            turretData.damage = 1;
+            if (tower != null)
+                tower.RefreshDamage();
         }
     }
 
