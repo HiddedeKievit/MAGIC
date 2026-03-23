@@ -13,8 +13,6 @@ public class TurretButton : MonoBehaviour
 
     public void Setup()
     {
-        if (turretData != null)
-            icon.sprite = turretData.icon;
     }
 
     public void OnClick()

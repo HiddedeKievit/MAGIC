@@ -7,16 +7,17 @@ public class TowerPanelToggle : MonoBehaviour
     [SerializeField] private Vector2 closedPosition;
     [SerializeField] private GameObject openArrowButton;
     [SerializeField] private GameObject closeArrowButton;
+    [SerializeField] private GameObject cardContainer;
     [SerializeField] private float speed = 10f;
-    [SerializeField] private TurretMenu turretMenu;
 
     private Vector2 targetPosition;
-    private bool isOpen = false;
 
     private void Start()
     {
         targetPosition = closedPosition;
         panel.anchoredPosition = closedPosition;
+
+        cardContainer.SetActive(false);
 
         openArrowButton.SetActive(true);
         closeArrowButton.SetActive(false);
@@ -33,20 +34,17 @@ public class TowerPanelToggle : MonoBehaviour
 
     public void OpenPanel()
     {
-        isOpen = true;
+        cardContainer.SetActive(true);
         targetPosition = openPosition;
 
         openArrowButton.SetActive(false);
         closeArrowButton.SetActive(true);
-
-        if (turretMenu != null)
-            turretMenu.PopulateMenu();
     }
 
     public void ClosePanel()
     {
-        isOpen = false;
         targetPosition = closedPosition;
+        cardContainer.SetActive(false);
 
         openArrowButton.SetActive(true);
         closeArrowButton.SetActive(false);
