@@ -20,4 +20,7 @@ public class TurretData : ScriptableObject
 
     [Header("Placement")]
     public Vector2 towerGrid = Vector2.one;
+
+    [Header("Cost")]
+    public float manaCost = 50f;
 }

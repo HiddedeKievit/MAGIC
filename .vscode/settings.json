@@ -67,5 +67,10 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Project Nyx.slnx"
+    "dotnet.defaultSolution": "Project Nyx.slnx",
+    "cSpell.words": [
+        "Behaviour",
+        "Mathf",
+        "Scriptable"
+    ]
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlacementManager : MonoBehaviour
 {
@@ -46,27 +47,35 @@ public class PlacementManager : MonoBehaviour
         ghostVisualizer.Initialize(selectedTurret);
     }
 
-    void Update()
+void Update()
+{
+    if (!ghostTurret)
+        return;
+
+    FollowMouse();
+
+    bool clickedUI = EventSystem.current.IsPointerOverGameObject();
+
+    bool canAfford = ManaManager.Instance.CanAfford(selectedTurret.manaCost);
+
+    bool canPlace = CanPlaceAt(
+        ghostTurret.transform.position,
+        selectedTurret.towerGrid
+    ) && canAfford;
+
+    ghostVisualizer.SetPlacementValid(canPlace);
+
+    if (Input.GetMouseButtonDown(0) && canPlace && !clickedUI)
     {
-        if (!ghostTurret)
-            return;
-
-        FollowMouse();
-
-        bool canPlace = CanPlaceAt(
-            ghostTurret.transform.position,
-            selectedTurret.towerGrid
-        );
-
-        // Update grid visual
-        ghostVisualizer.SetPlacementValid(canPlace);
-
-        if (Input.GetMouseButtonDown(0) && canPlace)
+        if (ManaManager.Instance.SpendMana(selectedTurret.manaCost))
+        {
             Place();
-
-        if (Input.GetMouseButtonDown(1))
-            ClearPlacement();
+        }
     }
+
+    if (Input.GetMouseButtonDown(1))
+        ClearPlacement();
+}
 
     void FollowMouse()
     {
