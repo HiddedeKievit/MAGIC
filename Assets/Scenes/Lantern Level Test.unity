@@ -981,6 +981,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turretButtonPrefab: {fileID: 8849458464441926231, guid: 30dbb98b4524fdf438ad0ebf61948290, type: 3}
+  startY: -10
+  spacing: 90
 --- !u!222 &480858546
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2360,6 +2362,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaText: {fileID: 1231111253}
+  textPopScale: 1.15
+  popSpeed: 10
   mana: 5
   manaCharge: 2
   startCharge: 2
@@ -2517,6 +2521,7 @@ GameObject:
   - component: {fileID: 1617197840}
   - component: {fileID: 1617197839}
   - component: {fileID: 1617197838}
+  - component: {fileID: 1617197842}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Lantern
@@ -2574,8 +2579,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.028258104, y: 0.0015314324}
-  m_Radius: 1.8494753
+  m_Offset: {x: 0.006963681, y: 0.65144634}
+  m_Radius: 2.500344
 --- !u!114 &1617197840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,7 +2622,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 2.700921
-  m_PointLightOuterRadius: 3.2391224
+  m_PointLightOuterRadius: 3.1948924
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2636,13 +2641,40 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617197837}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.027067438, w: 0.9996336}
+  m_LocalRotation: {x: 0, y: 0, z: 0.02742194, w: 0.99962395}
   m_LocalPosition: {x: -4.25, y: -0.83, z: -4.5190005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1617197842
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617197837}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1617218197
 GameObject:
   m_ObjectHideFlags: 0

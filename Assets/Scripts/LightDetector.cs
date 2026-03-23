@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class LightDetector : MonoBehaviour
@@ -18,7 +19,9 @@ public class LightDetector : MonoBehaviour
         if (lightDetected == true)
         {
             print("I'M IN THE SPOTLIGHT BABYYYY");
+            
         }
+        print("Light detected: " + lightDetected);
     }
 
     //Sets lightDetected to true if a GameObject with the Lantern tag enters the collision area.
@@ -27,6 +30,8 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = true;
+            print("light detected");
+            GetComponent<TurretData>().damage += 1;
         }
     }
 
@@ -36,6 +41,7 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = false;
+            GetComponent<TurretData>().damage -= 1;
         }
     }
 
