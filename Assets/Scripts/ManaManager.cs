@@ -7,12 +7,17 @@ public class ManaManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI manaText;
+    [SerializeField] private float textPopScale = 1.15f;
+    [SerializeField] private float popSpeed = 10f;
 
     [Header("Mana Settings")]
     public float mana = 0;
     [SerializeField] private float manaCharge = 5f;
     [SerializeField] private float startCharge = 1f;
     [SerializeField] private float repeatCharge = 2f;
+
+    private Vector3 originalTextScale;
+    private Vector3 targetTextScale;
 
     void Awake()
     {
@@ -27,25 +32,48 @@ public class ManaManager : MonoBehaviour
 
     void Start()
     {
+        if (manaText != null)
+        {
+            originalTextScale = manaText.rectTransform.localScale;
+            targetTextScale = originalTextScale;
+        }
+
         InvokeRepeating(nameof(AddManaOverTime), startCharge, repeatCharge);
         UpdateUI();
+    }
+
+    void Update()
+    {
+        if (manaText != null)
+        {
+            manaText.rectTransform.localScale = Vector3.Lerp(
+                manaText.rectTransform.localScale,
+                targetTextScale,
+                Time.deltaTime * popSpeed
+            );
+        }
     }
 
     void UpdateUI()
     {
         if (manaText != null)
-            manaText.text = $"Mana: {Mathf.FloorToInt(mana)}";
+            manaText.text = Mathf.FloorToInt(mana).ToString();
+    }
+
+    void PopText()
+    {
+        if (manaText == null) return;
+
+        manaText.rectTransform.localScale = originalTextScale * textPopScale;
+        targetTextScale = originalTextScale;
     }
 
     void AddManaOverTime()
     {
         mana += manaCharge;
         UpdateUI();
+        PopText();
     }
-
-    // =========================
-    // PUBLIC API (IMPORTANT)
-    // =========================
 
     public bool CanAfford(float cost)
     {
@@ -59,6 +87,7 @@ public class ManaManager : MonoBehaviour
 
         mana -= cost;
         UpdateUI();
+        PopText();
         return true;
     }
 
@@ -66,6 +95,7 @@ public class ManaManager : MonoBehaviour
     {
         mana += amount;
         UpdateUI();
+        PopText();
     }
 
     public float GetMana()
