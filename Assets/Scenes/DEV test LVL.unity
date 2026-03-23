@@ -3142,7 +3142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaText: {fileID: 714630779}
   mana: 5
-  manaCharge: 1
+  manaCharge: 2
   startCharge: 2
   repeatCharge: 1
 --- !u!4 &1907175952
