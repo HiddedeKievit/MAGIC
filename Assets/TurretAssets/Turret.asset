@@ -22,3 +22,4 @@ MonoBehaviour:
   turretPrefab: {fileID: 7809721549941625901, guid: 87c699993afe65c4cb3a2c7dbb616292, type: 3}
   ghostPrefab: {fileID: 5328992271549580022, guid: bce2d997fd38e7a4792756de71827b77, type: 3}
   towerGrid: {x: 15, y: 15}
+  manaCost: 10

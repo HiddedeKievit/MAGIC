@@ -4,9 +4,12 @@ public class TurretMenu : MonoBehaviour
 {
     [Header("Setup")]
     [SerializeField] private GameObject turretButtonPrefab;
-    private const int MAX_VISIBLE = 6;
+    [SerializeField] private float startY = -10f;
+    [SerializeField] private float spacing = 90f;
 
-    void OnEnable()
+    private const int MAX_VISIBLE = 3;
+
+    private void Start()
     {
         PopulateMenu();
     }
@@ -23,12 +26,24 @@ public class TurretMenu : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            GameObject buttonGO = Instantiate(turretButtonPrefab, transform);
+            GameObject buttonGO = Instantiate(turretButtonPrefab, transform, false);
+
+            RectTransform rt = buttonGO.GetComponent<RectTransform>();
+
+            rt.anchorMin = new Vector2(0.5f, 1f);
+            rt.anchorMax = new Vector2(0.5f, 1f);
+            rt.pivot = new Vector2(0.5f, 1f);
+
+            rt.localScale = Vector3.one;
+
+           
+
+            rt.anchoredPosition = new Vector2(0f, startY - (i * spacing));
 
             TurretButton button = buttonGO.GetComponent<TurretButton>();
-            button.turretData = turrets[i];                 // assign correct turret
-            button.placementManager = PlacementManager.Instance; // assign scene object
-            button.Setup();                                // apply icon
+            button.turretData = turrets[i];
+            button.placementManager = PlacementManager.Instance;
+            button.Setup();
         }
     }
 }

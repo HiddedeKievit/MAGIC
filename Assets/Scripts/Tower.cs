@@ -26,6 +26,16 @@ public class Tower : MonoBehaviour
         CurrentDamage = data.damage;
     }
 
+    public void RefreshDamage()
+    {
+        // Recalculate damage from TurretData + upgrades
+        CurrentDamage = Data.damage;
+        if (Path1Level >= 2)
+        {
+            CurrentDamage += 6;
+        }
+    }
+
     // =========================
     // PATH 1
     // =========================
