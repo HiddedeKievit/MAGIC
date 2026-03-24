@@ -346,7 +346,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4283716796
-  m_fontColor: {r: 0.735849, g: 0.32974365, b: 0.32974365, a: 1}
+  m_fontColor: {r: 0.21568628, g: 0.03137255, b: 0.03137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2908,7 +2908,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lanterns
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c236041872329524eb6c6b39349f476f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e0b630654d5d8e8459b486a47ca1fdd5, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: c236041872329524eb6c6b39349f476f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.21568628, g: 0.03137255, b: 0.03137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2975,7 +2975,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &896001661
@@ -4098,8 +4098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4128b1a7bb0806e42a89f7f511f99ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxCollider: {fileID: 1062532396}
+  Collider: {fileID: 0}
   lightDetected: 0
+  turretData: {fileID: 0}
 --- !u!1 &1065197667
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,7 +4160,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Towers
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c236041872329524eb6c6b39349f476f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e0b630654d5d8e8459b486a47ca1fdd5, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: c236041872329524eb6c6b39349f476f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4167,7 +4168,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.21568628, g: 0.03137255, b: 0.03137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4226,7 +4227,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1065197670
@@ -4600,7 +4601,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Characters
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c236041872329524eb6c6b39349f476f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e0b630654d5d8e8459b486a47ca1fdd5, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: c236041872329524eb6c6b39349f476f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4608,7 +4609,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.21568628, g: 0.03137255, b: 0.03137255, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4667,7 +4668,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1268580501
@@ -22533,7 +22534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1440794559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -43617,7 +43618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2098653087
 RectTransform:
   m_ObjectHideFlags: 0
