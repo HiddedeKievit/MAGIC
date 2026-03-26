@@ -2,41 +2,27 @@ using UnityEngine;
 
 [RequireComponent(typeof(Tower))]
 [RequireComponent(typeof(TowerTargeting))]
-[RequireComponent(typeof(TowerAttack))]
 public class TowerShooting : MonoBehaviour
 {
-[SerializeField] private Transform firePoint;
-[SerializeField] private Transform firePointLeft;
-[SerializeField] private Transform firePointRight;
-
     private Tower tower;
     private TowerTargeting targeting;
-    private TowerAttack attack;
 
     public float stunTimer = 0;
-
     private float fireCooldown;
-
-    private bool fireLeftNext = true;
 
     void Awake()
     {
         tower = GetComponent<Tower>();
         targeting = GetComponent<TowerTargeting>();
-        attack = GetComponent<TowerAttack>();
     }
 
     void Update()
     {
-
         if (stunTimer > 0)
-{
-    stunTimer -= Time.deltaTime;
-    return;
-} else
-{
-    stunTimer = 0;
-}
+        {
+            stunTimer -= Time.deltaTime;
+            return;
+        }
 
         fireCooldown -= Time.deltaTime;
 
@@ -48,20 +34,8 @@ public class TowerShooting : MonoBehaviour
 
         if (fireCooldown <= 0f)
         {
-if (tower.Path2Level > 0)
-{
-    if (fireLeftNext)
-        attack.Fire(firePointLeft, target);
-    else
-        attack.Fire(firePointRight, target);
-
-    fireLeftNext = !fireLeftNext;
-}
-else
-{
-    attack.Fire(firePoint, target);
-}
-            fireCooldown = 1f / tower.CurrentFireRate;
+            tower.Attack(target);
+            fireCooldown = 1f / tower.FireRate;
         }
     }
 

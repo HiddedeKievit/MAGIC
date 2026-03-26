@@ -3,8 +3,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tower Defense/Turret Data")]
 public class TurretData : ScriptableObject
 {
-    ManaManager manaManager;
-
     [Header("UI")]
     public string turretName;
     public Sprite icon;
@@ -14,6 +12,13 @@ public class TurretData : ScriptableObject
     public float fireRate = 1f;
     public int damage = 1;
     public float projectileSpeed = 60f;
+
+    [Header("Behavior")]
+    public TowerAttackBehaviour attackBehaviour;
+
+    [Header("Upgrades")]
+    public TowerUpgrade[] path1;
+    public TowerUpgrade[] path2;
 
     [Header("Prefabs")]
     public GameObject projectilePrefab;
