@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - firering
   - Tower
+  - Region
   layers:
   - Default
   - TransparentFX
