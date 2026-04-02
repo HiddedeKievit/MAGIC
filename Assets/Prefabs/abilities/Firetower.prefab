@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 3828422126134632221}
   - component: {fileID: 3323697143079440387}
   - component: {fileID: 2118989489893189105}
-  - component: {fileID: 9004407418737113154}
   m_Layer: 6
   m_Name: Firetower
   m_TagString: Tower
@@ -308,18 +307,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 10
---- !u!114 &9004407418737113154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3394722056427804626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f7c22c7ce4e9f4479fd9d6a20b702e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3622400354198196346
 GameObject:
   m_ObjectHideFlags: 0
