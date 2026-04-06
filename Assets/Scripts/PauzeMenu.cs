@@ -54,6 +54,7 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        print("Resume Game clicked");
         pauseMenuUI.SetActive(false);
 
         if (settingsPanel != null)
