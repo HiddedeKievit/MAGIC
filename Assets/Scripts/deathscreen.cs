@@ -8,7 +8,7 @@ public class deathscreen : MonoBehaviour
     [SerializeField] private HealthManager HealthManager;
     public GameObject deathScreenUI;
 
-    private bool isPaused = false;
+    
     private float currentSpeed;
     private float baseFixedDeltaTime;
         public float normalSpeed = 1f;
