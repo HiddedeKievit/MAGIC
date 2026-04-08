@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/VictorTest.unity
     guid: 37dd8e60dc64ade43bd427b994d9157e
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: c771d887c242a7840a445c13ee9542cf
+  - enabled: 1
     path: Assets/Scenes/BramTest.unity
     guid: 6618daa8c6741b245a8fad4b3b349374
   - enabled: 1
     path: Assets/Scenes/DEV test LVL.unity
     guid: a9d75478f02a8411b9089f12f29dcfff
+  - enabled: 1
+    path: Assets/Scenes/LVL 1.unity
+    guid: 2c529b46c3ea58243b685e8a11f38980
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

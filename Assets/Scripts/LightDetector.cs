@@ -48,7 +48,7 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = false;
-            turretData.damage = 1;
+            turretData.damage -= 1;
             if (tower != null)
                 tower.RefreshDamage();
         }
