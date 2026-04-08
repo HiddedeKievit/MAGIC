@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetClearance: 0.5
-  movementSpeed: 8
-  rotateSpeed: 2
+  movementSpeed: 0.5
+  rotateSpeed: 5
   canMove: 1
   Target: {x: 0, y: 0, z: 0}
   DistanceToTarget: 0
