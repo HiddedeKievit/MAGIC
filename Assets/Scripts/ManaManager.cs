@@ -15,6 +15,7 @@ public class ManaManager : MonoBehaviour
     [SerializeField] private float manaCharge = 5f;
     [SerializeField] private float startCharge = 1f;
     [SerializeField] private float repeatCharge = 2f;
+    [SerializeField] private float maxMana = 30f;
 
     private Vector3 originalTextScale;
     private Vector3 targetTextScale;
@@ -70,9 +71,11 @@ public class ManaManager : MonoBehaviour
 
     void AddManaOverTime()
     {
+        if (mana >= maxMana) return;
         mana += manaCharge;
         UpdateUI();
         PopText();
+        
     }
 
     public bool CanAfford(float cost)

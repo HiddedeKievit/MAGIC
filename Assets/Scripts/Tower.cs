@@ -28,12 +28,13 @@ public class Tower : MonoBehaviour
 
     public void RefreshDamage()
     {
-        // Recalculate damage from TurretData + upgrades
+        // Recalculate damage from base TurretData + upgrades
         CurrentDamage = Data.damage;
         if (Path1Level >= 2)
         {
             CurrentDamage += 6;
         }
+        // Add any lantern bonus from LightDetector if applicable
     }
 
     // =========================

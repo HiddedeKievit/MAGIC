@@ -3,8 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadBramTest()
+    public void LoadCutscene()
     {
-        SceneManager.LoadScene("BramTest");
+        SceneManager.LoadScene("Cutscene");
     }
 }

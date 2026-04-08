@@ -6372,7 +6372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5602939824680371063, guid: c122696153c56654c97ce57cf68ffb44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadBramTest
+      value: LoadCutscene
       objectReference: {fileID: 0}
     - target: {fileID: 5602939824680371063, guid: c122696153c56654c97ce57cf68ffb44, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

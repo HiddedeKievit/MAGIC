@@ -1,12 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PauseManager : MonoBehaviour
 {
     public GameObject pauseMenuUI;
-    public GameObject settingsPanel; 
+    public GameObject settingsPanel;
+
+    [Header("Speed Mode")]
+    public float normalSpeed = 1f;
+    public float fastSpeed = 2f;
+    public float ultraSpeed = 3f;
+    public TextMeshProUGUI speedText;
 
     private bool isPaused = false;
+    private float currentSpeed;
+    private float baseFixedDeltaTime;
 
     void Start()
     {
@@ -15,7 +24,9 @@ public class PauseManager : MonoBehaviour
         if (settingsPanel != null)
             settingsPanel.SetActive(false);
 
-        Time.timeScale = 1f;
+        baseFixedDeltaTime = Time.fixedDeltaTime;
+        currentSpeed = normalSpeed;
+        ApplySpeed();
     }
 
     void Update()
@@ -43,22 +54,59 @@ public class PauseManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        print("Resume Game clicked");
         pauseMenuUI.SetActive(false);
 
         if (settingsPanel != null)
             settingsPanel.SetActive(false);
 
-        Time.timeScale = 1f;
+        if (GameSpeedManager.Instance != null)
+            Time.timeScale = GameSpeedManager.Instance.CurrentSpeed;
+        else
+            Time.timeScale = 1f;
+
         isPaused = false;
+    }
+
+    public void ToggleSpeed()
+    {
+        if (Mathf.Approximately(currentSpeed, normalSpeed))
+        {
+            currentSpeed = fastSpeed; // x2
+        }
+        else if (Mathf.Approximately(currentSpeed, fastSpeed))
+        {
+            currentSpeed = ultraSpeed; // x3
+        }
+        else
+        {
+            currentSpeed = normalSpeed; // back to x1
+        }
+
+        if (!isPaused)
+            ApplySpeed();
+        else
+            UpdateSpeedText();
+    }
+
+    private void ApplySpeed()
+    {
+        Time.timeScale = currentSpeed;
+        Time.fixedDeltaTime = baseFixedDeltaTime * currentSpeed;
+        UpdateSpeedText();
+    }
+
+    private void UpdateSpeedText()
+    {
+        if (speedText != null)
+        {
+            speedText.text = "x" + currentSpeed.ToString("0");
+        }
     }
 
     public void SaveGame()
     {
         Debug.Log("Save Game clicked");
-
-        // Put your save system here later
-        // Example:
-        // SaveSystem.SavePlayer();
     }
 
     public void OpenSettings()
@@ -74,6 +122,7 @@ public class PauseManager : MonoBehaviour
     public void ExitToMainMenu()
     {
         Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
         SceneManager.LoadScene("VictorTest");
     }
 }
