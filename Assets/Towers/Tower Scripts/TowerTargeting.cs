@@ -1,68 +1,60 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Tower))]
 public class TowerTargeting : MonoBehaviour
 {
-    private Tower tower;
+    public TurretData data;
 
-    private Transform target;
-    public Transform CurrentTarget => target;
+    public Transform currentTarget;
 
-    public float Range
+    private List<Transform> enemiesInRange = new List<Transform>();
+
+    private void Update()
     {
-        get
-        {
-            if (tower == null)
-                return 0f;
-
-            return tower.CurrentRange;
-        }
-    }
-
-    void Awake()
-    {
-        tower = GetComponent<Tower>();
-    }
-
-    void Update()
-    {
-        if (target == null)
-            FindTarget();
-
-        if (target != null)
-        {
-            if (Vector2.Distance(transform.position, target.position) > Range)
-                target = null;
-        }
+        FindTarget();
+        RotateToTarget();
     }
 
     void FindTarget()
     {
-        GameObject[] entities = GameObject.FindGameObjectsWithTag("Enemy");
+        float shortestDistance = Mathf.Infinity;
+        Transform nearest = null;
 
-        foreach (GameObject entity in entities)
+        foreach (var enemy in enemiesInRange)
         {
-            float distance = Vector2.Distance(transform.position, entity.transform.position);
+            if (enemy == null) continue;
 
-            if (distance <= Range)
+            float distance = Vector2.Distance(transform.position, enemy.position);
+
+            if (distance < shortestDistance)
             {
-                target = entity.transform;
-                return;
+                shortestDistance = distance;
+                nearest = enemy;
             }
         }
 
-        target = null;
+        currentTarget = nearest;
     }
 
-    void OnDrawGizmosSelected()
+    void RotateToTarget()
     {
-        if (tower == null)
-            tower = GetComponent<Tower>();
+        if (currentTarget == null) return;
 
-        if (tower == null)
-            return;
+        Vector2 direction = currentTarget.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Range);
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+            enemiesInRange.Add(other.transform);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+            enemiesInRange.Remove(other.transform);
     }
 }
