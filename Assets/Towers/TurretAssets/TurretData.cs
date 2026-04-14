@@ -13,8 +13,6 @@ public class TurretData : ScriptableObject
     public int damage = 1;
     public float projectileSpeed = 60f;
 
-    [Header("Behavior")]
-    public TowerAttackBehaviour attackBehaviour;
 
     [Header("Upgrades")]
     public TowerUpgrade[] path1;
