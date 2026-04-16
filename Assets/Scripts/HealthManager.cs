@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-        healthtext.text = $": {Health}";
+        healthtext.text = $"{Health}";
 
         if (Health <= 0 && !_isDead)
         {

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 [System.Serializable]
 public class Wave
@@ -14,19 +14,15 @@ public class Wave_Spawner : MonoBehaviour
 {
     public Wave[] Waves;
     public Transform[] SpawnPoints;
-
-    public float timeBetweenWaves = 10f; 
-
+    public float timeBetweenWaves = 10f;
     public PathManager Path;
-
-    public Text waveCounterText;  
+    public TMP_Text waveCounterText;
 
     private int currentWaveNumber = 0;
     private Wave currentWave;
 
     private float nextSpawnTime;
     private float waveCountdown;
-
     private int enemiesLeftToSpawn;
 
     private bool isSpawning = false;
@@ -34,18 +30,34 @@ public class Wave_Spawner : MonoBehaviour
 
     private void Start()
     {
+        if (waveCounterText == null)
+        {
+            Debug.LogError("Wave Counter Text is not assigned!");
+            return;
+        }
+
+        if (Waves == null || Waves.Length == 0)
+        {
+            Debug.LogError("No waves added to the Waves array!");
+            return;
+        }
+
+        if (SpawnPoints == null || SpawnPoints.Length == 0)
+        {
+            Debug.LogError("No spawn points added!");
+            return;
+        }
+
         StartWave();
     }
 
     private void Update()
     {
-        // If currently spawning enemies
         if (isSpawning)
         {
             SpawnWave();
         }
 
-        // If waiting for next wave timer
         if (isWaitingForNextWave)
         {
             waveCountdown -= Time.deltaTime;
@@ -85,8 +97,6 @@ public class Wave_Spawner : MonoBehaviour
         {
             GameObject randomEnemy =
                 currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
-        
-           
 
             Transform randomPoint =
                 SpawnPoints[Random.Range(0, SpawnPoints.Length)];
@@ -99,7 +109,6 @@ public class Wave_Spawner : MonoBehaviour
             nextSpawnTime = Time.time + currentWave.spawnInterval;
         }
 
-        
         if (enemiesLeftToSpawn == 0 && isSpawning)
         {
             isSpawning = false;
@@ -109,7 +118,7 @@ public class Wave_Spawner : MonoBehaviour
     }
 
     void UpdateWaveUI()
-{
-    waveCounterText.text = "Wave: " + (currentWaveNumber + 1) + " / " + Waves.Length;
-}
+    {
+        waveCounterText.text = "Wave: " + (currentWaveNumber + 1) + " / " + Waves.Length;
+    }
 }
