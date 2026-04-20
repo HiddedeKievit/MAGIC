@@ -2074,7 +2074,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 190239959}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2084,8 +2084,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1244399673
+  m_SortingOrder: 77
   m_TargetDisplay: 0
 --- !u!224 &550118490
 RectTransform:
@@ -6541,7 +6541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -190.12, y: -17.344}
+  m_AnchoredPosition: {x: -190.12, y: -17.343994}
   m_SizeDelta: {x: 380.24, y: -34.6874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1102734621
@@ -7710,7 +7710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -386.99997, y: -87}
+  m_AnchoredPosition: {x: -387, y: -87}
   m_SizeDelta: {x: 0, y: -174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425276757
