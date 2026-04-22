@@ -3074,6 +3074,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthtext: {fileID: 513927927}
   Health: 12
+  bounceScale: 1.35
+  bounceDuration: 0.25
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!4 &1510365666
 Transform:
   m_ObjectHideFlags: 0
