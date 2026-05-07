@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4446bc13d004c4d9fa371e0bf45cd62e
+guid: dc2353837aa0443fcab0152df7ef890d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3747085705669286293
-    second: Sell_Icon_0
+      213: -4574592798649669118
+    second: Boulder13_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sell_Icon_0
+      name: Boulder13_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 512
+        x: 65
+        y: 51
+        width: 919
+        height: 927
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5999c5da892500430800000000000000
-      internalID: 3747085705669286293
+      spriteID: 20a2d6c3618c380c0800000000000000
+      internalID: -4574592798649669118
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sell_Icon_0: 3747085705669286293
+      Boulder13_0: -4574592798649669118
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
