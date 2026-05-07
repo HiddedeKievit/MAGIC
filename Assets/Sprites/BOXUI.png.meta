@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: 3267449c3b2493249b02cab5295c2980
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6771609088875247646
+    second: BOXUI_0
+  - first:
+      213: -2604869066689207582
+    second: BOXUI_1
+  - first:
+      213: -8085374113053808876
+    second: BOXUI_2
+  - first:
+      213: -7629248092867294069
+    second: BOXUI_3
+  - first:
+      213: -8017961900959701361
+    second: BOXUI_4
+  - first:
+      213: 2692221463972472057
+    second: BOXUI_5
+  - first:
+      213: 8035040429049879200
+    second: BOXUI_6
+  - first:
+      213: -6378237507279940364
+    second: BOXUI_7
+  - first:
+      213: 7012567592838103429
+    second: BOXUI_8
+  - first:
+      213: -8243798163128957043
+    second: BOXUI_9
+  - first:
+      213: -8197382245046588613
+    second: BOXUI_10
+  - first:
+      213: 5090171843411899114
+    second: BOXUI_11
+  - first:
+      213: -9079480793652617778
+    second: BOXUI_12
+  - first:
+      213: -5160805528514343261
+    second: BOXUI_13
+  - first:
+      213: 1032029384343415105
+    second: BOXUI_14
+  - first:
+      213: -3573171374568837431
+    second: BOXUI_15
+  - first:
+      213: -6560244210033740617
+    second: BOXUI_16
+  - first:
+      213: -8707621020728897070
+    second: BOXUI_17
+  - first:
+      213: -6957296023648424606
+    second: BOXUI_18
+  - first:
+      213: -3053547185312014084
+    second: BOXUI_19
+  - first:
+      213: 7392334416797428171
+    second: BOXUI_20
+  - first:
+      213: 4062615487005108220
+    second: BOXUI_21
+  - first:
+      213: -5847180376482210753
+    second: BOXUI_22
+  - first:
+      213: 4153668531020630707
+    second: BOXUI_23
+  - first:
+      213: 6737431505989711865
+    second: BOXUI_24
+  - first:
+      213: -7819444681042157910
+    second: BOXUI_25
+  - first:
+      213: -241370612555451364
+    second: BOXUI_26
+  - first:
+      213: 6707391833520293411
+    second: BOXUI_27
+  - first:
+      213: 4632383010456114532
+    second: BOXUI_28
+  - first:
+      213: 3361019865178515942
+    second: BOXUI_29
+  - first:
+      213: 6506406265970340908
+    second: BOXUI_30
+  - first:
+      213: 5040237295669855349
+    second: BOXUI_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BOXUI_0
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 687
+        width: 100
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e7c8c349696602a0800000000000000
+      internalID: -6771609088875247646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_1
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 775
+        width: 63
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e226919265a9dbd0800000000000000
+      internalID: -2604869066689207582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_2
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 775
+        width: 108
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417e943151bfacf80800000000000000
+      internalID: -8085374113053808876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_3
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 775
+        width: 99
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c8151f7477f1690800000000000000
+      internalID: -7629248092867294069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_4
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 775
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f866eaec12a7ab090800000000000000
+      internalID: -8017961900959701361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_5
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 775
+        width: 82
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4e2c05821bc5520800000000000000
+      internalID: 2692221463972472057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_6
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 775
+        width: 81
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa9b61e2b2328f60800000000000000
+      internalID: 8035040429049879200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_7
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 775
+        width: 58
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4918dc7c2fb77a0800000000000000
+      internalID: -6378237507279940364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_8
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 775
+        width: 166
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 581088e4215a15160800000000000000
+      internalID: 7012567592838103429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_9
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 775
+        width: 138
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d874ea68f35289d80800000000000000
+      internalID: -8243798163128957043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_10
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 775
+        width: 128
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b67eb974c0d3e80800000000000000
+      internalID: -8197382245046588613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_11
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 775
+        width: 94
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae2f24c925ce3a640800000000000000
+      internalID: 5090171843411899114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_12
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 775
+        width: 117
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd9a55c2543ff180800000000000000
+      internalID: -9079480793652617778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_13
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 733
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aec70607b22168b0800000000000000
+      internalID: -5160805528514343261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_14
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 611
+        width: 20
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 149ed83d141825e00800000000000000
+      internalID: 1032029384343415105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_15
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 649
+        width: 20
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ceea39f09b896ec0800000000000000
+      internalID: -3573171374568837431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 538
+        width: 20
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4302d06a455f4a0800000000000000
+      internalID: -6560244210033740617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_17
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 572
+        width: 20
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1dabc01d0582780800000000000000
+      internalID: -8707621020728897070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_18
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 439
+        width: 20
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26da239b028b27f90800000000000000
+      internalID: -6957296023648424606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_19
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 481
+        width: 20
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0659a630f9f95d0800000000000000
+      internalID: -3053547185312014084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_20
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 355
+        width: 20
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc9ea1e5cf8d69660800000000000000
+      internalID: 7392334416797428171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_21
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 376
+        width: 20
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf7a0f1c24f416830800000000000000
+      internalID: 4062615487005108220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_22
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 263
+        width: 120
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c94226d64aadea0800000000000000
+      internalID: -5847180376482210753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_23
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 268
+        width: 167
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba043a958bc4a930800000000000000
+      internalID: 4153668531020630707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_24
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 268
+        width: 146
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7ba0d124a208d50800000000000000
+      internalID: 6737431505989711865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_25
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 268
+        width: 134
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aae1aa5ed70cb7390800000000000000
+      internalID: -7819444681042157910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_26
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 268
+        width: 168
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c14f96be4ba76acf0800000000000000
+      internalID: -241370612555451364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_27
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 268
+        width: 106
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3264556d551751d50800000000000000
+      internalID: 6707391833520293411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_28
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 268
+        width: 129
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4659ac9fdc7894040800000000000000
+      internalID: 4632383010456114532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_29
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 268
+        width: 113
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e92ffa82cdb4ae20800000000000000
+      internalID: 3361019865178515942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_30
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 268
+        width: 112
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c24b987c6066b4a50800000000000000
+      internalID: 6506406265970340908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOXUI_31
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 267
+        width: 128
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574c318bd1582f540800000000000000
+      internalID: 5040237295669855349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BOXUI_0: -6771609088875247646
+      BOXUI_1: -2604869066689207582
+      BOXUI_10: -8197382245046588613
+      BOXUI_11: 5090171843411899114
+      BOXUI_12: -9079480793652617778
+      BOXUI_13: -5160805528514343261
+      BOXUI_14: 1032029384343415105
+      BOXUI_15: -3573171374568837431
+      BOXUI_16: -6560244210033740617
+      BOXUI_17: -8707621020728897070
+      BOXUI_18: -6957296023648424606
+      BOXUI_19: -3053547185312014084
+      BOXUI_2: -8085374113053808876
+      BOXUI_20: 7392334416797428171
+      BOXUI_21: 4062615487005108220
+      BOXUI_22: -5847180376482210753
+      BOXUI_23: 4153668531020630707
+      BOXUI_24: 6737431505989711865
+      BOXUI_25: -7819444681042157910
+      BOXUI_26: -241370612555451364
+      BOXUI_27: 6707391833520293411
+      BOXUI_28: 4632383010456114532
+      BOXUI_29: 3361019865178515942
+      BOXUI_3: -7629248092867294069
+      BOXUI_30: 6506406265970340908
+      BOXUI_31: 5040237295669855349
+      BOXUI_4: -8017961900959701361
+      BOXUI_5: 2692221463972472057
+      BOXUI_6: 8035040429049879200
+      BOXUI_7: -6378237507279940364
+      BOXUI_8: 7012567592838103429
+      BOXUI_9: -8243798163128957043
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
