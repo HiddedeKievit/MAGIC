@@ -5,8 +5,8 @@ public class BoulderPath : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f;
 
-    [Header("Damage")]
-    [SerializeField] private int damage = 25;
+    [Header("Boulder Health")]
+    [SerializeField] private int health = 25;
 
     private Transform[] waypoints;
     private int waypointIndex;
@@ -36,19 +36,14 @@ public class BoulderPath : MonoBehaviour
         for (int i = 0; i < childCount; i++)
         {
             waypoints[i] = path.transform.GetChild(i);
-
-            if (waypoints[i] == null)
-            {
-                Debug.LogError($"Waypoint {i} is null!");
-            }
         }
 
-        // Start at last waypoint
+        // Start at end of path
         waypointIndex = waypoints.Length - 1;
 
         transform.position = waypoints[waypointIndex].position;
 
-        // Move backwards
+        // Move backward through path
         waypointIndex--;
     }
 
@@ -57,15 +52,17 @@ public class BoulderPath : MonoBehaviour
         if (waypoints == null)
             return;
 
-        if (waypointIndex < 0)
+        // Boulder destroyed
+        if (health <= 0)
         {
             Destroy(gameObject);
             return;
         }
 
-        if (waypoints[waypointIndex] == null)
+        // Reached end of path
+        if (waypointIndex < 0)
         {
-            Debug.LogError($"Waypoint at index {waypointIndex} is null!");
+            Destroy(gameObject);
             return;
         }
 
@@ -77,15 +74,13 @@ public class BoulderPath : MonoBehaviour
             moveSpeed * Time.deltaTime
         );
 
-        float distance = Vector2.Distance(
-            transform.position,
-            targetWaypoint.position
-        );
-
-        if (distance < 0.05f)
+        if (Vector2.Distance(transform.position, targetWaypoint.position) < 0.05f)
         {
             waypointIndex--;
         }
+
+        // Rolling effect
+        transform.Rotate(0f, 0f, -360f * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -94,7 +89,16 @@ public class BoulderPath : MonoBehaviour
 
         if (entity != null)
         {
-            entity.Health -= damage;
+            // Store enemy HP before killing it
+            int enemyHealth = entity.Health;
+
+            // Boulder loses HP equal to enemy HP
+            health -= enemyHealth;
+
+            // Crush enemy
+            entity.Health = 0;
+
+            Debug.Log("Boulder HP Remaining: " + health);
         }
     }
 }
