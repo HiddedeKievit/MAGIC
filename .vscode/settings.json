@@ -67,7 +67,7 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Project Nyx.slnx",
+    "dotnet.defaultSolution": "MAGIC.slnx",
     "cSpell.words": [
         "BABYYYY",
         "Behaviour",
