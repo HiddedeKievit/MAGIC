@@ -80,25 +80,31 @@ public class BoulderPath : MonoBehaviour
         }
 
         // Rolling effect
-        transform.Rotate(0f, 0f, -360f * Time.deltaTime);
+        Vector2 moveDirection = (
+    targetWaypoint.position - transform.position
+).normalized;
+
+float rotationDirection = moveDirection.x > 0 ? -1f : 1f;
+
+transform.Rotate(0f, 0f, rotationDirection * 360f * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
+{
+    Entity entity = collision.GetComponent<Entity>();
+
+    if (entity != null)
     {
-        Entity entity = collision.GetComponent<Entity>();
+        int enemyHealth = entity.Health;
+        int boulderHealth = health;
 
-        if (entity != null)
-        {
-            // Store enemy HP before killing it
-            int enemyHealth = entity.Health;
+        // Damage enemy by current boulder HP
+        entity.Health -= boulderHealth;
 
-            // Boulder loses HP equal to enemy HP
-            health -= enemyHealth;
+        // Damage boulder by current enemy HP
+        health -= enemyHealth;
 
-            // Crush enemy
-            entity.Health = 0;
-
-            Debug.Log("Boulder HP Remaining: " + health);
-        }
+        Debug.Log("Boulder HP Remaining: " + health);
     }
+}
 }
