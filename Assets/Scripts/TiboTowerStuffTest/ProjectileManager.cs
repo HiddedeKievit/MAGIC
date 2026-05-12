@@ -59,7 +59,8 @@ public class ProjectileManager : MonoBehaviour
 
 
             // movement
-            projectile.transform.position += projectile.direction * projectile.Speed;
+            projectile.transform.position += projectile.direction * projectile.Speed * Time.deltaTime;
+
 
             // insert code later
 
@@ -76,6 +77,13 @@ public class ProjectileManager : MonoBehaviour
                 MoveProjectile(projectile, newKey);
             }
 
+
+            // one projectile can now deal damage to one enemy twice if the piercing is more than 1. there needs to be some way to track if the projectile is currently in an enemy, only on first hit deal damage.
+            // this is where "on collide" and "colliding" would be better, oh well...
+            // perhaps manually somehow. but then the case of 2 overlapping enemies would result in a flipflop between them. this may actually be fixable if enemies are always seperated a bit so their "collision" doesnt overlap. 
+
+            // projectile states maybe? "hit?" "colliding" "flying?"
+
             List<Entity> enemiesInCell = EnemyManager.Instance.GetCellList(projectile.gridPosition);
             if (enemiesInCell != null)
             {
@@ -84,14 +92,13 @@ public class ProjectileManager : MonoBehaviour
                     Entity enemy = enemiesInCell[e];
                     if (( enemy.transform.position - projectile.transform.position ).sqrMagnitude < 1)
                     {
-                        // HIT!
                         enemy.Health -= projectile.Damage;
 
                         projectile.Piercing--;
                         if (projectile.Piercing <= 0)
                         {
                             projectile.isDead = true;
-                            break; // break loop for this projectilem because its dead, done, gone, over, did its job!
+                            break; // break loop for this projectile because its dead, done, gone, over, did its job!
                         }
                     }
                 }
@@ -102,10 +109,10 @@ public class ProjectileManager : MonoBehaviour
 
     public void SpawnProjectile(ProjectileData projectilePrefab, TowerData origin, Entity target)
     {
+        Vector3 dir = ( target.transform.position - origin.transform.position ).normalized;
 
-        ProjectileData projectile = Instantiate(projectilePrefab, origin.transform.position, origin.transform.rotation, transform);
-        projectile.direction = ( target.transform.position - origin.transform.position ).normalized;
-
+        ProjectileData projectile = Instantiate(projectilePrefab, origin.transform.position, Quaternion.Euler(0, 0, ( Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg )), transform);
+        projectile.direction = dir;
         int centerX = Mathf.FloorToInt(projectile.transform.position.x / LevelData.Instance.GridCellSize);
         int centerY = Mathf.FloorToInt(projectile.transform.position.y / LevelData.Instance.GridCellSize);
 

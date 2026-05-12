@@ -12,6 +12,7 @@ public class TowerManager : MonoBehaviour
 
     private void Awake()
     {
+        Towers = new();
         Instance = this;
         potentialResults = new();
     }
@@ -19,6 +20,8 @@ public class TowerManager : MonoBehaviour
 
     void Update()
     {
+        if (Towers.Count == 0)
+            return;
 
         foreach (TowerData tower in Towers)
         {
@@ -88,9 +91,30 @@ public class TowerManager : MonoBehaviour
 
 
 
-            // shooting
-            // extra effects?
         }
     }
 
+    public TowerData SpawnTower(TowerData towerPrefab, Vector3 position)
+    {
+        TowerData tower = Instantiate(towerPrefab, position, towerPrefab.transform.rotation, transform);
+        Towers.Add(tower);
+
+        return tower;
+    }
+
+    public TowerData GetTowerAt(float x, float y, float checkRadius = 1)
+    {
+        if (Towers.Count > 0)
+        {
+            return Towers.Find(tower =>
+                tower.transform.position.x > x - checkRadius
+                && tower.transform.position.x < x + checkRadius
+                && tower.transform.position.y > y - checkRadius
+                && tower.transform.position.y < y + checkRadius
+                );
+        } else
+        {
+            return null;
+        }
+    }
 }

@@ -10,12 +10,11 @@ public class ManaCostCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("CHECKING!!");
+        //Debug.Log("CHECKING!!");
         if (manaManager.mana >= turretData.manaCost)
         {
             placementButton.enabled = true;
-        }
-        else
+        } else
         {
             placementButton.enabled = false;
         }

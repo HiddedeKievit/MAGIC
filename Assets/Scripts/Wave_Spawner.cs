@@ -104,7 +104,7 @@ public class Wave_Spawner : MonoBehaviour
             //PathFollower pf = newenemy.AddComponent<PathFollower>();
             //pf.Path = Path;
 
-            EnemyManager.Instance.SpawnEnemy(randomEnemy.GetComponent<Entity>(), Path);
+            EnemyManager.Instance.SpawnEnemy(randomEnemy.GetComponent<Entity>(), randomPoint.position, Path);
 
             enemiesLeftToSpawn--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;

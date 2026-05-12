@@ -1,10 +1,9 @@
-
 using UnityEngine;
 
 
 public class PathFollower : MonoBehaviour
 {
-    private Mover mover;
+    private Entity entity;
     [SerializeField] public PathManager Path;
 
     // what checkpoint am i at
@@ -12,10 +11,10 @@ public class PathFollower : MonoBehaviour
 
     void Awake()
     {
-        mover = GetComponent<Mover>();
+        entity = GetComponent<Entity>();
         if (Path != null)
         {
-            mover.Target = Path.checkpoints[0].position;
+            entity.Target = Path.checkpoints[0].position;
         }
     }
 
@@ -29,12 +28,14 @@ public class PathFollower : MonoBehaviour
 
 
         // keep updating the target.
-        mover.Target = Path.checkpoints[index].position;
+        entity.Target = Path.checkpoints[index].position;
 
 
 
         // close to the target
-        if (mover.DistanceToTarget < mover.TargetClearence)
+        float DistanceToTarget = Vector2.Distance(transform.position, entity.Target);
+
+        if (DistanceToTarget < entity.TargetClearance)
         {
 
             // at the last checkpoint. 
@@ -55,7 +56,7 @@ public class PathFollower : MonoBehaviour
             if (index + 1 < Path.checkpoints.Length)
             {
                 index++;
-                mover.Target = Path.checkpoints[index].position;
+                entity.Target = Path.checkpoints[index].position;
             }
         }
 

@@ -74,12 +74,23 @@ public class EnemyManager : MonoBehaviour
 
         foreach (Entity enemy in Enemies)
         {
-            if (enemy == null)
+            if (enemy == null || enemy.isDead)
                 continue;
 
             // movement
 
-            // insert code later
+            if (enemy.CanMove)
+            {
+                // move forwards by speed
+                enemy.transform.position = enemy.transform.position + enemy.MovementSpeed * Time.deltaTime * enemy.transform.up;
+
+                // direction from me to target
+                Vector3 dir = ( enemy.Target - enemy.transform.position ).normalized;
+
+                // rotate towards angle i want to be
+                enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90), Time.deltaTime * enemy.MovementSpeed * 2);
+            }
+
 
             // update grid
             int centerX = Mathf.FloorToInt(enemy.transform.position.x / LevelData.Instance.GridCellSize);
@@ -96,9 +107,9 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void SpawnEnemy(Entity enemyPrefab, PathManager Path)
+    public void SpawnEnemy(Entity enemyPrefab, Vector3 position, PathManager Path)
     {
-        Entity enemy = Instantiate(enemyPrefab, transform);
+        Entity enemy = Instantiate(enemyPrefab, position, enemyPrefab.transform.rotation, transform);
         PathFollower pf = enemy.gameObject.AddComponent<PathFollower>();
         pf.Path = Path;
 
