@@ -13,38 +13,59 @@ public class BoulderPath : MonoBehaviour
 
     private void Start()
     {
-        GameObject path = GameObject.Find("Path");
+        GameObject path = GameObject.Find("Paths");
 
         if (path == null)
         {
-            Debug.LogError("No object named 'Path' found!");
+            Debug.LogError("Path object not found!");
+            enabled = false;
             return;
         }
 
         int childCount = path.transform.childCount;
+
+        if (childCount == 0)
+        {
+            Debug.LogError("Path has no waypoints!");
+            enabled = false;
+            return;
+        }
 
         waypoints = new Transform[childCount];
 
         for (int i = 0; i < childCount; i++)
         {
             waypoints[i] = path.transform.GetChild(i);
+
+            if (waypoints[i] == null)
+            {
+                Debug.LogError($"Waypoint {i} is null!");
+            }
         }
 
-        // Start at LAST waypoint
+        // Start at last waypoint
         waypointIndex = waypoints.Length - 1;
 
         transform.position = waypoints[waypointIndex].position;
 
-        // Begin moving backward
+        // Move backwards
         waypointIndex--;
     }
 
     private void Update()
     {
-        // Finished path
+        if (waypoints == null)
+            return;
+
         if (waypointIndex < 0)
         {
             Destroy(gameObject);
+            return;
+        }
+
+        if (waypoints[waypointIndex] == null)
+        {
+            Debug.LogError($"Waypoint at index {waypointIndex} is null!");
             return;
         }
 
