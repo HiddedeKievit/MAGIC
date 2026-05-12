@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameSpeedManager : MonoBehaviour
 {
@@ -11,18 +10,25 @@ public class GameSpeedManager : MonoBehaviour
     [SerializeField] private float fastSpeed = 2f;
     [SerializeField] private float ultraSpeed = 3f;
 
-    [Header("Star UI")]
-    [SerializeField] private Image speedImage;
-    [SerializeField] private Sprite yellowStar; // x1
-    [SerializeField] private Sprite greenStar;  // x2
-    [SerializeField] private Sprite purpleStar; // x3
+    [Header("Speed Layouts")]
+    [SerializeField] private GameObject speed1;
+    [SerializeField] private GameObject speed2;
+    [SerializeField] private GameObject speed3;
 
-    [Header("Pop Animation")]
-    [SerializeField] private float popScale = 1.15f;
-    [SerializeField] private float popDuration = 0.12f;
+    [Header("Pop Effect")]
+    [SerializeField] private RectTransform popTarget;
+    [SerializeField] private float popScale = 1.12f;
+    [SerializeField] private float popDuration = 0.16f;
+    [SerializeField] private float wiggleAngle = 8f;
+
+    [Header("Optional Effects")]
+    [SerializeField] private ParticleSystem sparkleBurst;
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioClip speedChangeSfx;
 
     private float baseFixedDeltaTime;
     private Vector3 originalScale;
+    private Quaternion originalRotation;
     private Coroutine popRoutine;
 
     public float CurrentSpeed { get; private set; } = 1f;
@@ -41,10 +47,16 @@ public class GameSpeedManager : MonoBehaviour
 
     private void Start()
     {
-        if (speedImage != null)
-            originalScale = speedImage.rectTransform.localScale;
+        if (popTarget == null)
+            popTarget = GetComponent<RectTransform>();
 
-        SetSpeed(normalSpeed);
+        if (popTarget != null)
+        {
+            originalScale = popTarget.localScale;
+            originalRotation = popTarget.localRotation;
+        }
+
+        SetSpeed(normalSpeed, false);
     }
 
     public void ToggleSpeed()
@@ -53,27 +65,28 @@ public class GameSpeedManager : MonoBehaviour
             return;
 
         if (Mathf.Approximately(CurrentSpeed, normalSpeed))
-        {
-            SetSpeed(fastSpeed);   // x2
-        }
+            SetSpeed(fastSpeed);
         else if (Mathf.Approximately(CurrentSpeed, fastSpeed))
-        {
-            SetSpeed(ultraSpeed);  // x3
-        }
+            SetSpeed(ultraSpeed);
         else
-        {
-            SetSpeed(normalSpeed); // back to x1
-        }
+            SetSpeed(normalSpeed);
     }
 
     public void SetSpeed(float speed)
+    {
+        SetSpeed(speed, true);
+    }
+
+    private void SetSpeed(float speed, bool playEffects)
     {
         CurrentSpeed = speed;
         Time.timeScale = speed;
         Time.fixedDeltaTime = baseFixedDeltaTime * speed;
 
-        UpdateSpeedVisual();
-        PlayPop();
+        UpdateLayout();
+
+        if (playEffects)
+            PlayEffects();
     }
 
     public void ResetSpeed()
@@ -81,57 +94,64 @@ public class GameSpeedManager : MonoBehaviour
         SetSpeed(normalSpeed);
     }
 
-    private void UpdateSpeedVisual()
+    private void UpdateLayout()
     {
-        if (speedImage == null) return;
+        if (speed1 != null) speed1.SetActive(false);
+        if (speed2 != null) speed2.SetActive(false);
+        if (speed3 != null) speed3.SetActive(false);
 
         if (Mathf.Approximately(CurrentSpeed, normalSpeed))
-            speedImage.sprite = yellowStar;
+        {
+            if (speed1 != null) speed1.SetActive(true);
+        }
         else if (Mathf.Approximately(CurrentSpeed, fastSpeed))
-            speedImage.sprite = greenStar;
+        {
+            if (speed2 != null) speed2.SetActive(true);
+        }
         else
-            speedImage.sprite = purpleStar;
+        {
+            if (speed3 != null) speed3.SetActive(true);
+        }
     }
 
-    private void PlayPop()
+    private void PlayEffects()
     {
-        if (speedImage == null) return;
-
         if (popRoutine != null)
             StopCoroutine(popRoutine);
 
-        popRoutine = StartCoroutine(PopAnimation());
+        popRoutine = StartCoroutine(PopEffect());
+
+        if (sparkleBurst != null)
+            sparkleBurst.Play();
+
+        if (sfxSource != null && speedChangeSfx != null)
+            sfxSource.PlayOneShot(speedChangeSfx);
     }
 
-    private IEnumerator PopAnimation()
+    private IEnumerator PopEffect()
     {
-        RectTransform rt = speedImage.rectTransform;
+        if (popTarget == null)
+            yield break;
 
-        Vector3 startScale = originalScale;
-        Vector3 targetScale = originalScale * popScale;
-
-        float halfDuration = popDuration * 0.5f;
         float t = 0f;
 
-        while (t < halfDuration)
+        while (t < popDuration)
         {
             t += Time.unscaledDeltaTime;
-            float lerp = t / halfDuration;
-            rt.localScale = Vector3.Lerp(startScale, targetScale, lerp);
+            float progress = Mathf.Clamp01(t / popDuration);
+
+            float pop = Mathf.Sin(progress * Mathf.PI);
+            float scaleMultiplier = Mathf.Lerp(1f, popScale, pop);
+            float wiggle = Mathf.Sin(progress * Mathf.PI * 2f) * wiggleAngle * (1f - progress);
+
+            popTarget.localScale = originalScale * scaleMultiplier;
+            popTarget.localRotation = originalRotation * Quaternion.Euler(0f, 0f, wiggle);
+
             yield return null;
         }
 
-        t = 0f;
-
-        while (t < halfDuration)
-        {
-            t += Time.unscaledDeltaTime;
-            float lerp = t / halfDuration;
-            rt.localScale = Vector3.Lerp(targetScale, originalScale, lerp);
-            yield return null;
-        }
-
-        rt.localScale = originalScale;
+        popTarget.localScale = originalScale;
+        popTarget.localRotation = originalRotation;
         popRoutine = null;
     }
 }
