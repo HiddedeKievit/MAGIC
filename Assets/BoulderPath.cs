@@ -13,7 +13,7 @@ public class BoulderPath : MonoBehaviour
 
     private void Start()
     {
-        GameObject path = GameObject.Find("Paths");
+        GameObject path = GameObject.Find("path");
 
         if (path == null)
         {
