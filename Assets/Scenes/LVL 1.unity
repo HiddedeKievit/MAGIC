@@ -2524,7 +2524,7 @@ Transform:
   m_GameObject: {fileID: 581182668}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.57466, y: -7.048273, z: 200.51202}
+  m_LocalPosition: {x: 11.47, y: 9.48, z: 200.51202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2977,7 +2977,7 @@ Transform:
   m_GameObject: {fileID: 666025456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.70151, y: 97.97013, z: -0.06319744}
+  m_LocalPosition: {x: -4.6, y: 12.3, z: -0.06319744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14739,7 +14739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9730180b3864c5498fa45a6dbd6c76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatManager: {fileID: 0}
+  cheatManager: {fileID: 666025457}
   manaText: {fileID: 1922889256}
   textPopScale: 1.2
   popSpeed: 10
@@ -14759,7 +14759,7 @@ Transform:
   m_GameObject: {fileID: 1805871232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -107.77418, y: 79.94281, z: -5.1911254}
+  m_LocalPosition: {x: -14.62, y: 8.48, z: -5.1911254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16262,7 +16262,7 @@ Transform:
   m_GameObject: {fileID: 2086200195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 910.7215, y: 619.2679, z: -9.438045}
+  m_LocalPosition: {x: 17.5, y: 8.7, z: -9.438045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
