@@ -76,7 +76,8 @@ public class ManaManager : MonoBehaviour
 
     void PopText()
     {
-        if (manaText == null) return;
+        if (manaText == null)
+            return;
 
         manaText.rectTransform.localScale = originalTextScale * textPopScale;
         targetTextScale = originalTextScale;
@@ -84,11 +85,12 @@ public class ManaManager : MonoBehaviour
 
     void AddManaOverTime()
     {
-        if (mana >= maxMana) return;
+        if (mana >= maxMana)
+            return;
         mana += manaCharge;
         UpdateUI();
         PopText();
-        
+
     }
 
     public bool CanAfford(float cost)

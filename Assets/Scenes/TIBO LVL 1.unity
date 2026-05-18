@@ -603,8 +603,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1989190903
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -15027,7 +15027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9730180b3864c5498fa45a6dbd6c76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheatManager: {fileID: 0}
+  cheatManager: {fileID: 666025457}
   manaText: {fileID: 1922889256}
   textPopScale: 1.2
   popSpeed: 10

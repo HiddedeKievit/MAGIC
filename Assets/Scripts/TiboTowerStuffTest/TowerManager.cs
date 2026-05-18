@@ -62,6 +62,8 @@ public class TowerManager : MonoBehaviour
             tower.cooldown = tower.firerate;
 
             // targeting and shoot.
+
+            tower.currentTarget = null;
             switch (tower.targeting)
             {
                 case Targeting.Close:
@@ -83,14 +85,34 @@ public class TowerManager : MonoBehaviour
 
                     // target is now "closest"
                     tower.currentTarget = closest;
-                    ProjectileManager.Instance.SpawnProjectile(tower.projectile, tower, closest);
 
+                    break;
+                case Targeting.Far:
+                    Entity farthest = null;
+                    float maxDistance = 0;
+
+                    foreach (Entity enemy in potentialResults)
+                    {
+                        // skipping squareroot calculations that "Distance" function would use.
+                        float dist = ( enemy.transform.position - tower.transform.position ).sqrMagnitude;
+
+                        // check if enemy is farther than another
+                        if (dist > maxDistance)
+                        {
+                            maxDistance = dist;
+                            farthest = enemy;
+                        }
+                    }
+
+                    // target is now "farthest"
+                    tower.currentTarget = farthest;
                     break;
 
             }
 
-
-
+            // if there is a target, shoot it.
+            if (tower.currentTarget)
+                ProjectileManager.Instance.SpawnProjectile(tower.projectile, tower, tower.currentTarget);
         }
     }
 
