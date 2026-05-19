@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class PlacementManager_tibo : MonoBehaviour
 {
     public static PlacementManager_tibo Instance;
@@ -8,8 +9,11 @@ public class PlacementManager_tibo : MonoBehaviour
     public TowerData TowerToPlace;
     private bool canPlace = false;
 
-    private Color clr_cantplace = new Color(1f, 0.5f, 0.5f, 0.75f);
-    private Color clr_canplace = new Color(0.5f, 1f, 0.5f, 0.75f);
+    private Color clr_cantplace = new(1f, 0.25f, 0.25f, 0.8f);
+    private Color clr_canplace = new(0.25f, 1f, 0.25f, 0.8f);
+
+    [SerializeField] private LayerMask placementLayer;
+
 
     Vector3 mousePosition = new();
 
@@ -32,7 +36,10 @@ public class PlacementManager_tibo : MonoBehaviour
             return;
 
         // check if can place here. 
-        canPlace = TowerManager.Instance.GetTowerAt(GhostTower.transform.position.x, GhostTower.transform.position.y) == null;
+
+        canPlace =
+            TowerManager.Instance.GetOverlappingTower(GhostTower.transform.position, TowerToPlace.size) == null
+            && !Physics2D.OverlapBox(GhostTower.transform.position, TowerToPlace.size, 0f, placementLayer);
 
         if (canPlace)
         {
@@ -72,4 +79,5 @@ public class PlacementManager_tibo : MonoBehaviour
             GhostTower.transform.position = mousePosition;
         }
     }
+
 }

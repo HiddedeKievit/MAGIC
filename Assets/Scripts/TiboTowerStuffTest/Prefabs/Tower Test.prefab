@@ -49,8 +49,9 @@ MonoBehaviour:
   projectile: {fileID: 7093437736152251842, guid: 4327e7b4aaf98344da7f9adfcbb36f0f, type: 3}
   firerate: 2
   cooldown: 0
+  size: {x: 1, y: 1}
   currentTarget: {fileID: 0}
-  targeting: 1
+  targeting: 0
 --- !u!212 &1846075574324018012
 SpriteRenderer:
   m_ObjectHideFlags: 0

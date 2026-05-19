@@ -124,19 +124,28 @@ public class TowerManager : MonoBehaviour
         return tower;
     }
 
-    public TowerData GetTowerAt(float x, float y, float checkRadius = 1)
+    public TowerData GetOverlappingTower(Vector2 position, Vector2 size)
     {
-        if (Towers.Count > 0)
+        Rect a = RectFromCenter(position, size);
+
+        foreach (TowerData tower in Towers)
         {
-            return Towers.Find(tower =>
-                tower.transform.position.x > x - checkRadius
-                && tower.transform.position.x < x + checkRadius
-                && tower.transform.position.y > y - checkRadius
-                && tower.transform.position.y < y + checkRadius
-                );
-        } else
-        {
-            return null;
+            Rect b = RectFromCenter(tower.transform.position, tower.size);
+
+            if (a.Overlaps(b))
+                return tower;
         }
+
+        return null;
     }
+    private Rect RectFromCenter(Vector2 center, Vector2 size)
+    {
+        return new Rect(
+            center.x - size.x / 2f,
+            center.y - size.y / 2f,
+            size.x,
+            size.y
+        );
+    }
+
 }
