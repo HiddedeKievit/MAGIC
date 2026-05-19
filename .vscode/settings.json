@@ -67,18 +67,24 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "MAGIC.slnx",
+    "dotnet.defaultSolution": "Project Nyx.slnx",
     "cSpell.words": [
         "BABYYYY",
         "Behaviour",
+        "Cooldown",
         "deathscreen",
+        "ghostplace",
         "healthmanager",
         "healthtext",
         "Lerp",
+        "manamanager",
         "Mathf",
         "newenemy",
         "Scriptable",
         "spacebar",
-        "UGUI"
+        "tutoriallevel",
+        "UGUI",
+        "waittime",
+        "wavespawner"
     ]
 }
