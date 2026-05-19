@@ -71,14 +71,20 @@
     "cSpell.words": [
         "BABYYYY",
         "Behaviour",
+        "Cooldown",
         "deathscreen",
+        "ghostplace",
         "healthmanager",
         "healthtext",
         "Lerp",
+        "manamanager",
         "Mathf",
         "newenemy",
         "Scriptable",
         "spacebar",
-        "UGUI"
+        "tutoriallevel",
+        "UGUI",
+        "waittime",
+        "wavespawner"
     ]
 }

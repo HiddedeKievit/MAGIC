@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ManaManager : MonoBehaviour
 {
+    public CheatManager cheatManager;
     public static ManaManager Instance { get; private set; }
 
     [Header("UI")]
@@ -15,7 +16,9 @@ public class ManaManager : MonoBehaviour
     [SerializeField] private float manaCharge = 5f;
     [SerializeField] private float startCharge = 1f;
     [SerializeField] private float repeatCharge = 2f;
-    [SerializeField] private float maxMana = 30f;
+    [SerializeField] private float maxMana;
+    [SerializeField] private float manaLimit = 30f;
+    [SerializeField] private float manaCheats = 9999999f;
 
     private Vector3 originalTextScale;
     private Vector3 targetTextScale;
@@ -41,6 +44,8 @@ public class ManaManager : MonoBehaviour
 
         InvokeRepeating(nameof(AddManaOverTime), startCharge, repeatCharge);
         UpdateUI();
+        maxMana = manaLimit;
+        Debug.Log("maxMana is now manaLimit");
     }
 
     void Update()
@@ -52,6 +57,14 @@ public class ManaManager : MonoBehaviour
                 targetTextScale,
                 Time.deltaTime * popSpeed
             );
+        }
+
+        if (cheatManager.CheatsOn == true)
+        {
+            Debug.Log("CHEATS ENABLED");
+            maxMana = manaCheats;
+            Debug.Log("maxMana is now INFINTE RAAAAA");
+
         }
     }
 
