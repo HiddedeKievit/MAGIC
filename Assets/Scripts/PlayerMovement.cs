@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float sprintSpeed = 5f;
+    [SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private bool sprintState = false;
 
     [Header("SpriteChanger")]
@@ -29,8 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
         // get sprint key
         sprintState = Input.GetKey(KeyCode.LeftShift);
-        // if sprinting set to 10 otherwise to 5
-        moveSpeed = sprintState ? 10f : 5f;
+        // if sprinting = true, set movement to 10 otherwise to 5
+        moveSpeed = sprintState ? sprintSpeed : moveSpeed;
 
         // set velocity based on what key is pressed
         rb.linearVelocity = moveInput * moveSpeed;

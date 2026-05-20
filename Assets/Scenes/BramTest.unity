@@ -4516,7 +4516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  sprintSpeed: 5
+  sprintSpeed: 10
   sprintState: 0
   changer: {fileID: 1062532395}
 --- !u!114 &1062532394
@@ -4630,7 +4630,6 @@ MonoBehaviour:
   - {fileID: 1066324392502994509, guid: 749c3af901b2ff1448ee942395ce386b, type: 3}
   - {fileID: 8185558255610235970, guid: 749c3af901b2ff1448ee942395ce386b, type: 3}
   - {fileID: -2414515707607843714, guid: 749c3af901b2ff1448ee942395ce386b, type: 3}
-  newSprite: {fileID: 0}
 --- !u!61 &1062532396
 BoxCollider2D:
   m_ObjectHideFlags: 0
