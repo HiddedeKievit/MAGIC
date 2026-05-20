@@ -28,6 +28,7 @@ public class PlacementManager_tibo : MonoBehaviour
         tower.enabled = false;
         TowerToPlace = tower;
         GhostTower.sprite = tower.GetComponent<SpriteRenderer>().sprite;
+        GhostTower.transform.localScale = TowerToPlace.transform.localScale;
     }
     private void Update()
     {
