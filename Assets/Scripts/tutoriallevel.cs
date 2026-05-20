@@ -14,6 +14,7 @@ public GameObject wavespawner;
 public PlacementManager ghostplace;
 public GameObject manamanager;
 
+public GameObject openbutton;
 public float waittime = 3f;
     void Update()
     {
@@ -30,6 +31,8 @@ public float waittime = 3f;
         }
         if (PopupIndex == 0 )
         {
+            openbutton.SetActive(false);
+            
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
             PopupIndex++;
@@ -78,12 +81,27 @@ public float waittime = 3f;
                 }
         else if (PopupIndex == 6 )
         {
+            openbutton.SetActive(true);
                         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
             PopupIndex++;
             }
                 }
-        else if (PopupIndex == 7)
+        else if (PopupIndex == 7 )
+        {
+                        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+            PopupIndex++;
+            }
+                }
+        else if (PopupIndex == 8 )
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+            PopupIndex++;
+            }
+                }
+        else if (PopupIndex == 9 )
         {
             if (wavespawner.activeInHierarchy == false)
             {

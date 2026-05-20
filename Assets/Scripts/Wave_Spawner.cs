@@ -1,5 +1,5 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 [System.Serializable]
 public class Wave
@@ -69,8 +69,7 @@ public class Wave_Spawner : MonoBehaviour
                 if (currentWaveNumber < Waves.Length)
                 {
                     StartWave();
-                }
-                else
+                } else
                 {
                     Debug.Log("All waves completed!");
                     isWaitingForNextWave = false;
@@ -101,9 +100,11 @@ public class Wave_Spawner : MonoBehaviour
             Transform randomPoint =
                 SpawnPoints[Random.Range(0, SpawnPoints.Length)];
 
-            GameObject newenemy = Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
-            PathFollower pf = newenemy.AddComponent<PathFollower>();
-            pf.Path = Path;
+            //GameObject newenemy = Instantiate(randomEnemy, randomPoint.position, Quaternion.identity);
+            //PathFollower pf = newenemy.AddComponent<PathFollower>();
+            //pf.Path = Path;
+
+            EnemyManager.Instance.SpawnEnemy(randomEnemy.GetComponent<Entity>(), randomPoint.position, Path);
 
             enemiesLeftToSpawn--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
@@ -119,6 +120,6 @@ public class Wave_Spawner : MonoBehaviour
 
     void UpdateWaveUI()
     {
-        waveCounterText.text = "Wave: " + (currentWaveNumber + 1) + " / " + Waves.Length;
+        waveCounterText.text = "Wave: " + ( currentWaveNumber + 1 ) + " / " + Waves.Length;
     }
 }

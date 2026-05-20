@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 16d6c58db93ee804a82d961763d8ab91
+guid: adaa92cf25e367d4bab22f37d3e355ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1512956705064489309
-    second: Projectile_Test_0
+      213: 3832328247289993938
+    second: proj_magic_ingame_allstrip_0
+  - first:
+      213: -8470770076222291337
+    second: proj_magic_ingame_allstrip_1
+  - first:
+      213: 6309684660619291482
+    second: proj_magic_ingame_allstrip_2
+  - first:
+      213: -5592251707932914636
+    second: proj_magic_ingame_allstrip_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 160
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Projectile_Test_0
+      name: proj_magic_ingame_allstrip_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 34
-        height: 76
+        x: 46
+        y: 0
+        width: 66
+        height: 136
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d511ae57b1a1ff410800000000000000
-      internalID: 1512956705064489309
+      spriteID: 2da5a628c3a2f2530800000000000000
+      internalID: 3832328247289993938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proj_magic_ingame_allstrip_1
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 65
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77203c8ee77c17a80800000000000000
+      internalID: -8470770076222291337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proj_magic_ingame_allstrip_2
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 67
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ba1f8c4c0809750800000000000000
+      internalID: 6309684660619291482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proj_magic_ingame_allstrip_3
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 0
+        width: 67
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43c461e53b45462b0800000000000000
+      internalID: -5592251707932914636
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Projectile_Test_0: 1512956705064489309
+      proj_magic_ingame_allstrip_0: 3832328247289993938
+      proj_magic_ingame_allstrip_1: -8470770076222291337
+      proj_magic_ingame_allstrip_2: 6309684660619291482
+      proj_magic_ingame_allstrip_3: -5592251707932914636
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
