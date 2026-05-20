@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5383009265382318538}
   - component: {fileID: 1846075574324018012}
   m_Layer: 0
-  m_Name: Tower Test
-  m_TagString: Untagged
+  m_Name: Fast Tower
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.83, y: 2.48, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  projectile: {fileID: 7093437736152251842, guid: 4327e7b4aaf98344da7f9adfcbb36f0f, type: 3}
-  firerate: 2
+  projectile: {fileID: 7093437736152251842, guid: 817f49497921ac4498dd79206359f406, type: 3}
+  firerate: 0.5
   cooldown: 0
-  size: {x: 1, y: 1}
+  size: {x: 1, y: 0.5}
   currentTarget: {fileID: 0}
   targeting: 0
 --- !u!212 &1846075574324018012
