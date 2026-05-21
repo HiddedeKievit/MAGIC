@@ -10,6 +10,9 @@ public class TutorialLevel : MonoBehaviour
     public PlacementManager ghostplace;
     public GameObject manamanager;
 
+    public TowerPanelToggle towerPanelToggle;
+    public GameObject clicktocontinue;
+
     public GameObject openbutton;
     void Update()
     {
@@ -68,24 +71,52 @@ public class TutorialLevel : MonoBehaviour
             }
         } else if (PopupIndex == 6)
         {
-            openbutton.SetActive(true);
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
+
                 PopupIndex++;
             }
         } else if (PopupIndex == 7)
         {
+            
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                
+                PopupIndex++;
+                print("PopupIndex is now: " + PopupIndex);
+
+            }
+        } else if (PopupIndex == 8 )
+        {
+            openbutton.SetActive(true);
+            
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
+                
             }
-        } else if (PopupIndex == 8)
+        } else if (PopupIndex == 9 )
+        
+        {
+            towerPanelToggle.OpenPanel();
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                PopupIndex++;
+            
+            }
+                    } else if (PopupIndex == 10 )
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
+            if (clicktocontinue.activeInHierarchy == true)
+            {
+                clicktocontinue.SetActive(false);
             }
-        } else if (PopupIndex == 9)
+            }
+        } else if (PopupIndex == 11 )
+
+        
         {
             if (wavespawner.activeInHierarchy == false)
             {
@@ -97,6 +128,7 @@ public class TutorialLevel : MonoBehaviour
                 manamanager.SetActive(true);
 
             }
-        }
+
+    }
     }
 }
