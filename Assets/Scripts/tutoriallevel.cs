@@ -13,6 +13,8 @@ public class TutorialLevel : MonoBehaviour
     public TowerPanelToggle towerPanelToggle;
     public GameObject clicktocontinue;
 
+    public GameObject closearrowbutton;
+
     public GameObject openbutton;
     void Update()
     {
@@ -90,7 +92,7 @@ public class TutorialLevel : MonoBehaviour
         {
             openbutton.SetActive(true);
             
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            if (closearrowbutton.activeSelf == true)
             {
                 PopupIndex++;
                 
@@ -98,7 +100,6 @@ public class TutorialLevel : MonoBehaviour
         } else if (PopupIndex == 9 )
         
         {
-            towerPanelToggle.OpenPanel();
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
