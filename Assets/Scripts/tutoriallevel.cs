@@ -51,14 +51,14 @@ public class TutorialLevel : MonoBehaviour
             {
                 PopupIndex++;
             }
-
+        
         } else if (PopupIndex == 3)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
-            }
-
+            }        
+        
         } else if (PopupIndex == 4)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -71,14 +71,27 @@ public class TutorialLevel : MonoBehaviour
             {
                 PopupIndex++;
             }
+
         } else if (PopupIndex == 6)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                PopupIndex++;
+            }
+        } else if (PopupIndex == 7)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                PopupIndex++;
+            }
+        } else if (PopupIndex == 8)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
 
                 PopupIndex++;
             }
-        } else if (PopupIndex == 7)
+        } else if (PopupIndex == 9)
         {
             
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -86,18 +99,19 @@ public class TutorialLevel : MonoBehaviour
                 
                 PopupIndex++;
                 print("PopupIndex is now: " + PopupIndex);
+                openbutton.SetActive(true);
 
             }
-        } else if (PopupIndex == 8 )
+        } else if (PopupIndex == 10 )
         {
-            openbutton.SetActive(true);
+            
             
             if (closearrowbutton.activeSelf == true)
             {
                 PopupIndex++;
                 
             }
-        } else if (PopupIndex == 9 )
+        } else if (PopupIndex == 11 )
         
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -105,7 +119,7 @@ public class TutorialLevel : MonoBehaviour
                 PopupIndex++;
             
             }
-                    } else if (PopupIndex == 10 )
+                    } else if (PopupIndex == 12 )
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
@@ -115,7 +129,7 @@ public class TutorialLevel : MonoBehaviour
                 clicktocontinue.SetActive(false);
             }
             }
-        } else if (PopupIndex == 11 )
+        } else if (PopupIndex == 13 )
 
         
         {
