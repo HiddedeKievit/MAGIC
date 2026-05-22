@@ -40,10 +40,22 @@ public class TowerManager : MonoBehaviour
             if (tower.cooldown > 0)
             {
                 tower.cooldown -= Time.deltaTime;
+
                 // skip rest of code
                 continue;
             }
 
+            // check if activeprojectile has null references (projectile was killed)
+            for (int projectileIndex = 0; projectileIndex < tower.activeProjectiles.Count; projectileIndex++)
+            {
+                if (tower.activeProjectiles[projectileIndex] == null)
+                    tower.activeProjectiles.RemoveAt(projectileIndex);
+
+            }
+
+            // check if i can have another projectile
+            if (tower.activeProjectiles.Count >= tower.maxProjectiles)
+                continue;
 
 
             // get enemies in range
@@ -61,58 +73,69 @@ public class TowerManager : MonoBehaviour
 
             tower.cooldown = tower.firerate;
 
-            // targeting and shoot.
-
-            tower.currentTarget = null;
-            switch (tower.targeting)
+            // if the projectile should be circling the tower set target as self
+            if (tower.projectileCircleMe)
             {
-                case Targeting.Close:
-                    Entity closest = null;
-                    float minDistance = float.MaxValue;
+                tower.currentTarget = tower.transform;
+            } else
+            {
+                // projectile shouldnt target tower, calculate target.
+                tower.currentTarget = null;
+                switch (tower.targeting)
+                {
+                    case Targeting.Close:
+                        Entity closest = null;
+                        float minDistance = float.MaxValue;
 
-                    foreach (Entity enemy in potentialResults)
-                    {
-                        // skipping squareroot calculations that "Distance" function would use.
-                        float dist = ( enemy.transform.position - tower.transform.position ).sqrMagnitude;
-
-                        // check if enemy is closer than another
-                        if (dist < minDistance)
+                        foreach (Entity enemy in potentialResults)
                         {
-                            minDistance = dist;
-                            closest = enemy;
+                            // skipping squareroot calculations that "Distance" function would use.
+                            float dist = ( enemy.transform.position - tower.transform.position ).sqrMagnitude;
+
+                            // check if enemy is closer than another
+                            if (dist < minDistance)
+                            {
+                                minDistance = dist;
+                                closest = enemy;
+                            }
                         }
-                    }
 
-                    // target is now "closest"
-                    tower.currentTarget = closest;
+                        // target is now "closest"
+                        tower.currentTarget = closest.transform;
 
-                    break;
-                case Targeting.Far:
-                    Entity farthest = null;
-                    float maxDistance = 0;
+                        break;
+                    case Targeting.Far:
+                        Entity farthest = null;
+                        float maxDistance = 0;
 
-                    foreach (Entity enemy in potentialResults)
-                    {
-                        // skipping squareroot calculations that "Distance" function would use.
-                        float dist = ( enemy.transform.position - tower.transform.position ).sqrMagnitude;
-
-                        // check if enemy is farther than another
-                        if (dist > maxDistance)
+                        foreach (Entity enemy in potentialResults)
                         {
-                            maxDistance = dist;
-                            farthest = enemy;
-                        }
-                    }
+                            // skipping squareroot calculations that "Distance" function would use.
+                            float dist = ( enemy.transform.position - tower.transform.position ).sqrMagnitude;
 
-                    // target is now "farthest"
-                    tower.currentTarget = farthest;
-                    break;
+                            // check if enemy is farther than another
+                            if (dist > maxDistance)
+                            {
+                                maxDistance = dist;
+                                farthest = enemy;
+                            }
+                        }
+
+                        // target is now "farthest"
+                        tower.currentTarget = farthest.transform;
+                        break;
+                }
+
 
             }
 
             // if there is a target, shoot it.
             if (tower.currentTarget)
-                ProjectileManager.Instance.SpawnProjectile(tower.projectile, tower, tower.currentTarget);
+            {
+                ProjectileData shot = ProjectileManager.Instance.SpawnProjectile(tower.projectile, tower, tower.currentTarget);
+
+                tower.activeProjectiles.Add(shot);
+            }
         }
     }
 

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -16,10 +17,18 @@ public class TowerData : MonoBehaviour
 
     public float cost = 5f;
 
-    public Entity currentTarget = null;
+    public Transform currentTarget = null;
+
+    public bool projectileCircleMe;
+    public int maxProjectiles = 10;
+    public List<ProjectileData> activeProjectiles;
 
     public Targeting targeting;
 
+    private void Awake()
+    {
+        activeProjectiles = new();
+    }
 
     private void OnDrawGizmos()
     {

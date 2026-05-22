@@ -103,7 +103,6 @@ MonoBehaviour:
   Piercing: 2
   Damage: 1
   Speed: 10
-  direction: {x: 0, y: 0, z: 0}
   Lifetime: 100
   Timer: 0
   isDead: 0

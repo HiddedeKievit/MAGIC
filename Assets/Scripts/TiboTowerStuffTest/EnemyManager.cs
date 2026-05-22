@@ -28,9 +28,9 @@ public class EnemyManager : MonoBehaviour
         int gridRange = Mathf.CeilToInt(cellRange / LevelData.Instance.GridCellSize);
 
         // go trough cells from center
-        for (int x = centerX - gridRange; x <= centerX + cellRange; x++)
+        for (int x = centerX - gridRange; x <= centerX + gridRange; x++)
         {
-            for (int y = centerY - gridRange; y <= centerY + cellRange; y++)
+            for (int y = centerY - gridRange; y <= centerY + gridRange; y++)
             {
                 Vector2Int key = new(x, y);
                 if (EnemyGrid.TryGetValue(key, out List<Entity> celllist))
@@ -136,21 +136,23 @@ public class EnemyManager : MonoBehaviour
         enemy.gridPosition = newPos;
     }
 
-    public void GetOverlappingEnemies(Vector3 pos, Vector2 size, List<Entity> data)
+    public void GetOverlappingEnemies(Vector3 pos, Vector2 size, List<Entity> results)
     {
-        data.Clear();
-        GetEnemiesAt(pos.x, pos.y, size.magnitude, data);
+        List<Entity> nearbyEnemies = new();
+        GetEnemiesAt(pos.x, pos.y, size.magnitude, nearbyEnemies);
 
+
+        results.Clear();
         // rectangle projectile
         Rect a = RectFromCenter(pos, size);
 
-        foreach (Entity enemy in data)
+        foreach (Entity enemy in nearbyEnemies)
         {
             // rectangle enemy
             Rect b = RectFromCenter(enemy.transform.position, enemy.transform.localScale);
 
             if (a.Overlaps(b))
-                data.Add(enemy);
+                results.Add(enemy);
         }
     }
     private Rect RectFromCenter(Vector2 center, Vector2 size)
