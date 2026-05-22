@@ -40,15 +40,19 @@ public class PlacementManager_tibo : MonoBehaviour
 
         canPlace =
             TowerManager.Instance.GetOverlappingTower(GhostTower.transform.position, TowerToPlace.size) == null
-            && !Physics2D.OverlapBox(GhostTower.transform.position, TowerToPlace.size, 0f, placementLayer);
+            && !Physics2D.OverlapBox(GhostTower.transform.position, TowerToPlace.size, 0f, placementLayer) && ManaManager.Instance.CanAfford(TowerToPlace.cost);
 
         if (canPlace)
         {
+
             GhostTower.color = clr_canplace;
             // place
 
             if (Input.GetMouseButtonDown(0))
             {
+                // buy
+                ManaManager.Instance.SpendMana(TowerToPlace.cost);
+
                 // instantiate a new TowerToPlace at mouse location, set towertoplace and ghosttower to null
                 Debug.Log("le click");
 
@@ -57,6 +61,7 @@ public class PlacementManager_tibo : MonoBehaviour
 
                 GhostTower.sprite = null;
                 TowerToPlace = null;
+
                 return;
             }
         } else

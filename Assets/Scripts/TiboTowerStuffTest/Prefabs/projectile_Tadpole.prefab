@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6251499899555651301}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.1929, y: 6.9295945, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -102,9 +102,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Piercing: 2
   Damage: 1
-  Speed: 5
+  Speed: 10
   direction: {x: 0, y: 0, z: 0}
-  Lifetime: 10
+  Lifetime: 100
   Timer: 0
   isDead: 0
+  isCirlingTarget: 1
+  isHomingTarget: 1
+  target: {fileID: 0}
   gridPosition: {x: 0, y: 0}

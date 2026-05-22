@@ -8,9 +8,9 @@ public class BuildTowerData : MonoBehaviour
     {
         if (TowerPrefab == null)
             return;
+        // check if enough mana.
         if (ManaManager.Instance.CanAfford(TowerPrefab.cost))
         {
-            // check if enough mana.
             PlacementManager_tibo.Instance.StartPlacementt(TowerPrefab);
         }
 

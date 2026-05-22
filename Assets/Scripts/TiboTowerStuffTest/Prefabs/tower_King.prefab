@@ -47,11 +47,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 3
   projectile: {fileID: 7093437736152251842, guid: 4327e7b4aaf98344da7f9adfcbb36f0f, type: 3}
-  firerate: 2
+  firerate: 5
   cooldown: 0
   size: {x: 1.5, y: 2}
   cost: 5
   currentTarget: {fileID: 0}
+  projectileCircleMe: 1
+  maxProjectiles: 3
+  activeProjectiles: []
   targeting: 0
 --- !u!212 &1846075574324018012
 SpriteRenderer:
