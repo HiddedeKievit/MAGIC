@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialLevel : MonoBehaviour
 {
@@ -14,10 +15,11 @@ public class TutorialLevel : MonoBehaviour
     public GameObject clicktocontinue;
 
     public GameObject closearrowbutton;
+    public SpriteRenderer GhostTower;
 
-    public GameObject openbutton;
-    public GameObject tower2;
-    public GameObject tower3;
+    public Button openbutton;
+    public Button tower2;
+    public Button tower3;
     void Update()
     {
         for (int i = 0; i < popups.Length; i++)
@@ -32,10 +34,14 @@ public class TutorialLevel : MonoBehaviour
         }
         if (PopupIndex == 0)
         {
-            openbutton.SetActive(false);
+            // Disable tower buttons at the start of the tutorial
+            openbutton.interactable = false;
+            tower2.interactable = false;
+            tower3.interactable = false;
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
+                // Move to the next popup when the player clicks anywhere
                 PopupIndex++;
             
             }
@@ -95,13 +101,14 @@ public class TutorialLevel : MonoBehaviour
                 
                 PopupIndex++;
                 print("PopupIndex is now: " + PopupIndex);
-                openbutton.SetActive(true);
+                //make sure you can open the tower menu
+                openbutton.interactable = true;
 
             }
         } else if (PopupIndex == 9 )
         {
             
-            
+            // Wait for the player to click the open arrow button before moving to the next popup
             if (closearrowbutton.activeSelf == true)
             {
                 PopupIndex++;
@@ -110,7 +117,8 @@ public class TutorialLevel : MonoBehaviour
         } else if (PopupIndex == 10 )
         
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            // check if the player is trying to place a tower
+            if (GhostTower.sprite != null)
             {
                 PopupIndex++;
             
@@ -129,6 +137,7 @@ public class TutorialLevel : MonoBehaviour
 
         
         {
+            // Wait for the player to click anywhere to continue, then enable the wave spawner, mana manager, tower buttons and start the level
             if (wavespawner.activeInHierarchy == false)
             {
                 wavespawner.SetActive(true);
@@ -139,14 +148,14 @@ public class TutorialLevel : MonoBehaviour
                 manamanager.SetActive(true);
 
             }
-            if (tower2.activeInHierarchy == false)
+            if (tower2.interactable == false)
             {
-                tower2.SetActive(true);
+                tower2.interactable = true;
 
             }
-            if (tower3.activeInHierarchy == false)
+            if (tower3.interactable == false)
             {
-                tower3.SetActive(true);
+                tower3.interactable = true;
 
             }
 
