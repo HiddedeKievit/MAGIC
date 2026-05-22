@@ -31,7 +31,7 @@ public class TowerManager : MonoBehaviour
                 float dist = dir.sqrMagnitude;
                 if (dist < tower.range * tower.range)
                 {
-                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
                     tower.transform.rotation = Quaternion.Euler(0, 0, angle);
                 }
             }

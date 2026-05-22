@@ -84,27 +84,28 @@ public class ProjectileManager : MonoBehaviour
 
             // projectile states maybe? "hit?" "colliding" "flying?"
 
-            List<Entity> enemiesInCell = EnemyManager.Instance.GetCellList(projectile.gridPosition);
-            // TowerManager.Instance.GetOverlappingTower(GhostTower.transform.position, TowerToPlace.size)
-            if (enemiesInCell != null)
-            {
-                for (int e = enemiesInCell.Count - 1; e >= 0; e--)
-                {
-                    Entity enemy = enemiesInCell[e];
-                    if (( enemy.transform.position - projectile.transform.position ).sqrMagnitude < projectile.transform.localScale.x)
-                    {
-                        enemy.Health -= projectile.Damage;
+            EnemyManager.Instance.GetOverlappingEnemies(projectile.transform.position, projectile.transform.localScale, potentialResults);
 
-                        projectile.Piercing--;
-                        if (projectile.Piercing <= 0)
-                        {
-                            projectile.isDead = true;
-                            break; // break loop for this projectile because its dead, done, gone, over, did its job!
-                        }
+            // is there any enemy
+            if (potentialResults != null)
+            {
+                // every enemy i hit
+                for (int e = potentialResults.Count - 1; e >= 0; e--)
+                {
+                    // deal damage
+                    potentialResults[e].Health -= projectile.Damage;
+
+                    // remove piercing
+                    projectile.Piercing--;
+
+                    // if no more piercing left, its its dead, done, gone, over, did its job!
+                    if (projectile.Piercing <= 0)
+                    {
+                        projectile.isDead = true;
+                        break;
                     }
                 }
             }
-
         }
     }
 

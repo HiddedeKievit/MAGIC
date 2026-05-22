@@ -6,7 +6,14 @@ public class BuildTowerData : MonoBehaviour
 
     public void ButtonClicked()
     {
-        // check if enough mana.
-        PlacementManager_tibo.Instance.StartPlacementt(TowerPrefab);
+        if (TowerPrefab == null)
+            return;
+        if (ManaManager.Instance.CanAfford(TowerPrefab.cost))
+        {
+            // check if enough mana.
+            PlacementManager_tibo.Instance.StartPlacementt(TowerPrefab);
+        }
+
+        // else warn?
     }
 }

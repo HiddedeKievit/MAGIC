@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         // get sprint key
         sprintState = Input.GetKey(KeyCode.LeftShift);
         // if sprinting set to 10 otherwise to 5
+
         moveSpeed = sprintState ? 10f : 5f;
 
         // set velocity based on what key is pressed

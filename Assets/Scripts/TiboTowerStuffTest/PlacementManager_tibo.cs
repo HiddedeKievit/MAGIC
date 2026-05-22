@@ -55,7 +55,6 @@ public class PlacementManager_tibo : MonoBehaviour
                 TowerData newTower = TowerManager.Instance.SpawnTower(TowerToPlace, GhostTower.transform.position);
                 newTower.enabled = true;
 
-
                 GhostTower.sprite = null;
                 TowerToPlace = null;
                 return;

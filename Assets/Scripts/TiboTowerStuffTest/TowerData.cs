@@ -14,6 +14,8 @@ public class TowerData : MonoBehaviour
     public float cooldown;
     public Vector2 size;
 
+    public float cost = 5f;
+
     public Entity currentTarget = null;
 
     public Targeting targeting;

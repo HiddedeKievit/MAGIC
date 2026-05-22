@@ -135,4 +135,31 @@ public class EnemyManager : MonoBehaviour
         EnemyGrid[newPos].Add(enemy);
         enemy.gridPosition = newPos;
     }
+
+    public void GetOverlappingEnemies(Vector3 pos, Vector2 size, List<Entity> data)
+    {
+        data.Clear();
+        GetEnemiesAt(pos.x, pos.y, size.magnitude, data);
+
+        // rectangle projectile
+        Rect a = RectFromCenter(pos, size);
+
+        foreach (Entity enemy in data)
+        {
+            // rectangle enemy
+            Rect b = RectFromCenter(enemy.transform.position, enemy.transform.localScale);
+
+            if (a.Overlaps(b))
+                data.Add(enemy);
+        }
+    }
+    private Rect RectFromCenter(Vector2 center, Vector2 size)
+    {
+        return new Rect(
+            center.x - size.x / 2f,
+            center.y - size.y / 2f,
+            size.x,
+            size.y
+        );
+    }
 }
