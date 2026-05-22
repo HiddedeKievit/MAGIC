@@ -16,6 +16,8 @@ public class TutorialLevel : MonoBehaviour
     public GameObject closearrowbutton;
 
     public GameObject openbutton;
+    public GameObject tower2;
+    public GameObject tower3;
     void Update()
     {
         for (int i = 0; i < popups.Length; i++)
@@ -35,6 +37,7 @@ public class TutorialLevel : MonoBehaviour
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
+            
             }
 
 
@@ -44,34 +47,33 @@ public class TutorialLevel : MonoBehaviour
             {
                 PopupIndex++;
             }
-
-        } else if (PopupIndex == 2)
-        {
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-            {
-                PopupIndex++;
-            }
         
-        } else if (PopupIndex == 3)
+        } else if (PopupIndex == 2)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
             }        
         
+        } else if (PopupIndex == 3)
+        {
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            {
+                PopupIndex++;
+            }
         } else if (PopupIndex == 4)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
             }
+
         } else if (PopupIndex == 5)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
                 PopupIndex++;
             }
-
         } else if (PopupIndex == 6)
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -82,16 +84,10 @@ public class TutorialLevel : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
-                PopupIndex++;
-            }
-        } else if (PopupIndex == 8)
-        {
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-            {
 
                 PopupIndex++;
             }
-        } else if (PopupIndex == 9)
+        } else if (PopupIndex == 8)
         {
             
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -102,7 +98,7 @@ public class TutorialLevel : MonoBehaviour
                 openbutton.SetActive(true);
 
             }
-        } else if (PopupIndex == 10 )
+        } else if (PopupIndex == 9 )
         {
             
             
@@ -111,7 +107,7 @@ public class TutorialLevel : MonoBehaviour
                 PopupIndex++;
                 
             }
-        } else if (PopupIndex == 11 )
+        } else if (PopupIndex == 10 )
         
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
@@ -119,7 +115,7 @@ public class TutorialLevel : MonoBehaviour
                 PopupIndex++;
             
             }
-                    } else if (PopupIndex == 12 )
+                    } else if (PopupIndex == 11 )
         {
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
@@ -129,7 +125,7 @@ public class TutorialLevel : MonoBehaviour
                 clicktocontinue.SetActive(false);
             }
             }
-        } else if (PopupIndex == 13 )
+        } else if (PopupIndex == 12 )
 
         
         {
@@ -141,6 +137,16 @@ public class TutorialLevel : MonoBehaviour
             if (manamanager.activeInHierarchy == false)
             {
                 manamanager.SetActive(true);
+
+            }
+            if (tower2.activeInHierarchy == false)
+            {
+                tower2.SetActive(true);
+
+            }
+            if (tower3.activeInHierarchy == false)
+            {
+                tower3.SetActive(true);
 
             }
 
