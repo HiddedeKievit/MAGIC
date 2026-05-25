@@ -59,43 +59,25 @@ public class ProjectileManager : MonoBehaviour
 
             if (projectile.isHomingTarget && projectile.target != null)
             {
-                Vector3 dir = projectile.target.transform.position - projectile.transform.position;
-                dir.z = 0;
+                Vector3 diff = projectile.target.transform.position - projectile.transform.position;
+                Vector3 dir = diff.normalized;
+                float rotateSpeed = projectile.Speed * Time.deltaTime;
 
-                float distance = dir.magnitude;
-                dir = distance < 0.001f ? Vector3.up : dir.normalized;
-
-                float targetAngle;
-
-                float steeringOffset = 90f;
                 if (projectile.isCirlingTarget)
                 {
-                    float desiredRadius = 4f;
-
-
-                    if (distance < desiredRadius)
-                    {
-                        float ratio = distance / desiredRadius;
-
-                        steeringOffset = Mathf.Lerp(0f, 90f, ratio * ratio);
-                    } else
-                    {
-                        float overshoot = ( distance - desiredRadius ) / desiredRadius;
-                        steeringOffset = Mathf.Lerp(90f, 135f, Mathf.Clamp01(overshoot));
-                    }
-
+                    rotateSpeed /= 2;
                 }
-                targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - steeringOffset;
 
                 projectile.transform.rotation = Quaternion.Slerp(
-                        projectile.transform.rotation,
-                        Quaternion.Euler(0, 0, targetAngle),
-                        Time.deltaTime * projectile.Speed * 5f);
+                    projectile.transform.rotation,
+                    Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg),
+                    rotateSpeed
+                    );
             }
 
 
             // movement
-            projectile.transform.position += projectile.Speed * Time.deltaTime * projectile.transform.up;
+            projectile.transform.position += projectile.Speed * Time.deltaTime * projectile.transform.right;
 
             // insert code later
 
@@ -122,7 +104,7 @@ public class ProjectileManager : MonoBehaviour
             // or just adding a list of colliding enemies to projectiles, but then we could have many many lists in a lot of projectiles.
 
 
-            EnemyManager.Instance.GetOverlappingEnemies(projectile.transform.position, projectile.transform.localScale, potentialResults);
+            EnemyManager.Instance.GetOverlappingEnemies(projectile.transform.position, projectile.hitbox, potentialResults);
 
             // is there any enemy
             if (potentialResults != null)

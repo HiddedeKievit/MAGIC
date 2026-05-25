@@ -13,7 +13,7 @@ public class TowerData : MonoBehaviour
     public ProjectileData projectile;
     public float firerate;
     public float cooldown;
-    public Vector2 size;
+    public Vector2 hitbox;
 
     public float cost = 5f;
 
@@ -35,6 +35,6 @@ public class TowerData : MonoBehaviour
         // draw clearance radius
         Gizmos.color = new Color(0f, 1f, 0f, 0.1f);
         Gizmos.DrawWireSphere(transform.position, range);
-        Gizmos.DrawWireCube(transform.position, size);
+        Gizmos.DrawWireCube(transform.position, hitbox);
     }
 }

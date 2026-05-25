@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 192
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,10 +118,10 @@ TextureImporter:
       name: KnightFrog_0
       rect:
         serializedVersion: 2
-        x: 193
-        y: 836
-        width: 453
-        height: 94
+        x: 313
+        y: 1238
+        width: 368
+        height: 469
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: KnightFrog_1
       rect:
         serializedVersion: 2
-        x: 760
-        y: 750
-        width: 437
-        height: 262
+        x: 532
+        y: 1621
+        width: 165
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: KnightFrog_2
       rect:
         serializedVersion: 2
-        x: 212
-        y: 312
-        width: 471
-        height: 370
+        x: 838
+        y: 1275
+        width: 91
+        height: 451
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: KnightFrog_3
       rect:
         serializedVersion: 2
-        x: 230
-        y: 531
-        width: 70
-        height: 167
+        x: 285
+        y: 743
+        width: 368
+        height: 469
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: KnightFrog_4
       rect:
         serializedVersion: 2
-        x: 707
-        y: 284
-        width: 471
-        height: 370
+        x: 504
+        y: 1126
+        width: 165
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: KnightFrog_5
       rect:
         serializedVersion: 2
-        x: 725
-        y: 503
-        width: 70
-        height: 167
+        x: 751
+        y: 724
+        width: 259
+        height: 435
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0e5bc4e55c590ee4b920d95967d52ba5
     internalID: 0
     vertices: []
     indices: 

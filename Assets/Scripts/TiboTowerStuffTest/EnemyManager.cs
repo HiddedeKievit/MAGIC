@@ -136,15 +136,15 @@ public class EnemyManager : MonoBehaviour
         enemy.gridPosition = newPos;
     }
 
-    public void GetOverlappingEnemies(Vector3 pos, Vector2 size, List<Entity> results)
+    public void GetOverlappingEnemies(Vector3 pos, Vector2 hitbox, List<Entity> results)
     {
         List<Entity> nearbyEnemies = new();
-        GetEnemiesAt(pos.x, pos.y, size.magnitude, nearbyEnemies);
+        GetEnemiesAt(pos.x, pos.y, hitbox.magnitude, nearbyEnemies);
 
 
         results.Clear();
         // rectangle projectile
-        Rect a = RectFromCenter(pos, size);
+        Rect a = RectFromCenter(pos, hitbox);
 
         foreach (Entity enemy in nearbyEnemies)
         {

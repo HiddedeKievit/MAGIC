@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 192
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,10 +118,10 @@ TextureImporter:
       name: SherrifFrogTower_0
       rect:
         serializedVersion: 2
-        x: 423
-        y: 589
-        width: 319
-        height: 291
+        x: 590
+        y: 1179
+        width: 289
+        height: 317
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,10 +140,10 @@ TextureImporter:
       name: SherrifFrogTower_1
       rect:
         serializedVersion: 2
-        x: 520
-        y: 862
-        width: 16
-        height: 23
+        x: 863
+        y: 1385
+        width: 21
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: SherrifFrogTower_2
       rect:
         serializedVersion: 2
-        x: 674
-        y: 851
-        width: 20
-        height: 31
+        x: 291
+        y: 983
+        width: 314
+        height: 326
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: SherrifFrogTower_3
       rect:
         serializedVersion: 2
-        x: 831
-        y: 704
-        width: 56
-        height: 165
+        x: 852
+        y: 1227
+        width: 29
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: SherrifFrogTower_4
       rect:
         serializedVersion: 2
-        x: 610
-        y: 290
-        width: 328
-        height: 316
+        x: 705
+        y: 1034
+        width: 163
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: SherrifFrogTower_5
       rect:
         serializedVersion: 2
-        x: 1158
-        y: 278
-        width: 355
-        height: 321
+        x: 279
+        y: 408
+        width: 319
+        height: 353
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8be6163e546d3db45b0deba944dff163
     internalID: 0
     vertices: []
     indices: 

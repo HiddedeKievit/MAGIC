@@ -39,8 +39,8 @@ public class PlacementManager_tibo : MonoBehaviour
         // check if can place here. 
 
         canPlace =
-            TowerManager.Instance.GetOverlappingTower(GhostTower.transform.position, TowerToPlace.size) == null
-            && !Physics2D.OverlapBox(GhostTower.transform.position, TowerToPlace.size, 0f, placementLayer) && ManaManager.Instance.CanAfford(TowerToPlace.cost);
+            TowerManager.Instance.GetOverlappingTower(GhostTower.transform.position, TowerToPlace.hitbox) == null
+            && !Physics2D.OverlapBox(GhostTower.transform.position, TowerToPlace.hitbox, 0f, placementLayer) && ManaManager.Instance.CanAfford(TowerToPlace.cost);
 
         if (canPlace)
         {

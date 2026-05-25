@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.83, y: 2.48, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36ef8237e820d44c948fc2695848602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 5
   projectile: {fileID: 7093437736152251842, guid: 4327e7b4aaf98344da7f9adfcbb36f0f, type: 3}
-  firerate: 2
+  firerate: 1
   cooldown: 0
-  size: {x: 1.5, y: 2}
+  hitbox: {x: 1.5, y: 1}
   cost: 5
   currentTarget: {fileID: 0}
   projectileCircleMe: 1
@@ -100,12 +100,12 @@ SpriteRenderer:
   m_SortingLayerID: 1989190903
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4912230306988005348, guid: d20db4f2204588c498d4ce5729cd1c36, type: 3}
+  m_Sprite: {fileID: 3920754989102741409, guid: d20db4f2204588c498d4ce5729cd1c36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.385, y: 2.385}
+  m_Size: {x: 2.0885417, y: 1.5208334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

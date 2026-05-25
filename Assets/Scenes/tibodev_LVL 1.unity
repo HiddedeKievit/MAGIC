@@ -9641,7 +9641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751813901d790b7449859cf33b019117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerPrefab: {fileID: 5383009265382318538, guid: 1f065a6745e8dcb41975c427c907405a, type: 3}
+  TowerPrefab: {fileID: 5383009265382318538, guid: a469799bd22242d4d9cedfcab542bd8e, type: 3}
 --- !u!1 &1160501231
 GameObject:
   m_ObjectHideFlags: 0
@@ -11200,6 +11200,7 @@ GameObject:
   - component: {fileID: 1386734896}
   - component: {fileID: 1386734895}
   - component: {fileID: 1386734894}
+  - component: {fileID: 1386734898}
   m_Layer: 5
   m_Name: TowerCommon3
   m_TagString: Untagged
@@ -11289,13 +11290,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1386734892}
-        m_TargetAssemblyTypeName: TowerPanelManual, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 2
+      - m_Target: {fileID: 1386734898}
+        m_TargetAssemblyTypeName: BuildTowerData, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 74d1bdebe3b653241a1f9fb10bf59d54, type: 2}
-          m_ObjectArgumentAssemblyTypeName: TurretData, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11339,6 +11340,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386734892}
   m_CullTransparentMesh: 1
+--- !u!114 &1386734898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386734892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751813901d790b7449859cf33b019117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerPrefab: {fileID: 5383009265382318538, guid: 8e900a1a5e6d94147911321b133304cc, type: 3}
 --- !u!1 &1408329288 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3298721881086935741, guid: 80697fdb8b4b88a4eb532614dd3881b3, type: 3}
@@ -16867,7 +16881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751813901d790b7449859cf33b019117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TowerPrefab: {fileID: 5383009265382318538, guid: 8e900a1a5e6d94147911321b133304cc, type: 3}
+  TowerPrefab: {fileID: 5383009265382318538, guid: aaa5c52e5754af24eb3d20fc256f0eac, type: 3}
 --- !u!1 &1555834453
 GameObject:
   m_ObjectHideFlags: 0

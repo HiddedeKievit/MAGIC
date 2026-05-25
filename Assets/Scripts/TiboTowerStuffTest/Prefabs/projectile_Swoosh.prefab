@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5619798646657361652}
   - component: {fileID: 7093437736152251842}
   m_Layer: 0
-  m_Name: projectile_Tadpole
+  m_Name: projectile_Swoosh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 1989190903
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -95234950, guid: d20db4f2204588c498d4ce5729cd1c36, type: 3}
+  m_Sprite: {fileID: 5190257793881244672, guid: 53f234c9769f8c24f86a2efdf8518361, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7760417, y: 0.32291666}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e8288506e9c5e459efb2c0dd6dd15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Piercing: 2
+  Piercing: 5
   Damage: 1
-  Speed: 3
-  hitbox: {x: 0.4, y: 0.2}
-  Lifetime: 100
+  Speed: 2
+  hitbox: {x: 0.25, y: 1.25}
+  Lifetime: 1
   Timer: 0
   isDead: 0
-  isCirlingTarget: 1
-  isHomingTarget: 1
+  isCirlingTarget: 0
+  isHomingTarget: 0
   target: {fileID: 0}
   gridPosition: {x: 0, y: 0}

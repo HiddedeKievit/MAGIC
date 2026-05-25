@@ -31,7 +31,7 @@ public class TowerManager : MonoBehaviour
                 float dist = dir.sqrMagnitude;
                 if (dist < tower.range * tower.range)
                 {
-                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                     tower.transform.rotation = Quaternion.Euler(0, 0, angle);
                 }
             }
@@ -58,20 +58,8 @@ public class TowerManager : MonoBehaviour
                 continue;
 
 
-            // get enemies in range
-            EnemyManager.Instance.GetEnemiesAt(tower.transform.position.x, tower.transform.position.y, tower.range, potentialResults);
-
-            float rangeSqr = tower.range * tower.range;
-            Vector3 towerPos = tower.transform.position;
-
-            // kick out any enemy thats not in range
-            potentialResults.RemoveAll(enemy => ( enemy.transform.position - towerPos ).sqrMagnitude > rangeSqr);
-
-            // make sure theres at least 1 target.
-            if (potentialResults.Count == 0)
-                continue;
-
             tower.cooldown = tower.firerate;
+            tower.currentTarget = null;
 
             // if the projectile should be circling the tower set target as self
             if (tower.projectileCircleMe)
@@ -79,8 +67,20 @@ public class TowerManager : MonoBehaviour
                 tower.currentTarget = tower.transform;
             } else
             {
+                // get enemies in range
+                EnemyManager.Instance.GetEnemiesAt(tower.transform.position.x, tower.transform.position.y, tower.range, potentialResults);
+
+                float rangeSqr = tower.range * tower.range;
+                Vector3 towerPos = tower.transform.position;
+
+                // kick out any enemy thats not in range
+                potentialResults.RemoveAll(enemy => ( enemy.transform.position - towerPos ).sqrMagnitude > rangeSqr);
+
+                // make sure theres at least 1 target.
+                if (potentialResults.Count == 0)
+                    continue;
+
                 // projectile shouldnt target tower, calculate target.
-                tower.currentTarget = null;
                 switch (tower.targeting)
                 {
                     case Targeting.Close:
@@ -147,13 +147,13 @@ public class TowerManager : MonoBehaviour
         return tower;
     }
 
-    public TowerData GetOverlappingTower(Vector2 position, Vector2 size)
+    public TowerData GetOverlappingTower(Vector2 position, Vector2 hitbox)
     {
-        Rect a = RectFromCenter(position, size);
+        Rect a = RectFromCenter(position, hitbox);
 
         foreach (TowerData tower in Towers)
         {
-            Rect b = RectFromCenter(tower.transform.position, tower.size);
+            Rect b = RectFromCenter(tower.transform.position, tower.hitbox);
 
             if (a.Overlaps(b))
                 return tower;
