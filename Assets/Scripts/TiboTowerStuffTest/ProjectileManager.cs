@@ -5,7 +5,6 @@ public class ProjectileManager : MonoBehaviour
 {
     public static ProjectileManager Instance;
 
-
     private List<Entity> potentialResults;
 
     public List<ProjectileData> Projectiles;
@@ -15,8 +14,9 @@ public class ProjectileManager : MonoBehaviour
     {
         ProjectileGrid = new();
         potentialResults = new();
+
         if (Instance)
-            Debug.LogWarning("double ProjectileManager instance detected");
+            return;
 
         Instance = this;
     }
@@ -24,12 +24,26 @@ public class ProjectileManager : MonoBehaviour
 
     private void Update()
     {
+        // if theres no projectiles, do nothing
+        if (Projectiles.Count == 0)
+            return;
 
+        // check if the projectile is dead, if so remive it from list and grid.
         for (int i = Projectiles.Count - 1; i >= 0; i--)
         {
+            // remove if null reference
+            if (Projectiles[i] == null)
+            {
+                Projectiles.RemoveAt(i);
+                continue;
+            }
+
+            // remove if dead
             ProjectileData projectile = Projectiles[i];
+
             if (projectile.isDead)
             {
+
                 if (ProjectileGrid.ContainsKey(projectile.gridPosition))
                     ProjectileGrid[projectile.gridPosition].Remove(projectile);
 
@@ -39,30 +53,30 @@ public class ProjectileManager : MonoBehaviour
             }
         }
 
-        if (Projectiles.Count == 0)
-            return;
-
+        // logic per projectile
         foreach (ProjectileData projectile in Projectiles)
         {
+            // projectile null, skip.
             if (projectile == null)
                 continue;
 
-            // lifetime
-            if (projectile.Lifetime > projectile.Timer)
+            // if i've existed for longer than im allowed to, i die.
+            if (projectile.Lifetime < projectile.Timer)
             {
-                projectile.Timer += Time.deltaTime;
-            } else
-            {
-                Debug.Log($"[{projectile.gameObject.name}] DIED VIA TIMER. Timer: {projectile.Timer}, Lifetime: {projectile.Lifetime}");
                 projectile.isDead = true;
+                continue;
             }
 
+            projectile.Timer += Time.deltaTime;
+
+            // if i have a target and im homing, rotate towards the target
             if (projectile.isHomingTarget && projectile.target != null)
             {
                 Vector3 diff = projectile.target.transform.position - projectile.transform.position;
                 Vector3 dir = diff.normalized;
                 float rotateSpeed = projectile.Speed * Time.deltaTime;
 
+                // if i should circle the target, rotate slower
                 if (projectile.isCirlingTarget)
                 {
                     rotateSpeed /= 2;
@@ -79,8 +93,6 @@ public class ProjectileManager : MonoBehaviour
             // movement
             projectile.transform.position += projectile.Speed * Time.deltaTime * projectile.transform.right;
 
-            // insert code later
-
             // update grid
             int centerX = Mathf.FloorToInt(projectile.transform.position.x / LevelData.Instance.GridCellSize);
             int centerY = Mathf.FloorToInt(projectile.transform.position.y / LevelData.Instance.GridCellSize);
@@ -94,6 +106,7 @@ public class ProjectileManager : MonoBehaviour
                 MoveProjectile(projectile, newKey);
             }
 
+            /////// PIERCING ISSUE
 
             // one projectile can now deal damage to one enemy twice if the piercing is more than 1.
             // there needs to be some way to track if the projectile is currently in an enemy, only on first hit deal damage.
@@ -104,12 +117,13 @@ public class ProjectileManager : MonoBehaviour
             // or just adding a list of colliding enemies to projectiles, but then we could have many many lists in a lot of projectiles.
 
 
+            // get enemies im hitting
             EnemyManager.Instance.GetOverlappingEnemies(projectile.transform.position, projectile.hitbox, potentialResults);
 
-            // is there any enemy
-            if (potentialResults != null)
+            // if any results
+            if (potentialResults.Count != 0)
             {
-                // every enemy i hit
+                // for every enemy i hit
                 for (int e = potentialResults.Count - 1; e >= 0; e--)
                 {
                     // deal damage
@@ -118,10 +132,11 @@ public class ProjectileManager : MonoBehaviour
                     // remove piercing
                     projectile.Piercing--;
 
+                    // insert piercing fix later.
+
                     // if no more piercing left, its its dead, done, gone, over, did its job!
                     if (projectile.Piercing <= 0)
                     {
-                        Debug.Log($"[{projectile.gameObject.name}] DIED VIA PIERCING. Piercing: {projectile.Piercing}");
                         projectile.isDead = true;
                         break;
                     }

@@ -5,13 +5,14 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
 
-
-
     public List<Entity> Enemies;
     private Dictionary<Vector2Int, List<Entity>> EnemyGrid;
 
     private void Awake()
     {
+        if (Instance)
+            return;
+
         EnemyGrid = new();
         Instance = this;
     }
@@ -22,16 +23,19 @@ public class EnemyManager : MonoBehaviour
         // clear list
         results.Clear();
 
+        // calculate cell position.
         int centerX = Mathf.FloorToInt(worldX / LevelData.Instance.GridCellSize);
         int centerY = Mathf.FloorToInt(worldY / LevelData.Instance.GridCellSize);
-        // devide by cell size, round up to grab as many as needed.
+
+        // calculate cell range
         int gridRange = Mathf.CeilToInt(cellRange / LevelData.Instance.GridCellSize);
 
-        // go trough cells from center
+        // go trough cells
         for (int x = centerX - gridRange; x <= centerX + gridRange; x++)
         {
             for (int y = centerY - gridRange; y <= centerY + gridRange; y++)
             {
+                // if cell exists get its entity list
                 Vector2Int key = new(x, y);
                 if (EnemyGrid.TryGetValue(key, out List<Entity> celllist))
                 {
@@ -43,6 +47,7 @@ public class EnemyManager : MonoBehaviour
 
     public List<Entity> GetCellList(Vector2Int cell)
     {
+        // get entity list if the cell exists
         if (EnemyGrid.TryGetValue(cell, out List<Entity> celllist))
         {
             return celllist;
@@ -54,45 +59,49 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
+        // if there are no enemies, dont do anything.
+        if (Enemies.Count == 0)
+            return;
 
+        // go trough all enemies to check if theres any dead ones
         for (int i = Enemies.Count - 1; i >= 0; i--)
         {
             Entity enemy = Enemies[i];
             if (enemy != null && enemy.isDead)
             {
+                // check if the grid cell exists at enemy position then remove from position
                 if (EnemyGrid.ContainsKey(enemy.gridPosition))
                     EnemyGrid[enemy.gridPosition].Remove(enemy);
 
+                // remove enemy from general list and destroy
                 Enemies.RemoveAt(i);
                 Destroy(enemy.gameObject);
                 continue;
             }
         }
 
-        if (Enemies.Count == 0)
-            return;
 
         foreach (Entity enemy in Enemies)
         {
+            // if an enemy reference doesnt exist or if enemy is dead, skip it.
             if (enemy == null || enemy.isDead)
                 continue;
 
-            // movement
-
+            // if enemy can move, move.
             if (enemy.CanMove)
             {
-                // move forwards by speed
-                enemy.transform.position = enemy.transform.position + enemy.MovementSpeed * Time.deltaTime * enemy.transform.up;
+                // move forwards by speed.
+                enemy.transform.position = enemy.transform.position + ( enemy.MovementSpeed * Time.deltaTime * enemy.transform.up );
 
                 // direction from me to target
                 Vector3 dir = ( enemy.Target - enemy.transform.position ).normalized;
 
-                // rotate towards angle i want to be
+                // rotate towards angle i want to be based on twice the movement speed.
                 enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90), Time.deltaTime * enemy.MovementSpeed * 2);
             }
 
 
-            // update grid
+            // update cell grid
             int centerX = Mathf.FloorToInt(enemy.transform.position.x / LevelData.Instance.GridCellSize);
             int centerY = Mathf.FloorToInt(enemy.transform.position.y / LevelData.Instance.GridCellSize);
 
@@ -101,7 +110,6 @@ public class EnemyManager : MonoBehaviour
             // if the position changed, move enemy grid cell.
             if (newKey != enemy.gridPosition)
             {
-                // if the grid position doesnt exist, create it.
                 MoveEnemy(enemy, newKey);
             }
         }
@@ -109,10 +117,13 @@ public class EnemyManager : MonoBehaviour
 
     public void SpawnEnemy(Entity enemyPrefab, Vector3 position, PathManager Path)
     {
+        // create enemy from prefab at position using a path
+
         Entity enemy = Instantiate(enemyPrefab, position, enemyPrefab.transform.rotation, transform);
         PathFollower pf = enemy.gameObject.AddComponent<PathFollower>();
         pf.Path = Path;
 
+        // calculate grid position and move it to the new position
         int centerX = Mathf.FloorToInt(enemy.transform.position.x / LevelData.Instance.GridCellSize);
         int centerY = Mathf.FloorToInt(enemy.transform.position.y / LevelData.Instance.GridCellSize);
 
@@ -125,30 +136,35 @@ public class EnemyManager : MonoBehaviour
 
     public void MoveEnemy(Entity enemy, Vector2Int newPos)
     {
+        // check if the grid position exists, if so remove enemy from it.
         if (EnemyGrid.ContainsKey(enemy.gridPosition))
             EnemyGrid[enemy.gridPosition].Remove(enemy);
 
+        // if new position doesnt exist, make it.
         if (!EnemyGrid.ContainsKey(newPos))
         {
             EnemyGrid[newPos] = new();
         }
+        // add enemy to cell and set reference to position
         EnemyGrid[newPos].Add(enemy);
         enemy.gridPosition = newPos;
     }
 
     public void GetOverlappingEnemies(Vector3 pos, Vector2 hitbox, List<Entity> results)
     {
+        // temp list for collecting nearby enemies.
         List<Entity> nearbyEnemies = new();
         GetEnemiesAt(pos.x, pos.y, hitbox.magnitude, nearbyEnemies);
 
 
         results.Clear();
-        // rectangle projectile
+
+        // rectangle for projectile
         Rect a = RectFromCenter(pos, hitbox);
 
         foreach (Entity enemy in nearbyEnemies)
         {
-            // rectangle enemy
+            // rectangle for enemy
             Rect b = RectFromCenter(enemy.transform.position, enemy.transform.localScale);
 
             if (a.Overlaps(b))

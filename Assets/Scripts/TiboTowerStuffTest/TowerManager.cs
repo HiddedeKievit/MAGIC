@@ -20,11 +20,14 @@ public class TowerManager : MonoBehaviour
 
     void Update()
     {
+        // if no towers, do nothing
         if (Towers.Count == 0)
             return;
 
+        // go trough all towers
         foreach (TowerData tower in Towers)
         {
+            // if i have a target, look at it
             if (tower.currentTarget != null)
             {
                 Vector3 dir = tower.currentTarget.transform.position - tower.transform.position;
@@ -36,12 +39,11 @@ public class TowerManager : MonoBehaviour
                 }
             }
 
-            // cooldown
+            // if my cooldown is active skip the rest 
             if (tower.cooldown > 0)
             {
                 tower.cooldown -= Time.deltaTime;
 
-                // skip rest of code
                 continue;
             }
 
@@ -50,7 +52,6 @@ public class TowerManager : MonoBehaviour
             {
                 if (tower.activeProjectiles[projectileIndex] == null)
                     tower.activeProjectiles.RemoveAt(projectileIndex);
-
             }
 
             // check if i can have another projectile
@@ -58,31 +59,33 @@ public class TowerManager : MonoBehaviour
                 continue;
 
 
+            // reset cooldown and target
             tower.cooldown = tower.firerate;
             tower.currentTarget = null;
 
-            // if the projectile should be circling the tower set target as self
+            // if the projectile should be circling the tower set target as self, else run targeting
             if (tower.projectileCircleMe)
             {
                 tower.currentTarget = tower.transform;
             } else
             {
-                // get enemies in range
+                // get enemies in cells in range
                 EnemyManager.Instance.GetEnemiesAt(tower.transform.position.x, tower.transform.position.y, tower.range, potentialResults);
 
                 float rangeSqr = tower.range * tower.range;
                 Vector3 towerPos = tower.transform.position;
 
-                // kick out any enemy thats not in range
+                // kick out any enemy thats not in shooting range
                 potentialResults.RemoveAll(enemy => ( enemy.transform.position - towerPos ).sqrMagnitude > rangeSqr);
 
                 // make sure theres at least 1 target.
                 if (potentialResults.Count == 0)
                     continue;
 
-                // projectile shouldnt target tower, calculate target.
+                // who do i shoot
                 switch (tower.targeting)
                 {
+                    // go trough all potential results and get the closest
                     case Targeting.Close:
                         Entity closest = null;
                         float minDistance = float.MaxValue;
@@ -104,6 +107,8 @@ public class TowerManager : MonoBehaviour
                         tower.currentTarget = closest.transform;
 
                         break;
+
+                    // go trough all potential results and get the farthest
                     case Targeting.Far:
                         Entity farthest = null;
                         float maxDistance = 0;
@@ -126,10 +131,13 @@ public class TowerManager : MonoBehaviour
                         break;
                 }
 
-
+                // TODO Weak
+                // TODO Strong
+                // TODO Progress First
+                // TODO Profress Last
             }
 
-            // if there is a target, shoot it.
+            // if there is a target, spawn projectile
             if (tower.currentTarget)
             {
                 ProjectileData shot = ProjectileManager.Instance.SpawnProjectile(tower.projectile, tower, tower.currentTarget);
@@ -141,6 +149,7 @@ public class TowerManager : MonoBehaviour
 
     public TowerData SpawnTower(TowerData towerPrefab, Vector3 position)
     {
+        // spawn a tower at position with rotation and use me as parent
         TowerData tower = Instantiate(towerPrefab, position, towerPrefab.transform.rotation, transform);
         Towers.Add(tower);
 
@@ -149,6 +158,7 @@ public class TowerManager : MonoBehaviour
 
     public TowerData GetOverlappingTower(Vector2 position, Vector2 hitbox)
     {
+        // you know the drill (check GetOverlappingX on other managers)
         Rect a = RectFromCenter(position, hitbox);
 
         foreach (TowerData tower in Towers)
