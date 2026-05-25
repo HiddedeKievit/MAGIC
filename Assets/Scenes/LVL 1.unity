@@ -854,7 +854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You can press space to freeze and unfreezethe lantern
+  m_text: You can press space to freeze and unfreeze the lantern.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -4916,7 +4916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: It boosts your towers and makes them stronger
+  m_text: It boosts your towers and makes them stronger.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -8434,7 +8434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The lamp following your mouse is the lantern
+  m_text: The lamp following your mouse is the lantern.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -16729,7 +16729,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: (Click to continue)
+  m_text: (Click to continue.)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -21557,7 +21557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is the speed up button >  it has 1x, 2x and 3x speed
+  m_text: This is the speed up button >  it has 1x, 2x and 3x speed.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -21649,7 +21649,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ^             This is the mana manager
+  m_text: ^             This is the mana manager.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -21741,7 +21741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Let's try placing the sherrif tower
+  m_text: Let's try placing the sherrif tower.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -21833,7 +21833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ^           This is your health
+  m_text: ^           This is your health.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -21925,7 +21925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: We'll place it here
+  m_text: We'll place it here.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -22017,7 +22017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mana is used to place towers
+  m_text: Mana is used to place towers.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -22110,7 +22110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: ^                   This is the wave counter, it shows you wich wave you're
-    at
+    at.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -22202,7 +22202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your health will go down if an enemy reaches the end of the path
+  m_text: Your health will go down if an enemy reaches the end of the path.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
@@ -22295,7 +22295,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: This is the tower panel     >        you can find your selected towers
-    here
+    here.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
   m_sharedMaterial: {fileID: -4173006224786148301, guid: 8b817207eddc73c498c5643555fe8644, type: 2}
