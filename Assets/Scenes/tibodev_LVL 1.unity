@@ -18035,7 +18035,13 @@ MonoBehaviour:
   wavespawner: {fileID: 1313000327}
   ghostplace: {fileID: 581182669}
   manamanager: {fileID: 1805871232}
+  towerPanelToggle: {fileID: 0}
+  clicktocontinue: {fileID: 0}
+  closearrowbutton: {fileID: 0}
+  GhostTower: {fileID: 0}
   openbutton: {fileID: 182571246}
+  tower2: {fileID: 0}
+  tower3: {fileID: 0}
 --- !u!4 &1783921481
 Transform:
   m_ObjectHideFlags: 0
@@ -18209,7 +18215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1805871233
 MonoBehaviour:
   m_ObjectHideFlags: 0
