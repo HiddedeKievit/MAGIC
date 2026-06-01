@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1163345996174908759
+--- !u!1 &1543546841006501879
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14,21 +14,26 @@ GameObject:
   m_Layer: 0
   m_Name: ring of fire
   m_TagString: firering
+  - component: {fileID: 46146579463679837}
+  - component: {fileID: 2922062175482566607}
+  m_Layer: 0
+  m_Name: RangeIndicator
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1090909426028776401
+--- !u!4 &46146579463679837
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163345996174908759}
+  m_GameObject: {fileID: 1543546841006501879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.024, y: -0.235, z: 12.509816}
-  m_LocalScale: {x: 0.33039877, y: 0.33039877, z: 0.33039877}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2974555325676671880}
@@ -36,28 +41,30 @@ Transform:
 --- !u!199 &5978744658831137670
 ParticleSystemRenderer:
   serializedVersion: 6
+--- !u!212 &2922062175482566607
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163345996174908759}
+  m_GameObject: {fileID: 1543546841006501879}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 0
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 4294967295
+  m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,7 +77,7 @@ ParticleSystemRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -4918,6 +4925,20 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 8356958830029134202, guid: 3ccab4b01e8944e49a5a6f7a40558b73, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.44, y: 2.44}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &4426762781206527514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4929,8 +4950,8 @@ GameObject:
   - component: {fileID: 2974555325676671880}
   - component: {fileID: 5383009265382318538}
   - component: {fileID: 1846075574324018012}
-  - component: {fileID: 5790205834207247329}
-  - component: {fileID: 9164792040786898404}
+  - component: {fileID: 4763370834919196598}
+  - component: {fileID: 4934652390412921309}
   m_Layer: 0
   m_Name: tower_Sherif
   m_TagString: Tower
@@ -4947,11 +4968,12 @@ Transform:
   m_GameObject: {fileID: 4426762781206527514}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.83, y: 2.48, z: 0}
+  m_LocalPosition: {x: 2.83, y: 2.503, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1090909426028776401}
+  - {fileID: 4604414685219967894}
+  - {fileID: 46146579463679837}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5383009265382318538
@@ -5032,7 +5054,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5790205834207247329
+--- !u!114 &4763370834919196598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426762781206527514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34310cae16fbc4c4b82326ac044cecc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeIndicator: {fileID: 1543546841006501879}
+  uiAnchor: {fileID: 4604414685219967894}
+--- !u!58 &4934652390412921309
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5066,10 +5102,10 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.8489583
---- !u!114 &9164792040786898404
-MonoBehaviour:
+  m_Offset: {x: -0.0058641434, y: -0.06450516}
+  m_Radius: 0.8372307
+--- !u!1 &4926272965144606136
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5084,3 +5120,28 @@ MonoBehaviour:
   lightDetected: 0
   projectile: {fileID: 6251499899555651301, guid: 332dc9a61e480c94a9ae68b88f0f3956, type: 3}
   effect: {fileID: 1163345996174908759}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4604414685219967894}
+  m_Layer: 0
+  m_Name: UI_Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4604414685219967894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926272965144606136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1, y: -0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2974555325676671880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
