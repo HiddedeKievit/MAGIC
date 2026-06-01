@@ -2,32 +2,39 @@ using UnityEngine;
 
 public class TowerSelection : MonoBehaviour
 {
-    public static TowerSelection Current;
+    [SerializeField] private GameObject rangeIndicator;
+    [SerializeField] private Transform uiAnchor;
+
+    public Transform UIAnchor => uiAnchor;
 
     public bool IsSelected { get; private set; }
 
-    void OnMouseDown()
+    private Tower tower;
+
+    private void Awake()
     {
-        Select();
+        tower = GetComponent<Tower>();
+
+        if (rangeIndicator != null)
+            rangeIndicator.SetActive(false);
     }
 
-    void Select()
+    public void Select()
     {
-        if (Current != null && Current != this)
-            Current.Deselect();
-
-        Current = this;
         IsSelected = true;
 
-        TowerSelectedUI.Instance.Show(GetComponent<Tower>());
+        if (rangeIndicator != null)
+            rangeIndicator.SetActive(true);
+
+        TowerSelectedUI.Instance.Show(tower, uiAnchor);
     }
 
     public void Deselect()
     {
         IsSelected = false;
 
-        if (Current == this)
-            Current = null;
+        if (rangeIndicator != null)
+            rangeIndicator.SetActive(false);
 
         TowerSelectedUI.Instance.Hide();
     }

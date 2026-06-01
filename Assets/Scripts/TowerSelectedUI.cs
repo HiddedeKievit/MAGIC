@@ -5,130 +5,72 @@ public class TowerSelectedUI : MonoBehaviour
     public static TowerSelectedUI Instance;
 
     [SerializeField] private GameObject panel;
-    [SerializeField] private UnityEngine.UI.Image path1ButtonIcon;
-[SerializeField] private UnityEngine.UI.Image path2ButtonIcon;
-
-[SerializeField] private Sprite path1Level1Icon;
-[SerializeField] private Sprite path1Level2Icon;
-
-[SerializeField] private Sprite path2Level1Icon;
-[SerializeField] private Sprite path2Level2Icon;
 
     private Tower currentTower;
     private Transform anchor;
 
-    void Awake()
+    private Camera cam;
+    private RectTransform canvasRect;
+    private RectTransform panelRect;
+
+    private void Awake()
     {
         Instance = this;
+
+        cam = Camera.main;
+
+        canvasRect =
+            GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+
+        panelRect =
+            panel.GetComponent<RectTransform>();
+
         panel.SetActive(false);
     }
 
-    void Update()
+    private void Update()
     {
         if (currentTower == null || anchor == null)
             return;
 
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(anchor.position);
-
-        RectTransform canvasRect = panel.GetComponentInParent<Canvas>().GetComponent<RectTransform>();
-        RectTransform panelRect = panel.GetComponent<RectTransform>();
-
-        Vector2 localPos;
+        Vector3 screenPos =
+            cam.WorldToScreenPoint(anchor.position);
 
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvasRect,
             screenPos,
-            Camera.main,
-            out localPos
+            cam,
+            out Vector2 localPos
         );
 
         panelRect.localPosition = localPos;
     }
 
-public void Show(Tower tower)
-{
-    currentTower = tower;
-    anchor = tower.transform.Find("UIAnchor");
+    public void Show(Tower tower, Transform uiAnchor)
+    {
+        currentTower = tower;
+        anchor = uiAnchor;
 
-    panel.SetActive(true);
-
-    // Reset buttons for new tower
-    path1ButtonIcon.gameObject.SetActive(true);
-    path2ButtonIcon.gameObject.SetActive(true);
-
-    UpdateUpgradeButtons();
-}
+        panel.SetActive(true);
+    }
 
     public void Hide()
     {
         currentTower = null;
         anchor = null;
+
         panel.SetActive(false);
     }
 
     public void Sell()
     {
-        if (currentTower != null)
-        {
-            Destroy(currentTower.gameObject);
-            Hide();
-        }
+        if (currentTower == null)
+            return;
+
+        Destroy(currentTower.gameObject);
+
+        Hide();
+
+        SelectionManager.Instance.DeselectCurrent();
     }
-
-void UpdateUpgradeButtons()
-{
-    if (currentTower == null)
-        return;
-
-    // PATH 1
-    if (currentTower.Path1Level == 0)
-        path1ButtonIcon.sprite = path1Level1Icon;
-
-    else if (currentTower.Path1Level == 1)
-        path1ButtonIcon.sprite = path1Level2Icon;
-
-    else
-        path1ButtonIcon.gameObject.SetActive(false);
-
-
-    // PATH 2
-    if (currentTower.Path2Level == 0)
-        path2ButtonIcon.sprite = path2Level1Icon;
-
-    else if (currentTower.Path2Level == 1)
-        path2ButtonIcon.sprite = path2Level2Icon;
-
-    else
-        path2ButtonIcon.gameObject.SetActive(false);
-
-
-    // IMPORTANT RULE
-    // Only one level-2 upgrade allowed
-
-    if (currentTower.Path1Level == 2 && currentTower.Path2Level == 1)
-    {
-        path2ButtonIcon.gameObject.SetActive(false);
-    }
-
-    if (currentTower.Path2Level == 2 && currentTower.Path1Level == 1)
-    {
-        path1ButtonIcon.gameObject.SetActive(false);
-    }
-}
-
-    public void OnPath1UpgradePressed()
-{
-    if (currentTower == null) return;
-
-    currentTower.UpgradePath1();
-    UpdateUpgradeButtons();
-}
-
-public void OnPath2UpgradePressed()
-{
-    if (currentTower == null) return;
-
-    currentTower.UpgradePath2();
-    UpdateUpgradeButtons();
-}
 }
