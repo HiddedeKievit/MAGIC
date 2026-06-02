@@ -9,6 +9,7 @@ public enum Targeting
 
 public class TowerData : MonoBehaviour
 {
+    public Transform turret;
     // how far can i see enemies
     public float range;
     // what do i shoot
