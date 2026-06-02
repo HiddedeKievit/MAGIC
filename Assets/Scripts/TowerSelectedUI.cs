@@ -6,7 +6,7 @@ public class TowerSelectedUI : MonoBehaviour
 
     [SerializeField] private GameObject panel;
 
-    private Tower currentTower;
+    private TowerData currentTower;
     private Transform anchor;
 
     private Camera cam;
@@ -17,7 +17,18 @@ public class TowerSelectedUI : MonoBehaviour
     {
         Instance = this;
 
+        Debug.Log("[TowerSelectedUI] Awake");
+
         cam = Camera.main;
+
+        if (cam == null)
+            Debug.LogError("[TowerSelectedUI] Camera.main NOT FOUND");
+
+        if (panel == null)
+        {
+            Debug.LogError("[TowerSelectedUI] Panel NOT ASSIGNED");
+            return;
+        }
 
         canvasRect =
             GetComponentInParent<Canvas>().GetComponent<RectTransform>();
@@ -26,6 +37,8 @@ public class TowerSelectedUI : MonoBehaviour
             panel.GetComponent<RectTransform>();
 
         panel.SetActive(false);
+
+        Debug.Log("[TowerSelectedUI] Initialized successfully");
     }
 
     private void Update()
@@ -46,16 +59,32 @@ public class TowerSelectedUI : MonoBehaviour
         panelRect.localPosition = localPos;
     }
 
-    public void Show(Tower tower, Transform uiAnchor)
+    public void Show(TowerData tower, Transform uiAnchor)
     {
+        Debug.Log("[TowerSelectedUI] Show() called");
+
         currentTower = tower;
         anchor = uiAnchor;
 
+        if (tower == null)
+        {
+            Debug.LogError("[TowerSelectedUI] Tower parameter is NULL");
+        }
+
+        if (uiAnchor == null)
+        {
+            Debug.LogError("[TowerSelectedUI] UI Anchor is NULL");
+        }
+
         panel.SetActive(true);
+
+        Debug.Log("[TowerSelectedUI] Panel enabled");
     }
 
     public void Hide()
     {
+        Debug.Log("[TowerSelectedUI] Hide() called");
+
         currentTower = null;
         anchor = null;
 
@@ -64,8 +93,15 @@ public class TowerSelectedUI : MonoBehaviour
 
     public void Sell()
     {
+        Debug.Log("[TowerSelectedUI] Sell button pressed");
+
         if (currentTower == null)
+        {
+            Debug.LogWarning("[TowerSelectedUI] No tower selected");
             return;
+        }
+
+        Debug.Log($"[TowerSelectedUI] Destroying {currentTower.name}");
 
         Destroy(currentTower.gameObject);
 

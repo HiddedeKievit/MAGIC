@@ -35,7 +35,11 @@ public class TowerManager : MonoBehaviour
                 if (dist < tower.range * tower.range)
                 {
                     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                    tower.transform.rotation = Quaternion.Euler(0, 0, angle);
+                    if (tower.turret != null)
+            {
+                tower.turret.localRotation =
+                Quaternion.Euler(0, 0, angle);
+            }
                 }
             }
 

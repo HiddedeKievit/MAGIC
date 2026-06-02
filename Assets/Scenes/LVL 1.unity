@@ -27932,7 +27932,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956326607}
   m_CullTransparentMesh: 1
---- !u!1 &1964099249
+--- !u!1 &1979280105
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27944,6 +27944,10 @@ GameObject:
   - component: {fileID: 1964099251}
   m_Layer: 5
   m_Name: Rayorigin
+  - component: {fileID: 1979280107}
+  - component: {fileID: 1979280106}
+  m_Layer: 0
+  m_Name: SelectionManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28003,6 +28007,7 @@ RectTransform:
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964099251
+--- !u!114 &1979280106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28026,6 +28031,27 @@ MonoBehaviour:
   minAlphaMultiplier: 0.4
   maxAlphaMultiplier: 1
   setupOnStart: 1
+  m_GameObject: {fileID: 1979280105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c10a63188f4dc982b6578aa337b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1979280107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979280105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8953265, y: 0.15953156, z: 0.13459088}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1983500411
 GameObject:
   m_ObjectHideFlags: 0
@@ -32675,6 +32701,7 @@ SceneRoots:
   - {fileID: 614266608}
   - {fileID: 599322964}
   - {fileID: 1832590102}
+  - {fileID: 1979280107}
   - {fileID: 1312095442}
   - {fileID: 1066449980}
   - {fileID: 1805871234}

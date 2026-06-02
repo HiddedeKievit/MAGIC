@@ -24,15 +24,26 @@ public class PlacementManager_tibo : MonoBehaviour
         Instance = this;
     }
 
-    public void StartPlacementt(TowerData tower)
+  public void StartPlacementt(TowerData tower)
+{
+    tower.enabled = false;
+    TowerToPlace = tower;
+
+    SpriteRenderer towerRenderer =
+        tower.GetComponentInChildren<SpriteRenderer>();
+
+    if (towerRenderer == null)
     {
-        // disable tower so it doesnt start shooting.
-        tower.enabled = false;
-        TowerToPlace = tower;
-        // set ghost tower sprite and scale to match the tower we're placing.
-        GhostTower.sprite = tower.GetComponent<SpriteRenderer>().sprite;
-        GhostTower.transform.localScale = TowerToPlace.transform.localScale;
+        Debug.LogError(
+            $"No SpriteRenderer found on {tower.name} or its children."
+        );
+        return;
     }
+
+    GhostTower.sprite = towerRenderer.sprite;
+    GhostTower.transform.localScale =
+        TowerToPlace.transform.localScale;
+}
     private void Update()
     {
         // check if i have a tower to place.
