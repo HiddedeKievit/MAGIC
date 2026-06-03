@@ -115,8 +115,12 @@ public class TutorialLevel : MonoBehaviour
                 
             }
         } else if (PopupIndex == 10 )
-        
         {
+                if (manamanager.activeInHierarchy == false) //set manamanager active
+            {
+                manamanager.SetActive(true);
+
+            }
             // check if the player is trying to place a tower
             if (GhostTower.sprite != null)
             {
@@ -125,7 +129,7 @@ public class TutorialLevel : MonoBehaviour
             }
                     } else if (PopupIndex == 11 )
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+            if (TowerManager.Instance.Towers.Count > 0) //check if the player has placed a tower
             {
                 PopupIndex++;
             if (clicktocontinue.activeInHierarchy == true)
@@ -143,11 +147,7 @@ public class TutorialLevel : MonoBehaviour
                 wavespawner.SetActive(true);
 
             }
-            if (manamanager.activeInHierarchy == false)
-            {
-                manamanager.SetActive(true);
 
-            }
             if (tower2.interactable == false)
             {
                 tower2.interactable = true;
