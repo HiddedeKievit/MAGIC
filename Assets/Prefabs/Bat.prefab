@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4244749158778839480}
   - component: {fileID: 8550287152453695547}
-  - component: {fileID: 6341563363269936030}
   - component: {fileID: 6164836246344652347}
   - component: {fileID: 9209980464937517271}
   m_Layer: 0
@@ -90,24 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6341563363269936030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349908986371229524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef3f2ed26e9c024bb7eee3b088463d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetClearance: 1
-  movementSpeed: 1.5
-  rotateSpeed: 5
-  canMove: 1
-  Target: {x: 0, y: 0, z: 0}
-  DistanceToTarget: 0
 --- !u!114 &6164836246344652347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  TargetClearance: 1
+  MovementSpeed: 2
+  CanMove: 1
+  Target: {x: 0, y: 0, z: 0}
+  isDead: 0
+  gridPosition: {x: 0, y: 0}
 --- !u!61 &9209980464937517271
 BoxCollider2D:
   m_ObjectHideFlags: 0

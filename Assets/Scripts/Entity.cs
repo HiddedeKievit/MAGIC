@@ -2,20 +2,28 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour, IFinishable
 {
-    [Header("Health")]
+
     [SerializeField] private int health = 5;
+    public float TargetClearance = 1f;
+    public float MovementSpeed = 1f;
+    public bool CanMove = true;
+
+    public Vector3 Target;
+
+    public bool isDead = false;
+    public Vector2Int gridPosition = new();
 
     public int Health
     {
-        get => health; set
+        get => health;
+        set
         {
             health = value;
             if (health <= 0)
-            {
-                Destroy(gameObject);
-            }
+                isDead = true;
         }
     }
+
     public void ReachEnd()
     {
         // WIP: deal damage to tower
@@ -28,8 +36,6 @@ public class Entity : MonoBehaviour, IFinishable
 
 
         // delete self
-        Destroy(gameObject);
-
-        enabled = false;
+        isDead = true;
     }
 }

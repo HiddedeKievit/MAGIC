@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1164708830060783020}
   - component: {fileID: 5519961647331530015}
   - component: {fileID: 1552335814090384362}
-  - component: {fileID: 6397205238902822767}
   - component: {fileID: 6823298608620882736}
   m_Layer: 0
   m_Name: Zombie
@@ -103,24 +102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
---- !u!114 &6397205238902822767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4371970553508042413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef3f2ed26e9c024bb7eee3b088463d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetClearance: 0.4
-  movementSpeed: 0.75
-  rotateSpeed: 5
-  canMove: 1
+  TargetClearance: 1
+  MovementSpeed: 1
+  CanMove: 1
   Target: {x: 0, y: 0, z: 0}
-  DistanceToTarget: 0
+  isDead: 0
+  gridPosition: {x: 0, y: 0}
 --- !u!70 &6823298608620882736
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

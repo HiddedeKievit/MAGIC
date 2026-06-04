@@ -1,38 +1,39 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpriteChanger : MonoBehaviour
 {
     [SerializeField] Sprite[] directionalSprites;
-    public Sprite newSprite;
 
-    //Finds the SpriteRenderer so it can change the sprite.
-    private void Start()
+    SpriteRenderer spriteRenderer;
+    private void Awake()
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = directionalSprites[0];
+        //Finds the SpriteRenderer so it can change the sprite.
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+
+
     //Changes sprite on key input.
-    public void SpriteChange()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            newSprite = directionalSprites[0];
+            spriteRenderer.sprite = directionalSprites[0];
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            newSprite = directionalSprites[1];
+            spriteRenderer.sprite = directionalSprites[1];
         }
 
         if (Input.GetKeyDown(KeyCode.A))
         {
-            newSprite = directionalSprites[2];
+            spriteRenderer.sprite = directionalSprites[2];
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            newSprite = directionalSprites[3];
+            spriteRenderer.sprite = directionalSprites[3];
         }
     }
 

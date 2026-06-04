@@ -71,14 +71,31 @@
     "cSpell.words": [
         "BABYYYY",
         "Behaviour",
+        "canplace",
+        "cantplace",
+        "clicktocontinue",
+        "closearrowbutton",
+        "Cooldown",
         "deathscreen",
+        "ghostplace",
+        "ghosttower",
         "healthmanager",
         "healthtext",
+        "interactable",
         "Lerp",
+        "manamanager",
         "Mathf",
         "newenemy",
+        "openbutton",
+        "Placementt",
         "Scriptable",
         "spacebar",
-        "UGUI"
+        "spriterenderer",
+        "tibo",
+        "towertoplace",
+        "tutoriallevel",
+        "UGUI",
+        "waittime",
+        "wavespawner"
     ]
 }
