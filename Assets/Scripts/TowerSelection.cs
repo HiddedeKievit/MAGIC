@@ -31,17 +31,8 @@ public class TowerSelection : MonoBehaviour
         }
         else
         {
-            // Scale the indicator to match tower range
-            float diameter = tower.range * 2f;
-
-            rangeIndicator.transform.localScale =
-                new Vector3(diameter, diameter, 1f);
-
+            RefreshRangeIndicator();
             rangeIndicator.SetActive(false);
-
-            Debug.Log(
-                $"[TowerSelection] Range indicator scaled to diameter {diameter}"
-            );
         }
 
         if (uiAnchor == null)
@@ -56,7 +47,7 @@ public class TowerSelection : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Keep range indicator from rotating if something accidentally rotates parent
+        // Keep range indicator from rotating if parent rotates
         if (rangeIndicator != null)
         {
             rangeIndicator.transform.rotation = Quaternion.identity;
@@ -104,19 +95,46 @@ public class TowerSelection : MonoBehaviour
         }
     }
 
-    // Call this later if upgrades increase range
+    /// <summary>
+    /// Updates the visual range indicator to match the tower's actual range.
+    /// Call this after upgrades if range changes.
+    /// </summary>
     public void RefreshRangeIndicator()
     {
         if (tower == null || rangeIndicator == null)
             return;
 
+        SpriteRenderer sr = rangeIndicator.GetComponent<SpriteRenderer>();
+
+        if (sr == null)
+        {
+            Debug.LogError(
+                $"[TowerSelection] Range Indicator on {name} has no SpriteRenderer!"
+            );
+            return;
+        }
+
+        if (sr.sprite == null)
+        {
+            Debug.LogError(
+                $"[TowerSelection] Range Indicator on {name} has no sprite assigned!"
+            );
+            return;
+        }
+
+        float spriteWidth = sr.sprite.bounds.size.x;
         float diameter = tower.range * 2f;
 
+        // Compensate for parent scaling
+        float parentScale = transform.lossyScale.x;
+
+        float scale = diameter / spriteWidth / parentScale;
+
         rangeIndicator.transform.localScale =
-            new Vector3(diameter, diameter, 1f);
+            new Vector3(scale, scale, 1f);
 
         Debug.Log(
-            $"[TowerSelection] Range indicator refreshed to diameter {diameter}"
+            $"[TowerSelection] Range={tower.range} | Diameter={diameter} | SpriteWidth={spriteWidth} | ParentScale={parentScale} | FinalScale={scale}"
         );
     }
 }
