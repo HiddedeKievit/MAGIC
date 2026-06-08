@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5383009265382318538}
   - component: {fileID: 1846075574324018012}
   m_Layer: 0
-  m_Name: Fast Tower
+  m_Name: tower_Sherif
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.83, y: 2.48, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,12 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36ef8237e820d44c948fc2695848602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
-  projectile: {fileID: 7093437736152251842, guid: 817f49497921ac4498dd79206359f406, type: 3}
-  firerate: 0.5
+  range: 4
+  projectile: {fileID: 7093437736152251842, guid: 332dc9a61e480c94a9ae68b88f0f3956, type: 3}
+  firerate: 3
   cooldown: 0
-  size: {x: 1, y: 0.5}
+  hitbox: {x: 0.5, y: 0.5}
+  cost: 5
   currentTarget: {fileID: 0}
+  projectileCircleMe: 0
+  maxProjectiles: 12
+  activeProjectiles: []
   targeting: 0
 --- !u!212 &1846075574324018012
 SpriteRenderer:
@@ -96,7 +100,7 @@ SpriteRenderer:
   m_SortingLayerID: 1989190903
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fbfd514c896b0234092c6ba608c72d5d, type: 3}
+  m_Sprite: {fileID: -6187846232679581433, guid: 9c099cbbd1e68304f88e08ec7de70055, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

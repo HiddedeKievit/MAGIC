@@ -5,9 +5,7 @@ public class ProjectileManager : MonoBehaviour
 {
     public static ProjectileManager Instance;
 
-
     private List<Entity> potentialResults;
-
 
     public List<ProjectileData> Projectiles;
     private Dictionary<Vector2Int, List<ProjectileData>> ProjectileGrid;
@@ -16,8 +14,9 @@ public class ProjectileManager : MonoBehaviour
     {
         ProjectileGrid = new();
         potentialResults = new();
+
         if (Instance)
-            Debug.LogWarning("double ProjectileManager instance detected");
+            return;
 
         Instance = this;
     }
@@ -25,12 +24,26 @@ public class ProjectileManager : MonoBehaviour
 
     private void Update()
     {
+        // if theres no projectiles, do nothing
+        if (Projectiles.Count == 0)
+            return;
 
+        // check if the projectile is dead, if so remive it from list and grid.
         for (int i = Projectiles.Count - 1; i >= 0; i--)
         {
+            // remove if null reference
+            if (Projectiles[i] == null)
+            {
+                Projectiles.RemoveAt(i);
+                continue;
+            }
+
+            // remove if dead
             ProjectileData projectile = Projectiles[i];
+
             if (projectile.isDead)
             {
+
                 if (ProjectileGrid.ContainsKey(projectile.gridPosition))
                     ProjectileGrid[projectile.gridPosition].Remove(projectile);
 
@@ -40,29 +53,45 @@ public class ProjectileManager : MonoBehaviour
             }
         }
 
-        if (Projectiles.Count == 0)
-            return;
-
+        // logic per projectile
         foreach (ProjectileData projectile in Projectiles)
         {
+            // projectile null, skip.
             if (projectile == null)
                 continue;
 
-            // lifetime
-            if (projectile.Lifetime > projectile.Timer)
-            {
-                projectile.Timer += Time.deltaTime;
-            } else
+            // if i've existed for longer than im allowed to, i die.
+            if (projectile.Lifetime < projectile.Timer)
             {
                 projectile.isDead = true;
+                continue;
+            }
+
+            projectile.Timer += Time.deltaTime;
+
+            // if i have a target and im homing, rotate towards the target
+            if (projectile.isHomingTarget && projectile.target != null)
+            {
+                Vector3 diff = projectile.target.transform.position - projectile.transform.position;
+                Vector3 dir = diff.normalized;
+                float rotateSpeed = projectile.Speed * Time.deltaTime;
+
+                // if i should circle the target, rotate slower
+                if (projectile.isCirlingTarget)
+                {
+                    rotateSpeed /= 2;
+                }
+
+                projectile.transform.rotation = Quaternion.Slerp(
+                    projectile.transform.rotation,
+                    Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg),
+                    rotateSpeed
+                    );
             }
 
 
             // movement
-            projectile.transform.position += projectile.direction * projectile.Speed * Time.deltaTime;
-
-
-            // insert code later
+            projectile.transform.position += projectile.Speed * Time.deltaTime * projectile.transform.right;
 
             // update grid
             int centerX = Mathf.FloorToInt(projectile.transform.position.x / LevelData.Instance.GridCellSize);
@@ -77,43 +106,54 @@ public class ProjectileManager : MonoBehaviour
                 MoveProjectile(projectile, newKey);
             }
 
+            /////// PIERCING ISSUE
 
-            // one projectile can now deal damage to one enemy twice if the piercing is more than 1. there needs to be some way to track if the projectile is currently in an enemy, only on first hit deal damage.
+            // one projectile can now deal damage to one enemy twice if the piercing is more than 1.
+            // there needs to be some way to track if the projectile is currently in an enemy, only on first hit deal damage.
             // this is where "on collide" and "colliding" would be better, oh well...
-            // perhaps manually somehow. but then the case of 2 overlapping enemies would result in a flipflop between them. this may actually be fixable if enemies are always seperated a bit so their "collision" doesnt overlap. 
+            // perhaps manually somehow. but then the case of 2 overlapping enemies would result in a flipflop between them.
 
-            // projectile states maybe? "hit?" "colliding" "flying?"
+            // this may actually be fixable if enemies are always seperated a bit so their "collision" doesnt overlap. 
+            // or just adding a list of colliding enemies to projectiles, but then we could have many many lists in a lot of projectiles.
 
-            List<Entity> enemiesInCell = EnemyManager.Instance.GetCellList(projectile.gridPosition);
-            // TowerManager.Instance.GetOverlappingTower(GhostTower.transform.position, TowerToPlace.size)
-            if (enemiesInCell != null)
+
+            // get enemies im hitting
+            EnemyManager.Instance.GetOverlappingEnemies(projectile.transform.position, projectile.hitbox, potentialResults);
+
+            // if any results
+            if (potentialResults.Count != 0)
             {
-                for (int e = enemiesInCell.Count - 1; e >= 0; e--)
+                // for every enemy i hit
+                for (int e = potentialResults.Count - 1; e >= 0; e--)
                 {
-                    Entity enemy = enemiesInCell[e];
-                    if (( enemy.transform.position - projectile.transform.position ).sqrMagnitude < projectile.transform.localScale.x)
-                    {
-                        enemy.Health -= projectile.Damage;
+                    // deal damage
+                    potentialResults[e].Health -= projectile.Damage;
 
-                        projectile.Piercing--;
-                        if (projectile.Piercing <= 0)
-                        {
-                            projectile.isDead = true;
-                            break; // break loop for this projectile because its dead, done, gone, over, did its job!
-                        }
+                    // remove piercing
+                    projectile.Piercing--;
+
+                    // insert piercing fix later.
+
+                    // if no more piercing left, its its dead, done, gone, over, did its job!
+                    if (projectile.Piercing <= 0)
+                    {
+                        projectile.isDead = true;
+                        break;
                     }
                 }
             }
-
         }
     }
 
-    public void SpawnProjectile(ProjectileData projectilePrefab, TowerData origin, Entity target)
+    public ProjectileData SpawnProjectile(ProjectileData projectilePrefab, TowerData origin, Transform target)
     {
+        // get the direction from origin to target;
         Vector3 dir = ( target.transform.position - origin.transform.position ).normalized;
 
-        ProjectileData projectile = Instantiate(projectilePrefab, origin.transform.position, Quaternion.Euler(0, 0, ( Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg )), transform);
-        projectile.direction = dir;
+        // create projectile and add it to the grid
+        ProjectileData projectile = Instantiate(projectilePrefab, origin.transform.position, Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg), transform);
+        projectile.target = target;
+
         int centerX = Mathf.FloorToInt(projectile.transform.position.x / LevelData.Instance.GridCellSize);
         int centerY = Mathf.FloorToInt(projectile.transform.position.y / LevelData.Instance.GridCellSize);
 
@@ -122,17 +162,23 @@ public class ProjectileManager : MonoBehaviour
         MoveProjectile(projectile, newKey);
 
         Projectiles.Add(projectile);
+
+        return projectile;
     }
 
     public void MoveProjectile(ProjectileData projectile, Vector2Int newPos)
     {
+        // check if the projectile grid has a key for the active position, if so remove projectile from that position.
         if (ProjectileGrid.ContainsKey(projectile.gridPosition))
             ProjectileGrid[projectile.gridPosition].Remove(projectile);
 
+        // if grid doesnt have a key for a position, make it.
         if (!ProjectileGrid.ContainsKey(newPos))
         {
             ProjectileGrid[newPos] = new();
         }
+
+        // add projectile to the position and update reference
         ProjectileGrid[newPos].Add(projectile);
         projectile.gridPosition = newPos;
     }
