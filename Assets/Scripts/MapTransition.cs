@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MapTransition : MonoBehaviour
 {
-    [SerializeField] PolygonCollider2D mapBoundry;
+    [SerializeField] BoxCollider2D mapBoundry;
     CinemachineConfiner2D confiner;
     [SerializeField] Direction direction;
     [SerializeField] Transform teleportTargetPosition;
