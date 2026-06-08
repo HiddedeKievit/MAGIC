@@ -91,13 +91,13 @@ public class EnemyManager : MonoBehaviour
             if (enemy.CanMove)
             {
                 // move forwards by speed.
-                enemy.transform.position = enemy.transform.position + ( enemy.MovementSpeed * Time.deltaTime * enemy.transform.up );
+                enemy.transform.position = enemy.transform.position + ( enemy.MovementSpeed * Time.deltaTime * enemy.transform.right );
 
                 // direction from me to target
                 Vector3 dir = ( enemy.Target - enemy.transform.position ).normalized;
 
                 // rotate towards angle i want to be based on twice the movement speed.
-                enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90), Time.deltaTime * enemy.MovementSpeed * 2);
+                enemy.transform.rotation = Quaternion.Slerp(enemy.transform.rotation, Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg), Time.deltaTime * enemy.MovementSpeed * 2);
             }
 
 
