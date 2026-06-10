@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36ef8237e820d44c948fc2695848602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 5887747978788005924}
   range: 4
   projectile: {fileID: 7093437736152251842, guid: 332dc9a61e480c94a9ae68b88f0f3956, type: 3}
   firerate: 3
