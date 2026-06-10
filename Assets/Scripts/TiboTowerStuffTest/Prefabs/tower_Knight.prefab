@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2974555325676671880}
   - component: {fileID: 5383009265382318538}
   - component: {fileID: 1846075574324018012}
+  - component: {fileID: 695949510142171253}
+  - component: {fileID: 8922872511429933459}
   m_Layer: 0
   m_Name: tower_Knight
   m_TagString: Tower
@@ -111,3 +113,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &695949510142171253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426762781206527514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4128b1a7bb0806e42a89f7f511f99ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 8922872511429933459}
+  lightDetected: 0
+  projectile: {fileID: 6251499899555651301, guid: 45edaf9a236cdee4ab571a54f912141d, type: 3}
+--- !u!70 &8922872511429933459
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426762781206527514}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.0051341057}
+  m_Size: {x: 1.9166666, y: 2.4529762}
+  m_Direction: 0
