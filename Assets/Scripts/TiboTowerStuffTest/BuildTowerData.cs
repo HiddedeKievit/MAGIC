@@ -8,7 +8,7 @@ public class BuildTowerData : MonoBehaviour
     // link button to this function
     public void ButtonClicked()
     {
-        // if the button doesnt have a tower linked, do noothing
+        // if the button doesn't have a tower linked, do noothing
         if (TowerPrefab == null)
             return;
 
