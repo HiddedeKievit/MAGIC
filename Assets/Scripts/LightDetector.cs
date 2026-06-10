@@ -7,7 +7,7 @@ public class LightDetector : MonoBehaviour
 {
     [SerializeField] Collider2D Collider;
     [SerializeField] bool lightDetected;
-    [SerializeField] TurretData turretData;
+    [SerializeField] GameObject projectile;
     private Tower tower;
 
 
@@ -35,8 +35,8 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = true;
-            turretData.damage += 1;
-            print("Turret damage increased to " + turretData.damage);
+            projectile.GetComponent<ProjectileData>().Damage += 1;
+            print("Turret damage increased to " + projectile.GetComponent<ProjectileData>().Damage);
             if (tower != null)
                 tower.RefreshDamage();
         }
@@ -48,7 +48,8 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = false;
-            turretData.damage -= 1;
+            projectile.GetComponent<ProjectileData>().Damage -= 1;
+            print("Turret damage decreased to " + projectile.GetComponent<ProjectileData>().Damage);
             if (tower != null)
                 tower.RefreshDamage();
         }
