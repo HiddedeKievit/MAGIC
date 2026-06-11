@@ -57,6 +57,9 @@ TagManager:
   - name: Collision
     uniqueID: 682016471
     locked: 0
+  - name: Layer for Stairs
+    uniqueID: 1266756641
+    locked: 0
   - name: Player
     uniqueID: 1989190903
     locked: 0
