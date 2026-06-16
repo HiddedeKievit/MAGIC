@@ -27388,13 +27388,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1700764823276702182, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700764823276702182, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1989190903
+      objectReference: {fileID: 0}
+    - target: {fileID: 1700764823276702182, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2027280093918822883, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 1808710071}
+    - target: {fileID: 2829742395575765229, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8624787534811928375, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
       propertyPath: m_Name
       value: MineShaft
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997336659486973471, guid: 8a45cc5d0f09aaa478732de0f11772fd, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
