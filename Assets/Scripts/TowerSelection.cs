@@ -1,15 +1,24 @@
 using UnityEngine;
+using TMPro;
 
 public class TowerSelection : MonoBehaviour
 {
-    [SerializeField] private GameObject rangeIndicator;
+    [Header("General")]
     [SerializeField] private Transform uiAnchor;
+
+    [Header("Range Indicator (Optional)")]
+    [SerializeField] private GameObject rangeIndicator;
+
+    [Header("Countdown Display (Optional)")]
+    [SerializeField] private GameObject countdownObject;
+    [SerializeField] private TMP_Text countdownText;
 
     public Transform UIAnchor => uiAnchor;
 
     public bool IsSelected { get; private set; }
 
     private TowerData tower;
+    private BoulderSpawnerTower spawner;
 
     private void Awake()
     {
@@ -25,14 +34,24 @@ public class TowerSelection : MonoBehaviour
 
         Debug.Log($"[TowerSelection] TowerData component found on {name}");
 
+        // Optional spawner component
+        spawner = GetComponent<BoulderSpawnerTower>();
+
+        // Range indicator setup
         if (rangeIndicator == null)
         {
-            Debug.LogWarning($"[TowerSelection] Range Indicator NOT assigned on {name}");
+            Debug.Log($"[TowerSelection] No range indicator assigned on {name}");
         }
         else
         {
             RefreshRangeIndicator();
             rangeIndicator.SetActive(false);
+        }
+
+        // Countdown setup
+        if (countdownObject != null)
+        {
+            countdownObject.SetActive(false);
         }
 
         if (uiAnchor == null)
@@ -42,6 +61,19 @@ public class TowerSelection : MonoBehaviour
         else
         {
             Debug.Log($"[TowerSelection] UI Anchor assigned: {uiAnchor.name}");
+        }
+    }
+
+    private void Update()
+    {
+        // Update countdown if this tower is a spawner
+        if (!IsSelected)
+            return;
+
+        if (spawner != null && countdownText != null)
+        {
+            countdownText.text =
+                Mathf.CeilToInt(spawner.TimeRemaining).ToString();
         }
     }
 
@@ -66,6 +98,12 @@ public class TowerSelection : MonoBehaviour
             Debug.Log("[TowerSelection] Range indicator enabled");
         }
 
+        if (countdownObject != null)
+        {
+            countdownObject.SetActive(true);
+            Debug.Log("[TowerSelection] Countdown enabled");
+        }
+
         if (TowerSelectedUI.Instance == null)
         {
             Debug.LogError("[TowerSelection] TowerSelectedUI.Instance is NULL");
@@ -87,6 +125,12 @@ public class TowerSelection : MonoBehaviour
         {
             rangeIndicator.SetActive(false);
             Debug.Log("[TowerSelection] Range indicator disabled");
+        }
+
+        if (countdownObject != null)
+        {
+            countdownObject.SetActive(false);
+            Debug.Log("[TowerSelection] Countdown disabled");
         }
 
         if (TowerSelectedUI.Instance != null)
