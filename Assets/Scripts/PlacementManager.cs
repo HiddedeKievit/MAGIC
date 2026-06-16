@@ -9,12 +9,6 @@ public class PlacementManager : MonoBehaviour
     private GameObject ghostTurret;
     private GhostTowerVisualizer ghostVisualizer;
 
-    public SpriteRenderer GhostTower;
-
-[SerializeField] private SpriteRenderer ghostRangeIndicator;
-[SerializeField] private Sprite blueRangeSprite;
-[SerializeField] private Sprite redRangeSprite;
-
     [Header("Placement")]
     [SerializeField] private LayerMask placementLayer;
 
