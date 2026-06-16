@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 48689322d4838454b8470b5eb37fe10a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5612535590154107768
+    second: Light rays_0
+  - first:
+      213: 7510629480539681190
+    second: Light rays_1
+  - first:
+      213: -5685547444362063098
+    second: Light rays_2
+  - first:
+      213: -4553571705447454476
+    second: Light rays_3
+  - first:
+      213: 137922438043375437
+    second: Light rays_4
+  - first:
+      213: -7371986483353156213
+    second: Light rays_5
+  - first:
+      213: 7868174197623066794
+    second: Light rays_6
+  - first:
+      213: -7159839922136488317
+    second: Light rays_7
+  - first:
+      213: 2970436322059661043
+    second: Light rays_8
+  - first:
+      213: 2024613521532092771
+    second: Light rays_9
+  - first:
+      213: -7474113508983321139
+    second: Light rays_10
+  - first:
+      213: -4033622547506677878
+    second: Light rays_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Light rays_0
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 608
+        width: 253
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88480a30e944c12b0800000000000000
+      internalID: -5612535590154107768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1006
+        width: 197
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1f42338bd1b3860800000000000000
+      internalID: 7510629480539681190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_2
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 824
+        width: 145
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6035b2109b0e811b0800000000000000
+      internalID: -5685547444362063098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_3
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 561
+        width: 339
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8e885e8a67ec0c0800000000000000
+      internalID: -4553571705447454476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_4
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 534
+        width: 477
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4791260abff9e100800000000000000
+      internalID: 137922438043375437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 535
+        width: 168
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8501c21a5171b990800000000000000
+      internalID: -7371986483353156213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_6
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 468
+        width: 775
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa09730debe513d60800000000000000
+      internalID: 7868174197623066794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 101
+        width: 1069
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386e468768323ac90800000000000000
+      internalID: -7159839922136488317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_8
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 66
+        width: 46
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fea84cc81c193920800000000000000
+      internalID: 2970436322059661043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_9
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 245
+        width: 345
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3618f5e554fd81c10800000000000000
+      internalID: 2024613521532092771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_10
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 125
+        width: 104
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcdc916fc5d964890800000000000000
+      internalID: -7474113508983321139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Light rays_11
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 107
+        width: 107
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87bbd10aa1b508c0800000000000000
+      internalID: -4033622547506677878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Light rays_0: -5612535590154107768
+      Light rays_1: 7510629480539681190
+      Light rays_10: -7474113508983321139
+      Light rays_11: -4033622547506677878
+      Light rays_2: -5685547444362063098
+      Light rays_3: -4553571705447454476
+      Light rays_4: 137922438043375437
+      Light rays_5: -7371986483353156213
+      Light rays_6: 7868174197623066794
+      Light rays_7: -7159839922136488317
+      Light rays_8: 2970436322059661043
+      Light rays_9: 2024613521532092771
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

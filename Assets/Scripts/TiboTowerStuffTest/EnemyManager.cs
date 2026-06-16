@@ -8,6 +8,10 @@ public class EnemyManager : MonoBehaviour
     public List<Entity> Enemies;
     private Dictionary<Vector2Int, List<Entity>> EnemyGrid;
 
+    public Wave_Spawner waveSpawner;
+    private VictoryManager _victoryManager;
+    private HealthManager _healthManager;
+
     private void Awake()
     {
         if (Instance)
@@ -15,6 +19,14 @@ public class EnemyManager : MonoBehaviour
 
         EnemyGrid = new();
         Instance = this;
+    }
+
+    private void Start()
+    {
+        if (waveSpawner == null)
+            waveSpawner = Object.FindFirstObjectByType<Wave_Spawner>();
+        _victoryManager = Object.FindFirstObjectByType<VictoryManager>();
+        _healthManager = Object.FindFirstObjectByType<HealthManager>();
     }
 
 
@@ -59,10 +71,6 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        // if there are no enemies, dont do anything.
-        if (Enemies.Count == 0)
-            return;
-
         // go trough all enemies to check if theres any dead ones
         for (int i = Enemies.Count - 1; i >= 0; i--)
         {
@@ -80,6 +88,15 @@ public class EnemyManager : MonoBehaviour
             }
         }
 
+        if (Enemies.Count == 0 && waveSpawner != null && waveSpawner.allWavesSpawned && _victoryManager != null)
+        {
+            int lives = _healthManager != null ? Mathf.RoundToInt(_healthManager.Health) : 0;
+            _victoryManager.TriggerVictory(lives, 12);
+        }
+
+        // if there are no enemies, dont do anything.
+        if (Enemies.Count == 0)
+            return;
 
         foreach (Entity enemy in Enemies)
         {
