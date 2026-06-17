@@ -3903,7 +3903,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1962258045
-  m_SortingLayer: 8
+  m_SortingLayer: 10
   m_SortingOrder: 209
   m_RenderMode: 0
   m_MeshDistribution: 1
@@ -23645,6 +23645,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2073960659}
+  - {fileID: 92507690}
   m_Father: {fileID: 1102734622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -24724,7 +24725,7 @@ SpriteRenderer:
   m_Size: {x: 3.5, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1592519657
@@ -25715,7 +25716,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1989190903
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -28063,7 +28064,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956326607}
   m_CullTransparentMesh: 1
---- !u!1 &1979280105
 --- !u!1 &1964099249
 GameObject:
   m_ObjectHideFlags: 0
@@ -28072,20 +28072,15 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1979280107}
+  - component: {fileID: 1964099250}
   - component: {fileID: 1979280106}
   m_Layer: 0
   m_Name: SelectionManager
-  - component: {fileID: 1964099250}
-  - component: {fileID: 1964099251}
-  m_Layer: 5
-  m_Name: Rayorigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1979280106
 --- !u!224 &1964099250
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28154,6 +28149,38 @@ MonoBehaviour:
   towerLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!1 &1979280105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979280107}
+  - component: {fileID: 1964099251}
+  m_Layer: 0
+  m_Name: 
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1979280106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964099249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0c10a63188f4dc982b6578aa337b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &1979280107
 Transform:
   m_ObjectHideFlags: 0
@@ -28169,24 +28196,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_GameObject: {fileID: 1964099249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3ed1def46d13a742bfd17084c6a7c7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rayWidth: 1200
-  rayHeight: 45
-  duration: 1.2
-  maxScaleX: 6
-  minScaleX: 0
-  maxAlpha: 0.65
-  maxRandomDelay: 0.25
-  minScaleMultiplier: 0.75
-  maxScaleMultiplier: 1.25
-  minAlphaMultiplier: 0.4
-  maxAlphaMultiplier: 1
-  setupOnStart: 1
 --- !u!1 &1983500411
 GameObject:
   m_ObjectHideFlags: 0
@@ -32845,3 +32854,4 @@ SceneRoots:
   - {fileID: 1783921481}
   - {fileID: 94313737}
   - {fileID: 1864486565}
+  - {fileID: 1592519657}
