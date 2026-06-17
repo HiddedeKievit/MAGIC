@@ -7,14 +7,4 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("Cutscene");
     }
-
-    public void LoadBramTest()
-    {
-        SceneManager.LoadScene("BramTest");
-    }
-
-    public void LoadVictorTest()
-    {
-        SceneManager.LoadScene("VictorTest");
-    }
 }

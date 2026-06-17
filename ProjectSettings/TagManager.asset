@@ -57,9 +57,6 @@ TagManager:
   - name: Collision
     uniqueID: 682016471
     locked: 0
-  - name: Layer for Stairs
-    uniqueID: 1266756641
-    locked: 0
   - name: Player
     uniqueID: 1989190903
     locked: 0
@@ -68,9 +65,6 @@ TagManager:
     locked: 0
   - name: Decor
     uniqueID: 1756410079
-    locked: 0
-  - name: Level2Flags
-    uniqueID: 3742052665
     locked: 0
   - name: New Layer 7
     uniqueID: 3632224521

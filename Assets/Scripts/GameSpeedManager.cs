@@ -24,11 +24,7 @@ public class GameSpeedManager : MonoBehaviour
     [Header("Optional Effects")]
     [SerializeField] private ParticleSystem sparkleBurst;
     [SerializeField] private AudioSource sfxSource;
-
-    [Header("Speed Audio")]
-    [SerializeField] private AudioClip speed2xSfx;
-    [SerializeField] private AudioClip speed3xSfx;
-    [SerializeField] private AudioClip normalSpeedSfx;
+    [SerializeField] private AudioClip speedChangeSfx;
 
     private float baseFixedDeltaTime;
     private Vector3 originalScale;
@@ -90,7 +86,7 @@ public class GameSpeedManager : MonoBehaviour
         UpdateLayout();
 
         if (playEffects)
-            PlayEffects(speed);
+            PlayEffects();
     }
 
     public void ResetSpeed()
@@ -118,7 +114,7 @@ public class GameSpeedManager : MonoBehaviour
         }
     }
 
-    private void PlayEffects(float speed)
+    private void PlayEffects()
     {
         if (popRoutine != null)
             StopCoroutine(popRoutine);
@@ -128,25 +124,8 @@ public class GameSpeedManager : MonoBehaviour
         if (sparkleBurst != null)
             sparkleBurst.Play();
 
-        PlaySpeedSound(speed);
-    }
-
-    private void PlaySpeedSound(float speed)
-    {
-        if (sfxSource == null)
-            return;
-
-        AudioClip clipToPlay = null;
-
-        if (Mathf.Approximately(speed, fastSpeed))
-            clipToPlay = speed2xSfx;
-        else if (Mathf.Approximately(speed, ultraSpeed))
-            clipToPlay = speed3xSfx;
-        else if (Mathf.Approximately(speed, normalSpeed))
-            clipToPlay = normalSpeedSfx;
-
-        if (clipToPlay != null)
-            sfxSource.PlayOneShot(clipToPlay);
+        if (sfxSource != null && speedChangeSfx != null)
+            sfxSource.PlayOneShot(speedChangeSfx);
     }
 
     private IEnumerator PopEffect()

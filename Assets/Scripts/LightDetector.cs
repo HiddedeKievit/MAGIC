@@ -8,8 +8,6 @@ public class LightDetector : MonoBehaviour
     [SerializeField] Collider2D Collider;
     [SerializeField] bool lightDetected;
     [SerializeField] GameObject projectile;
-
-[SerializeField] GameObject effect;
     private Tower tower;
 
 
@@ -19,7 +17,6 @@ public class LightDetector : MonoBehaviour
     {
         lightDetected = false;
         tower = GetComponent<Tower>();
-        effect.SetActive(false);
     }
 
     //Check to see if lightDetected is true, Debug purposes only.
@@ -28,6 +25,7 @@ public class LightDetector : MonoBehaviour
         if (lightDetected == true)
         {
             print("I'M IN THE SPOTLIGHT BABYYYY");
+            
         }
     }
 
@@ -37,8 +35,6 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = true;
-            //particles
-            effect.SetActive(true);
             projectile.GetComponent<ProjectileData>().Damage += 1;
             print("Turret damage increased to " + projectile.GetComponent<ProjectileData>().Damage);
             if (tower != null)
@@ -52,8 +48,6 @@ public class LightDetector : MonoBehaviour
         if (collision.tag == "Lantern")
         {
             lightDetected = false;
-            //no more particles
-            effect.SetActive(false);
             projectile.GetComponent<ProjectileData>().Damage -= 1;
             print("Turret damage decreased to " + projectile.GetComponent<ProjectileData>().Damage);
             if (tower != null)

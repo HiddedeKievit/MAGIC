@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -103,12 +103,12 @@ TextureImporter:
       name: Cutscene_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 616
-        width: 563
-        height: 464
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,99 +121,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Cutscene_1
-      rect:
-        serializedVersion: 2
-        x: 569
-        y: 633
-        width: 1350
-        height: 445
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07857eb880e720048856a6d55f77e3ac
-      internalID: -1456000923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cutscene_2
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 4
-        width: 862
-        height: 612
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d2095b737ac08c4a9612d6436b03ad6
-      internalID: 2047141716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cutscene_3
-      rect:
-        serializedVersion: 2
-        x: 873
-        y: 4
-        width: 484
-        height: 617
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b4344bd9f73c8146bea4799fa01fe4f
-      internalID: 332639395
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Cutscene_4
-      rect:
-        serializedVersion: 2
-        x: 1353
-        y: 2
-        width: 566
-        height: 624
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6922e4251fe0cac49a008627637cb20e
-      internalID: 292804916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e6f8e7a1ccdc1864c9ab4bdaf7b57a41
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -224,10 +136,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Cutscene_0: -19314004337531388
-      Cutscene_1: -1456000923
-      Cutscene_2: 2047141716
-      Cutscene_3: 332639395
-      Cutscene_4: 292804916
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
