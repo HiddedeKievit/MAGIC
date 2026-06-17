@@ -27,6 +27,7 @@ public class Wave_Spawner : MonoBehaviour
 
     private bool isSpawning = false;
     private bool isWaitingForNextWave = false;
+    public bool allWavesSpawned = false;
 
     private void Start()
     {
@@ -69,10 +70,6 @@ public class Wave_Spawner : MonoBehaviour
                 if (currentWaveNumber < Waves.Length)
                 {
                     StartWave();
-                } else
-                {
-                    Debug.Log("All waves completed!");
-                    isWaitingForNextWave = false;
                 }
             }
         }
@@ -113,8 +110,15 @@ public class Wave_Spawner : MonoBehaviour
         if (enemiesLeftToSpawn == 0 && isSpawning)
         {
             isSpawning = false;
-            isWaitingForNextWave = true;
-            waveCountdown = timeBetweenWaves;
+
+            bool isLastWave = (currentWaveNumber >= Waves.Length - 1);
+            if (isLastWave)
+                allWavesSpawned = true;
+            else
+            {
+                isWaitingForNextWave = true;
+                waveCountdown = timeBetweenWaves;
+            }
         }
     }
 
