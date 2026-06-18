@@ -607,7 +607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &25460168
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3081,12 +3081,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 221974464}
-  path1ButtonIcon: {fileID: 1941628706}
-  path2ButtonIcon: {fileID: 493986462}
-  path1Level1Icon: {fileID: 21300000, guid: 9915ca86656ac1f42858ad1541bc35b4, type: 3}
-  path1Level2Icon: {fileID: 21300000, guid: 71d563a58dfdc9b44988fddea64c956a, type: 3}
-  path2Level1Icon: {fileID: 21300000, guid: 61348f45a90bc2a4f9d5a1e98b41778d, type: 3}
-  path2Level2Icon: {fileID: 21300000, guid: 6cb461a3c82ce6f488f761e95f82e5d3, type: 3}
+  path1ButtonIcon: {fileID: 0}
+  path2ButtonIcon: {fileID: 0}
+  path1Level1Icon: {fileID: 0}
+  path1Level2Icon: {fileID: 0}
+  path2Level1Icon: {fileID: 0}
+  path2Level2Icon: {fileID: 0}
 --- !u!1 &493986459
 GameObject:
   m_ObjectHideFlags: 0
@@ -16115,7 +16115,7 @@ Tilemap:
   - first: {x: -6, y: 1, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 18
+      m_TileIndex: 15
       m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
@@ -16565,7 +16565,7 @@ Tilemap:
   - first: {x: -1, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 18
+      m_TileIndex: 15
       m_TileSpriteIndex: 13
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
@@ -16575,7 +16575,7 @@ Tilemap:
   - first: {x: 0, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 14
+      m_TileIndex: 18
       m_TileSpriteIndex: 30
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
@@ -17102,16 +17102,16 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: bda5f433c9d2b08469e6eb2df7039c90, type: 2}
   - m_RefCount: 52
     m_Data: {fileID: 11400000, guid: 8b4d9b91e4a3bb34fa131ebf47042a11, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 510f00dd7be350c4880975d49fc41d78, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 9a6123618654fee48bacc16efc884e74, type: 2}
   - m_RefCount: 30
     m_Data: {fileID: 11400000, guid: ca92b18501cc86b479a4aeee552ce199, type: 2}
   - m_RefCount: 64
     m_Data: {fileID: 11400000, guid: f240a1fdd25415e498af9baf02d48d51, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 9a6123618654fee48bacc16efc884e74, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 510f00dd7be350c4880975d49fc41d78, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: f456a7c9ff33b704d985a89c207bebe2, type: 2}
   - m_RefCount: 2
