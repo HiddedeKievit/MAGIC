@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: beb6683a3bfc00a4d92d4aa2526bb2c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6413410637925376488
+    second: Luma's_0
+  - first:
+      213: -3461710593246955268
+    second: Luma's_1
+  - first:
+      213: -7106918859896950822
+    second: Luma's_2
+  - first:
+      213: 403606285383615848
+    second: Luma's_3
+  - first:
+      213: 53321812360930111
+    second: Luma's_4
+  - first:
+      213: 8536485820163046605
+    second: Luma's_5
+  - first:
+      213: -2956455417916953756
+    second: Luma's_6
+  - first:
+      213: -3498425092046677333
+    second: Luma's_7
+  - first:
+      213: -7168391741845484418
+    second: Luma's_8
+  - first:
+      213: -8940296670376713237
+    second: Luma's_9
+  - first:
+      213: -1999194750521122497
+    second: Luma's_10
+  - first:
+      213: 6584512723784836900
+    second: Luma's_11
+  - first:
+      213: 507228347957288091
+    second: Luma's_12
+  - first:
+      213: 3097514965109574278
+    second: Luma's_13
+  - first:
+      213: -8735411780321788417
+    second: Luma's_14
+  - first:
+      213: 6147366071571879841
+    second: Luma's_15
+  - first:
+      213: 6318073492092728086
+    second: Luma's_16
+  - first:
+      213: -4098084833702877548
+    second: Luma's_17
+  - first:
+      213: 3429163693351915870
+    second: Luma's_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luma's_0
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 515
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1e048def2010950800000000000000
+      internalID: 6413410637925376488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_1
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 512
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8fe4e6e8885ffc0800000000000000
+      internalID: -3461710593246955268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 511
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf615473f62f5d90800000000000000
+      internalID: -7106918859896950822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 462
+        width: 42
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865c76537c5e99500800000000000000
+      internalID: 403606285383615848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_4
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 477
+        width: 11
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f33ad84e7ef6db000800000000000000
+      internalID: 53321812360930111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_5
+      rect:
+        serializedVersion: 2
+        x: 1461
+        y: 54
+        width: 408
+        height: 503
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc3afc00a0b77670800000000000000
+      internalID: 8536485820163046605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 79
+        width: 404
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46be7cc167f88f6d0800000000000000
+      internalID: -2956455417916953756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_7
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 471
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa9e3b0ae8137fc0800000000000000
+      internalID: -3498425092046677333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_8
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 24
+        width: 428
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7cc478c0b1c48c90800000000000000
+      internalID: -7168391741845484418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_9
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 453
+        width: 70
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3a697cb8fade380800000000000000
+      internalID: -8940296670376713237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_10
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 467
+        width: 60
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31ec5277fe6144e0800000000000000
+      internalID: -1999194750521122497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_11
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 447
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4272c30af63e06b50800000000000000
+      internalID: 6584512723784836900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_12
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 458
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c900cbe790a0700800000000000000
+      internalID: 507228347957288091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_13
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 474
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a00dd03759cfa20800000000000000
+      internalID: 3097514965109574278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_14
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 471
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd382b944595c680800000000000000
+      internalID: -8735411780321788417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_15
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 445
+        width: 80
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a794583fd4df4550800000000000000
+      internalID: 6147366071571879841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_16
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 392
+        width: 57
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613bff0dd5e4ea750800000000000000
+      internalID: 6318073492092728086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_17
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 60
+        width: 444
+        height: 514
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49669bb6e8da027c0800000000000000
+      internalID: -4098084833702877548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luma's_18
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 408
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5158eae536d69f20800000000000000
+      internalID: 3429163693351915870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b50f8b7f101c4c0499181e85bb74157e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Luma's_0: 6413410637925376488
+      Luma's_1: -3461710593246955268
+      Luma's_10: -1999194750521122497
+      Luma's_11: 6584512723784836900
+      Luma's_12: 507228347957288091
+      Luma's_13: 3097514965109574278
+      Luma's_14: -8735411780321788417
+      Luma's_15: 6147366071571879841
+      Luma's_16: 6318073492092728086
+      Luma's_17: -4098084833702877548
+      Luma's_18: 3429163693351915870
+      Luma's_2: -7106918859896950822
+      Luma's_3: 403606285383615848
+      Luma's_4: 53321812360930111
+      Luma's_5: 8536485820163046605
+      Luma's_6: -2956455417916953756
+      Luma's_7: -3498425092046677333
+      Luma's_8: -7168391741845484418
+      Luma's_9: -8940296670376713237
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
