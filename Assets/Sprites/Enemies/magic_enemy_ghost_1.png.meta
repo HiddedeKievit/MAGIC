@@ -103,7 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy_ghost_basic
+      name: magic_enemy_ghost_basic
       rect:
         serializedVersion: 2
         x: 114
@@ -116,16 +116,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9bd56d9064289d260800000000000000
-      internalID: 7122867522987515321
+      spriteID: bf7bb4473d3f2994dab9353528bfbc61
+      internalID: 118561567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy_ghost_fast
+      name: magic_enemy_ghost_fast
       rect:
         serializedVersion: 2
         x: 544
@@ -138,10 +138,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fe63c6baeee29c850800000000000000
-      internalID: 6397696348269590255
+      spriteID: 72b82f6f523ee754a914d265ca25c70b
+      internalID: -1062743040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: magic_enemy_ghost_troll
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 784
+        width: 295
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2693e2fb3e6c3b4f9414e0dff28e951
+      internalID: -2042176700
       vertices: []
       indices: 
       edges: []
@@ -160,8 +182,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      enemy_ghost_basic: 7122867522987515321
-      enemy_ghost_fast: 6397696348269590255
+      magic_enemy_ghost_basic: 118561567
+      magic_enemy_ghost_fast: -1062743040
+      magic_enemy_ghost_troll: -2042176700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
