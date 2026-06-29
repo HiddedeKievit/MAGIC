@@ -20,6 +20,8 @@ public class TowerData : MonoBehaviour
     public float cooldown;
     // how big am i
     public Vector2 hitbox;
+    // can this tower only be placed on water?
+public bool waterTower = false;
 
     // how much do i cost
     public float cost = 5f;

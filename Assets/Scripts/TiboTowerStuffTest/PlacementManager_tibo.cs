@@ -10,15 +10,16 @@ public class PlacementManager_tibo : MonoBehaviour
     [SerializeField] private Sprite blueRangeSprite;
     [SerializeField] private Sprite redRangeSprite;
 
+    // Layers
+    [SerializeField] private LayerMask placementLayer;
+    [SerializeField] private LayerMask waterPlacementLayer;
+
     public TowerData TowerToPlace;
     private bool canPlace = false;
 
     // the colors to use for when you can and cant place a tower.
     private Color clr_cantplace = new(1f, 0.25f, 0.25f, 0.8f);
     private Color clr_canplace = new(0.25f, 1f, 0.25f, 0.8f);
-
-    // where the tower CANT get placed.
-    [SerializeField] private LayerMask placementLayer;
 
     Vector3 mousePosition = new();
 
@@ -74,19 +75,19 @@ public class PlacementManager_tibo : MonoBehaviour
         }
 
         float spriteWidth =
-    ghostRangeIndicator.sprite.bounds.size.x;
+            ghostRangeIndicator.sprite.bounds.size.x;
 
-float diameter = TowerToPlace.range * 2f;
+        float diameter = TowerToPlace.range * 2f;
 
-// Compensate for GhostTower scaling
-float parentScale =
-    GhostTower.transform.lossyScale.x;
+        // Compensate for GhostTower scaling
+        float parentScale =
+            GhostTower.transform.lossyScale.x;
 
-float scale =
-    diameter / spriteWidth / parentScale;
+        float scale =
+            diameter / spriteWidth / parentScale;
 
-ghostRangeIndicator.transform.localScale =
-    new Vector3(scale, scale, 1f);
+        ghostRangeIndicator.transform.localScale =
+            new Vector3(scale, scale, 1f);
 
         ghostRangeIndicator.transform.localPosition = Vector3.zero;
 
@@ -99,23 +100,61 @@ ghostRangeIndicator.transform.localScale =
         if (!TowerToPlace)
             return;
 
-        // check if can place here.
+        bool validPlacement;
+
+        if (TowerToPlace.waterTower)
+        {
+            Vector2 half = TowerToPlace.hitbox / 2f;
+
+            // Optional: shrink the corners inward slightly
+            // to avoid issues on collider edges.
+            half -= Vector2.one * 0.05f;
+
+            Vector2 pos = GhostTower.transform.position;
+
+            bool topLeft = Physics2D.OverlapPoint(
+                pos + new Vector2(-half.x, half.y),
+                waterPlacementLayer
+            );
+
+            bool topRight = Physics2D.OverlapPoint(
+                pos + new Vector2(half.x, half.y),
+                waterPlacementLayer
+            );
+
+            bool bottomLeft = Physics2D.OverlapPoint(
+                pos + new Vector2(-half.x, -half.y),
+                waterPlacementLayer
+            );
+
+            bool bottomRight = Physics2D.OverlapPoint(
+                pos + new Vector2(half.x, -half.y),
+                waterPlacementLayer
+            );
+
+            validPlacement =
+                topLeft &&
+                topRight &&
+                bottomLeft &&
+                bottomRight;
+        }
+        else
+        {
+            validPlacement =
+                !Physics2D.OverlapBox(
+                    GhostTower.transform.position,
+                    TowerToPlace.hitbox,
+                    0f,
+                    placementLayer
+                );
+        }
+
         canPlace =
-            // is the tower i want to place NOT overlapping any other towers?
             TowerManager.Instance.GetOverlappingTower(
                 GhostTower.transform.position,
                 TowerToPlace.hitbox
             ) == null
-
-            // is the hitbox of the tower i want to place NOT overlapping anything on the placement layer?
-            && !Physics2D.OverlapBox(
-                GhostTower.transform.position,
-                TowerToPlace.hitbox,
-                0f,
-                placementLayer
-            )
-
-            // can i still afford the tower?
+            && validPlacement
             && ManaManager.Instance.CanAfford(
                 TowerToPlace.cost
             );

@@ -137,11 +137,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 6383495694211196607}
-  range: 10
+  range: 6
   projectile: {fileID: 4254744570189976027, guid: d71412ba6dc01734bbf8970c7c4bc2b1, type: 3}
   firerate: 3
   cooldown: 0
-  hitbox: {x: 0.5, y: 0.5}
+  hitbox: {x: 1, y: 1}
+  waterTower: 1
   cost: 5
   currentTarget: {fileID: 0}
   projectileCircleMe: 0
