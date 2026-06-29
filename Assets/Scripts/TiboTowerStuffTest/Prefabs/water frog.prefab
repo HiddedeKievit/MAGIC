@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 6383495694211196607}
-  range: 4
-  projectile: {fileID: 7093437736152251842, guid: 332dc9a61e480c94a9ae68b88f0f3956, type: 3}
+  range: 10
+  projectile: {fileID: 4254744570189976027, guid: d71412ba6dc01734bbf8970c7c4bc2b1, type: 3}
   firerate: 3
   cooldown: 0
   hitbox: {x: 0.5, y: 0.5}
