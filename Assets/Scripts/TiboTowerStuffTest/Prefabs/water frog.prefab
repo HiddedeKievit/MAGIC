@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 8924579984095795352}
   - component: {fileID: 7314752363829235713}
   - component: {fileID: 2404448045530779625}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: water frog
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
