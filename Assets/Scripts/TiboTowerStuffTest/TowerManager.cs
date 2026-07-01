@@ -20,6 +20,19 @@ public class TowerManager : MonoBehaviour
 
     void Update()
     {
+        // go trough all towers to check if theres any sold ones
+        for (int i = Towers.Count - 1; i >= 0; i--)
+        {
+            TowerData tower = Towers[i];
+            if (tower != null && tower.isSold)
+            {
+                // remove enemy from general list and destroy
+                Towers.RemoveAt(i);
+                Destroy(tower.gameObject);
+                continue;
+            }
+        }
+
         // if no towers, do nothing
         if (Towers.Count == 0)
             return;
@@ -27,6 +40,9 @@ public class TowerManager : MonoBehaviour
         // go trough all towers
         foreach (TowerData tower in Towers)
         {
+            if (tower == null)
+                continue;
+
             // if i have a target, look at it
             if (tower.currentTarget != null)
             {
@@ -36,10 +52,10 @@ public class TowerManager : MonoBehaviour
                 {
                     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
                     if (tower.turret != null)
-            {
-                tower.turret.localRotation =
-                Quaternion.Euler(0, 0, angle);
-            }
+                    {
+                        tower.turret.localRotation =
+                        Quaternion.Euler(0, 0, angle);
+                    }
                 }
             }
 
@@ -185,4 +201,9 @@ public class TowerManager : MonoBehaviour
         );
     }
 
+    public void SellTower(TowerData tower)
+    {
+        ManaManager.Instance.AddMana(tower.cost);
+        tower.isSold = true;
+    }
 }

@@ -12,6 +12,7 @@ public class TowerStatsNSettings : MonoBehaviour
     [SerializeField] private TextMeshProUGUI txt_damage;
     [SerializeField] private TextMeshProUGUI txt_kills;
     [SerializeField] private TextMeshProUGUI txt_priority;
+    [SerializeField] private TextMeshProUGUI txt_sellTower;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class TowerStatsNSettings : MonoBehaviour
             txt_priority.text = $"Priority: {tower.targeting}";
             txt_damage.text = $"Damage Dealt: {tower.damageDealt}";
             txt_kills.text = $"Kills: {tower.kills}";
+            txt_sellTower.text = $"Sell for {tower.cost} Mana.";
         }
     }
 
@@ -68,5 +70,12 @@ public class TowerStatsNSettings : MonoBehaviour
     public void CloseMenu()
     {
         SetTowerToView(null);
+    }
+
+    public void SellTower()
+    {
+        TowerManager.Instance.SellTower(tower);
+
+        CloseMenu();
     }
 }

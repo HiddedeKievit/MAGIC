@@ -23,6 +23,7 @@ public class TowerData : MonoBehaviour
 
     public int damageDealt;
     public int kills;
+    public bool isSold;
 
     // how much do i cost
     public float cost = 5f;

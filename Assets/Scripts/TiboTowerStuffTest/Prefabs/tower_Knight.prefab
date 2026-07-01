@@ -147,7 +147,8 @@ MonoBehaviour:
   hitbox: {x: 0.75, y: 0.75}
   damageDealt: 0
   kills: 0
-  cost: 0.5
+  isSold: 0
+  cost: 5
   currentTarget: {fileID: 0}
   projectileCircleMe: 0
   maxProjectiles: 1
