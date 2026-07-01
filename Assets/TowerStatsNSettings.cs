@@ -37,7 +37,15 @@ public class TowerStatsNSettings : MonoBehaviour
         gameObject.SetActive(towerToView != null);
     }
 
-    public void nextPriority()
+    public bool IsTower(TowerData checkTower)
+    {
+        return tower == checkTower;
+    }
+
+    // Menu Buttons
+
+    // next tower priority button
+    public void NextPriority()
     {
         if (tower != null)
         {
@@ -46,7 +54,8 @@ public class TowerStatsNSettings : MonoBehaviour
         }
     }
 
-    public void prevPriority()
+    // previous priority button
+    public void PrevPriority()
     {
         if (tower != null)
         {
@@ -55,8 +64,9 @@ public class TowerStatsNSettings : MonoBehaviour
         }
     }
 
-    public bool IsTower(TowerData checkTower)
+    // close the menu button
+    public void CloseMenu()
     {
-        return tower == checkTower;
+        SetTowerToView(null);
     }
 }
