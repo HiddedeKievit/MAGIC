@@ -44,7 +44,7 @@ public class TowerStatsNSettings : MonoBehaviour
         return tower == checkTower;
     }
 
-    // Menu Buttons
+    //// Menu Buttons
 
     // next tower priority button
     public void NextPriority()

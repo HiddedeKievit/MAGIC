@@ -37,19 +37,16 @@ public class TowerManager : MonoBehaviour
         if (Towers.Count == 0)
             return;
 
-
+        // use previously made methods to deteckt clicking on a tower
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition =
-                    Camera.main.ScreenToWorldPoint(
-                        Input.mousePosition
-                    );
-
+            // where is the mouse
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // is there a tower at the mouse position
             TowerData tower = GetOverlappingTower(mousePosition, new(1, 1));
-            if (tower)
-                TowerStatsNSettings.Instance.SetTowerToView(tower);
-            else
-                TowerStatsNSettings.Instance.SetTowerToView(null);
+
+            // if there is a tower at mouse position, set view to that tower, otherwise set to null
+            TowerStatsNSettings.Instance.SetTowerToView(tower);
         }
 
 
