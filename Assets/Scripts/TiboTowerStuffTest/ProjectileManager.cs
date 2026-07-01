@@ -129,6 +129,13 @@ public class ProjectileManager : MonoBehaviour
                     // deal damage
                     potentialResults[e].Health -= projectile.Damage;
 
+                    if (projectile.parentTower != null)
+                    {
+                        if (potentialResults[e].Health <= 0)
+                            projectile.parentTower.kills += 1;
+                        projectile.parentTower.damageDealt += projectile.Damage;
+                    }
+
                     // remove piercing
                     projectile.Piercing--;
 
@@ -153,6 +160,7 @@ public class ProjectileManager : MonoBehaviour
         // create projectile and add it to the grid
         ProjectileData projectile = Instantiate(projectilePrefab, origin.transform.position, Quaternion.Euler(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg), transform);
         projectile.target = target;
+        projectile.parentTower = origin;
 
         int centerX = Mathf.FloorToInt(projectile.transform.position.x / LevelData.Instance.GridCellSize);
         int centerY = Mathf.FloorToInt(projectile.transform.position.y / LevelData.Instance.GridCellSize);

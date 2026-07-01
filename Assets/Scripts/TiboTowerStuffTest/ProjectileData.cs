@@ -24,6 +24,8 @@ public class ProjectileData : MonoBehaviour
     // am i rotating towards my target 
     public bool isHomingTarget = false;
 
+    public TowerData parentTower;
+
     // what is my target
     public Transform target;
 

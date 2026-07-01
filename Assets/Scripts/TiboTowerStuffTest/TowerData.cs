@@ -21,6 +21,9 @@ public class TowerData : MonoBehaviour
     // how big am i
     public Vector2 hitbox;
 
+    public int damageDealt;
+    public int kills;
+
     // how much do i cost
     public float cost = 5f;
 
@@ -48,5 +51,21 @@ public class TowerData : MonoBehaviour
         Gizmos.color = new Color(0f, 1f, 0f, 0.1f);
         Gizmos.DrawWireSphere(transform.position, range);
         Gizmos.DrawWireCube(transform.position, hitbox);
+    }
+
+    private void OnMouseOver()
+    {
+        Debug.Log($"he hovering me!! {this.name}");
+        if (Input.GetMouseButtonDown(0))
+        {
+            // should be clicking on this tower
+            if (TowerStatsNSettings.Instance.IsTower(this))
+            {
+                TowerStatsNSettings.Instance.SetTowerToView(null);
+            } else
+            {
+                TowerStatsNSettings.Instance.SetTowerToView(this);
+            }
+        }
     }
 }
