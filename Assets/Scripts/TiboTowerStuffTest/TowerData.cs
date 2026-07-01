@@ -57,16 +57,10 @@ public class TowerData : MonoBehaviour
     private void OnMouseOver()
     {
         Debug.Log($"he hovering me!! {this.name}");
+
         if (Input.GetMouseButtonDown(0))
         {
-            // should be clicking on this tower
-            if (TowerStatsNSettings.Instance.IsTower(this))
-            {
-                TowerStatsNSettings.Instance.SetTowerToView(null);
-            } else
-            {
-                TowerStatsNSettings.Instance.SetTowerToView(this);
-            }
+            TowerStatsNSettings.Instance.SetTowerToView(this);
         }
     }
 }

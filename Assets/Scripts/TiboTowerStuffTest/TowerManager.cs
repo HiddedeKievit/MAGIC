@@ -37,6 +37,22 @@ public class TowerManager : MonoBehaviour
         if (Towers.Count == 0)
             return;
 
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mousePosition =
+                    Camera.main.ScreenToWorldPoint(
+                        Input.mousePosition
+                    );
+
+            TowerData tower = GetOverlappingTower(mousePosition, new(1, 1));
+            if (tower)
+                TowerStatsNSettings.Instance.SetTowerToView(tower);
+            else
+                TowerStatsNSettings.Instance.SetTowerToView(null);
+        }
+
+
         // go trough all towers
         foreach (TowerData tower in Towers)
         {
