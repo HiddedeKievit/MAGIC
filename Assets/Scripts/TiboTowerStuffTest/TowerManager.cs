@@ -45,8 +45,9 @@ public class TowerManager : MonoBehaviour
             // is there a tower at the mouse position
             TowerData tower = GetOverlappingTower(mousePosition, new(1, 1));
 
-            // if there is a tower at mouse position, set view to that tower, otherwise set to null
-            TowerStatsNSettings.Instance.SetTowerToView(tower);
+            // if there is a tower at mouse position, set view to that tower
+            if (tower != null)
+                TowerStatsNSettings.Instance.SetTowerToView(tower);
         }
 
 
