@@ -15469,7 +15469,7 @@ MonoBehaviour:
   fadeOutDuration: 0.5
   slideDistance: 15
   showOnStart: 1
-  levelName: Level 1
+  levelName: Level 2
 --- !u!114 &1832590101
 MonoBehaviour:
   m_ObjectHideFlags: 0
