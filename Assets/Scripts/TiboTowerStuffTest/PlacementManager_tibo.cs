@@ -139,15 +139,23 @@ public class PlacementManager_tibo : MonoBehaviour
                 bottomRight;
         }
         else
-        {
-            validPlacement =
-                !Physics2D.OverlapBox(
-                    GhostTower.transform.position,
-                    TowerToPlace.hitbox,
-                    0f,
-                    placementLayer
-                );
-        }
+{
+    bool hitsPlacementBlocker = Physics2D.OverlapBox(
+        GhostTower.transform.position,
+        TowerToPlace.hitbox,
+        0f,
+        placementLayer
+    );
+
+    bool hitsWater = Physics2D.OverlapBox(
+        GhostTower.transform.position,
+        TowerToPlace.hitbox,
+        0f,
+        waterPlacementLayer
+    );
+
+    validPlacement = !hitsPlacementBlocker && !hitsWater;
+}
 
         canPlace =
             TowerManager.Instance.GetOverlappingTower(
